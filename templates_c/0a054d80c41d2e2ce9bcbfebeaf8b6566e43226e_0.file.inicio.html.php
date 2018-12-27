@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-12-27 12:38:25
+/* Smarty version 3.1.30, created on 2018-12-27 13:29:31
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\inicio.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c251c21267ef7_28506300',
+  'unifunc' => 'content_5c25281b543865_81376180',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\inicio.html',
-      1 => 1545935904,
+      1 => 1545938969,
       2 => 'file',
     ),
   ),
@@ -22,53 +22,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie.html' => 1,
   ),
 ),false)) {
-function content_5c251c21267ef7_28506300 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c25281b543865_81376180 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 
 <style>
-    .requestwizard-modal{
-        background: rgba(255, 255, 255, 0.8);
-        box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
-    }
-    .requestwizard-step p {
-        margin-top: 10px;
-    }
-
-    .requestwizard-row {
-        display: table-row;
-    }
-
-    .requestwizard {
-        display: table;
-        width: 100%;
-        position: relative;
-    }
-
-    .requestwizard-step button[disabled] {
-        opacity: 1 !important;
-        filter: alpha(opacity=100) !important;
-    }
-
-    .requestwizard-row:before {
-        top: 14px;
-        bottom: 0;
-        position: absolute;
-        content: " ";
-        width: 100%;
-        height: 1px;
-        background-color: #ccc;
-        z-order: 0;
-
-    }
-
-    .requestwizard-step {
-        display: table-cell;
-        text-align: center;
-        position: relative;
-    }
-
     .btn-circle {
         width: 30px;
         height: 30px;
@@ -394,6 +353,10 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
         background: #775BA3;
         border-color: transparent;
     }*/
+
+    .btn-group.bootstrap-select select {
+        width: 1px !important;
+    }
 </style>
 
 <!---- Modal show info--->
@@ -740,8 +703,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                 <div class="form-row col-md-12">
                                     <div class="col-md-3">
                                         <label class="form-check-label">Familia</label>
-                                        <select class="form-control" name="familia"  id="familias" onchange="obtenerModelos();">
-                                            <option selected disabled>Familia</option>
+                                        <select class="form-control" name="familia"  id="familias" onchange="obtenerModelos();" required>
+                                            <option selected disabled value="">Familia</option>
                                             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['familias']->value, 'familia');
 if ($_from !== null) {
@@ -760,8 +723,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     </div>
                                     <div class="col-md-3">
                                         <label class="form-check-label">Modelo</label>
-                                        <select class="form-control" name="modelos" id="modelos" onchange="obtenerHojas()">
-                                            <option selected disabled >Modelo</option>
+                                        <select class="form-control" name="modelos" id="modelos" onchange="obtenerHojas()" required>
+                                            <option selected disabled value="">Modelo</option>
                                         </select>
                                     </div>
                                     <div class="col-md-3">
@@ -776,7 +739,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                                     <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkCavidad">
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control onlynum" name="cavidad" id="newCavidad" placeholder="Cavidad">
+                                            <input type="text" class="form-control onlynum" name="cavidad" id="newCavidad" placeholder="Cavidad" required>
                                         </div>
                                     </div>
                                 </div>
@@ -790,7 +753,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                                     <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkDurezaMin">
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control onlynum" id="newDurezaMin" name="dureza" placeholder="Dureza Min">
+                                            <input type="text" class="form-control onlynum" id="newDurezaMin" name="dureza" placeholder="Dureza Min" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -801,7 +764,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                                     <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkDurezaMax">
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control onlynum" id="newDurezaMax"  name="dureza_min" placeholder="Dureza Max">
+                                            <input type="text" class="form-control onlynum" id="newDurezaMax"  name="dureza_min" placeholder="Dureza Max" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -812,7 +775,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                                     <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkNodularidad">
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control onlynum" id="newNodularidad"  name="nodularidad" placeholder="Nodularidad">
+                                            <input type="text" class="form-control onlynum" id="newNodularidad"  name="nodularidad" placeholder="Nodularidad" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -823,7 +786,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                                     <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkNod">
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control onlynum" id="newNod"  name="nod" placeholder="NOD/mm2">
+                                            <input type="text" class="form-control onlynum" id="newNod"  name="nod" placeholder="NOD/mm2" required>
                                         </div>
                                     </div>
                                 </div>
@@ -843,8 +806,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     </div>
                                     <div class="col-md-3">
                                         <label class="form-check-label">Grafito</label>
-                                        <select class="form-control" name="grafito">
-                                            <option selected disabled>Grafito</option>
+                                        <select class="form-control" name="grafito" required>
+                                            <option selected disabled value="">Grafito</option>
                                             <option>IYII</option>
                                             <option>A+B</option>
                                             <option>III</option>
@@ -869,7 +832,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     <input type="hidden" value="metalurgico" name="opcion">
                                     <div class="col-md-3">
                                         <label class="form-check-label" style="visibility: hidden">Esteadita</label>
-                                        <button id="btnGuardarMetalurgico" onclick="agregarMetalurgico()" class="btn btn-primary" type="button" >Guardar</button>
+                                        <button id="btnGuardarMetalurgico" class="btn btn-primary" type="submit" >Guardar</button>
+                                        <!--<button id="btnGuardarMetalurgico" onclick="agregarMetalurgico()" class="btn btn-primary" type="button" >Guardar</button>-->
                                         <!--<button class="btn btn-primary nextBtn" type="button" >Siguiente</button>-->
                                     </div>
                                 </div>
@@ -1221,45 +1185,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
         crearTabla();
 
-        var navListItems = $('div.setup-panel div a'),
-            allWells = $('.setup-content'),
-            allNextBtn = $('.nextBtn');
-
-        allWells.hide();
-
-        navListItems.click(function (e) {
-            e.preventDefault();
-            var $target = $($(this).attr('href')),
-                $item = $(this);
-
-            if (!$item.hasClass('disabled')) {
-                navListItems.removeClass('btn-primary').addClass('btn-default');
-                $item.addClass('btn-primary');
-                allWells.hide();
-                $target.show();
-                $target.find('input:eq(0)').focus();
-            }
-        });
-
-        allNextBtn.click(function(){
-            var curStep = $(this).closest(".setup-content"),
-                curStepBtn = curStep.attr("id"),
-                nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-                curInputs = curStep.find("input[type='text'],input[type='url']"),
-                isValid = true;
-
-            $(".form-group").removeClass("has-error");
-            for(var i=0; i<curInputs.length; i++){
-                if (!curInputs[i].validity.valid){
-                    isValid = false;
-                    $(curInputs[i]).closest(".form-group").addClass("has-error");
-                }
-            }
-
-            if (isValid)
-                nextStepWizard.removeAttr('disabled').trigger('click');
-        });
-        $('div.setup-panel div a.btn-primary').trigger('click');
     });
 
     function crearTabla() {
@@ -1386,6 +1311,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     });
 
     function eliminarClaseSelected(){
+        t.draw();
         $('#tableData tbody tr').each(function () {
             console.log($(this)[0]);
             $(this).removeClass('selected');
@@ -1897,13 +1823,25 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         t.draw();
     }
 
+    $('#formMetalurgicoAdd').submit(function (e) {
+        $.ajax({
+            url: '../peticiones/InsertData.php',
+            method: 'post',
+            data: $('#formMetalurgicoAdd').serialize(),
+            dataType: 'json',
+            success: function (response) {
+                t.draw();
+                ultimo_id_insert = response[0].id;
+            }
+        });
+        e.preventDefault();
+    });
+
     function agregarMetalurgico() {
         if (ultimo_id_insert !== 0){ // se hace update
 
         } else { // se hace insert
-            let data = $('#formMetalurgicoAdd').serializeArray();
-            console.log(data);
-            
+
             $.ajax({
                 url: '../peticiones/InsertData.php',
                 method: 'post',
