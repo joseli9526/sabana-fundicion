@@ -25,7 +25,7 @@ else if ($hora >= '21:30:00' && $hora <= '23:59:59')
     $turno = '3ero';
 else if ($hora >= '00:00:00' && $hora < '05:59:59')
     $turno = '3ero';
-
+print_r($_POST);
 if ($_POST['opcion'] == 'metalurgico') {
     $olla = $_POST['olla'];
     $familia = $_POST['familia'];
@@ -48,8 +48,9 @@ if ($_POST['opcion'] == 'metalurgico') {
                     esteadita,usuario_metalurgico) VALUES ('$fecha','$turno',$olla,'$modelo',$cavidad,'$dureza',
                                                            '$dureza_max','$nodularidad','$nod','$perlita','$ferrita','$carburo',
                                                            '$grafito','$tamanio_grafito_min','$tamanio_grafito','$esteadita','$usuario')";
-    $web->ejecutar($sql);
+    //$web->ejecutar($sql);
 
+    echo $sql; die();
     $ultimo_id = $web->fetchAll("SELECT MAX(id) as id FROM sabana");
     echo json_encode($ultimo_id);
 } else if ($_POST['opcion'] == 'quimico') {
@@ -69,7 +70,7 @@ if ($_POST['opcion'] == 'metalurgico') {
     $c = $_POST['c'];
     $s = $_POST['s'];
 
-    //$sql = "INSERT INTO sabana ()"
+    //  $sql = "INSERT INTO sabana ()"
 }
 
 /*//obtener los valores de post

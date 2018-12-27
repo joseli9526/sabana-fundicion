@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-12-27 10:09:38
+/* Smarty version 3.1.30, created on 2018-12-27 12:38:25
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\inicio.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c24f9428e5b56_76937708',
+  'unifunc' => 'content_5c251c21267ef7_28506300',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\inicio.html',
-      1 => 1545926976,
+      1 => 1545935904,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie.html' => 1,
   ),
 ),false)) {
-function content_5c24f9428e5b56_76937708 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c251c21267ef7_28506300 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -666,6 +666,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     <label style="visibility: hidden">s</label>
                                     <button type="button" id="btnEditarTres" onclick="seleccionarEvento(this)" class="btn btn-outline-blue form-control">Editar</button>
                                 </div>
+
                             </div>
                             <input type="hidden" id="id3" name="id3">
                         </form>
@@ -711,7 +712,289 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 </div>
 
 <!-- Modal add -->
-<div class="modal fade" id="requestform" tabindex="-1" role="dialog"  aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal" id="requestform" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Agregar Registros</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-pills mb-3" id="pills-tab2" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active"  id="pills-home-tab2" data-toggle="pill" href="#pills-home2" role="tab" aria-controls="pills-home2" aria-selected="true">Reporte Metalurgico</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  id="pills-profile-tab2" data-toggle="pill" href="#pills-profile2" role="tab" aria-controls="pills-profile2" aria-selected="false">Análisis Químico</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-contact-tab2" data-toggle="pill" href="#pills-contact2" role="tab" aria-controls="pills-contact2" aria-selected="false">Temperatura e Inoculante</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="pills-tabContent2">
+                    <div class="tab-pane fade show active" id="pills-home2" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <form role="form" id="formMetalurgicoAdd">
+                                <div class="form-row col-md-12">
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">Familia</label>
+                                        <select class="form-control" name="familia"  id="familias" onchange="obtenerModelos();">
+                                            <option selected disabled>Familia</option>
+                                            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['familias']->value, 'familia');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['familia']->value) {
+?>
+                                            <option value=<?php echo $_smarty_tpl->tpl_vars['familia']->value['id'];?>
+><?php echo $_smarty_tpl->tpl_vars['familia']->value['familia'];?>
+</option>
+                                            <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">Modelo</label>
+                                        <select class="form-control" name="modelos" id="modelos" onchange="obtenerHojas()">
+                                            <option selected disabled >Modelo</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">No. Olla</label>
+                                        <input type="text" required class="form-control onlynum" placeholder="No. Olla" name="olla">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">Cavidad</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend" style="width: 25px">
+                                                <div class="input-group-text">
+                                                    <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkCavidad">
+                                                </div>
+                                            </div>
+                                            <input type="text" class="form-control onlynum" name="cavidad" id="newCavidad" placeholder="Cavidad">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row mt-2 col-md-12">
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">Dureza Min</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend" style="width: 25px">
+                                                <div class="input-group-text">
+                                                    <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkDurezaMin">
+                                                </div>
+                                            </div>
+                                            <input type="text" class="form-control onlynum" id="newDurezaMin" name="dureza" placeholder="Dureza Min">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">Dureza Max</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend" style="width: 25px">
+                                                <div class="input-group-text">
+                                                    <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkDurezaMax">
+                                                </div>
+                                            </div>
+                                            <input type="text" class="form-control onlynum" id="newDurezaMax"  name="dureza_min" placeholder="Dureza Max">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">Nodularidad</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend" style="width: 25px">
+                                                <div class="input-group-text">
+                                                    <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkNodularidad">
+                                                </div>
+                                            </div>
+                                            <input type="text" class="form-control onlynum" id="newNodularidad"  name="nodularidad" placeholder="Nodularidad">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">NOD/mm2</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend" style="width: 25px">
+                                                <div class="input-group-text">
+                                                    <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkNod">
+                                                </div>
+                                            </div>
+                                            <input type="text" class="form-control onlynum" id="newNod"  name="nod" placeholder="NOD/mm2">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row mt-2 col-md-12">
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">%Perlita</label>
+                                        <input type="text" class="form-control onlynum" name="perlita" placeholder="% Perlita" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">%Ferrita</label>
+                                        <input type="text" class="form-control onlynum" name="ferrita" placeholder="% Ferrita" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">%Carburos</label>
+                                        <input type="text" class="form-control onlynum" name="carburos" placeholder="% Carburos" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">Grafito</label>
+                                        <select class="form-control" name="grafito">
+                                            <option selected disabled>Grafito</option>
+                                            <option>IYII</option>
+                                            <option>A+B</option>
+                                            <option>III</option>
+                                            <option>A+E</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row mt-2 col-md-12">
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">Grafito Min</label>
+                                        <input type="text" class="form-control onlynum" name="grafitotamanio" placeholder="Grafito Min" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">Grafito Max</label>
+                                        <input type="text" class="form-control onlynum" name="grafitotamaniomin" placeholder="Grafito max" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">Esteadita</label>
+                                        <input type="text" class="form-control onlynum" name="esteadita" placeholder="Esteadita" required>
+                                    </div>
+                                    <input type="hidden" value="metalurgico" name="opcion">
+                                    <div class="col-md-3">
+                                        <label class="form-check-label" style="visibility: hidden">Esteadita</label>
+                                        <button id="btnGuardarMetalurgico" onclick="agregarMetalurgico()" class="btn btn-primary" type="button" >Guardar</button>
+                                        <!--<button class="btn btn-primary nextBtn" type="button" >Siguiente</button>-->
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-profile2" role="tabpanel" aria-labelledby="pills-profile-tab2">
+                        <form id="formQuimicoAdd">
+                                <div class="form-row col-md-12">
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">% Si</label>
+                                        <input type="text" required class="form-control onlyfloat" name="si" placeholder="% Si">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">% Mn</label>
+                                        <input type="text" required class="form-control onlyfloat" name="mn" placeholder="% Mn">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">% P</label>
+                                        <input type="text" required class="form-control onlyfloat" name="p" placeholder="% P">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">% Mg</label>
+                                        <input type="text" required class="form-control onlyfloat" name="mg" placeholder="% Mg">
+                                    </div>
+                                </div>
+
+                                <div class="form-row mt-2 col-md-12">
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">% Cr</label>
+                                        <input type="text" required class="form-control onlyfloat" name="cr" placeholder="% Cr">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">% Ni</label>
+                                        <input type="text" required class="form-control onlyfloat" name="ni" placeholder="% Ni">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">% Mo</label>
+                                        <input type="text" required class="form-control onlyfloat" name="mo" placeholder="% Mo">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">% Cu</label>
+                                        <input type="text" required class="form-control onlyfloat" name="cu" placeholder="% Cu">
+                                    </div>
+                                </div>
+
+                                <div class="form-row mt-2 col-md-12">
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">% Al</label>
+                                        <input type="text" required class="form-control onlyfloat" name="al" placeholder="% Al">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">% Ti</label>
+                                        <input type="text" required class="form-control onlyfloat" name="ti" placeholder="% Ti">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">% V</label>
+                                        <input type="text" required class="form-control onlyfloat" name="v" placeholder="% V">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">% Sn</label>
+                                        <input type="text" required class="form-control onlyfloat" name="sn" placeholder="% Sn">
+                                    </div>
+                                </div>
+
+                                <div class="form-row mt-2 col-md-12">
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">% Pb</label>
+                                        <input type="text" required class="form-control onlyfloat" name="pb" placeholder="% Pb">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">% C</label>
+                                        <input type="text" class="form-control onlyfloat" name="c" placeholder="% C" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">% S</label>
+                                        <input type="text" class="form-control onlyfloat" name="s" placeholder="% S" required>
+                                    </div>
+                                    <input type="hidden" value="quimico" name="opcion">
+                                    <div class="col-md-3">
+                                        <label class="form-check-label" style="visibility: hidden">% S</label>
+                                        <button class="btn btn-primary pull-right" type="button" onclick="agregarQuimico()">Guardar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    <div class="tab-pane fade" id="pills-contact2" role="tabpanel" aria-labelledby="pills-contact-tab2">
+                        <form id="formTemperaturaAdd">
+                                <div class="form-row col-md-12">
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">Sangrado °C</label>
+                                        <input type="text" class="form-control onlynum" name="sangrado" placeholder="Sangrado °C" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">Vaciado °C</label>
+                                        <input type="text" class="form-control onlynum" name="vaciado" placeholder="Vaciado °C" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">Kg</label>
+                                        <input type="text" class="form-control onlyfloat" name="kg" placeholder="Kg" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">Tiempo</label>
+                                        <input type="text" class="form-control onlynum" name="tiempo" placeholder="Tiempo" required>
+                                    </div>
+                                </div>
+                                <div class="form-row mt-2 col-md-12">
+                                    <div class="col">
+                                        <button class="btn btn-primary nextBtn pull-right" type="button" onclick="setdata()">Finalizar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="eliminarClaseSelected()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<div class="modal fade" id="" tabindex="-1" role="dialog"  aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content" style="width: 600px">
             <div class="modal-header">
@@ -721,7 +1004,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 </button>
             </div>
             <div class="modal-body">
-                <!-- Steps starts here -->
+                &lt;!&ndash; Steps starts here &ndash;&gt;
                 <div class="requestwizard">
                     <div class="requestwizard-row setup-panel">
                         <div class="requestwizard-step">
@@ -736,255 +1019,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                     </div>
                 </div>
 
-                <form role="form" id="formMetalurgicoAdd">
-                    <div class="row setup-content" id="step-1">
-                        <div class="form-row col-md-12 mt-2">
-                            <div class="col-md-3">
-                                <label class="form-check-label">Familia</label>
-                                <select class="form-control" name="familia"  id="familias" onchange="obtenerModelos();">
-                                    <option selected disabled>Familia</option>
-                                    <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['familias']->value, 'familia');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['familia']->value) {
-?>
-                                    <option value=<?php echo $_smarty_tpl->tpl_vars['familia']->value['id'];?>
-><?php echo $_smarty_tpl->tpl_vars['familia']->value['familia'];?>
-</option>
-                                    <?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
-?>
 
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">Modelo</label>
-                                <select class="form-control" name="modelos" id="modelos" onchange="obtenerHojas()">
-                                    <option selected disabled >Modelo</option>
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">No. Olla</label>
-                                <input type="text" required class="form-control onlynum" placeholder="No. Olla" name="olla">
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">Cavidad</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend" style="width: 25px">
-                                        <div class="input-group-text">
-                                            <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkCavidad">
-                                        </div>
-                                    </div>
-                                    <input type="text" class="form-control onlynum" name="cavidad" id="newCavidad" placeholder="Cavidad">
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="form-row mt-2 col-md-12">
-                            <div class="col-md-3">
-                                <label class="form-check-label">Dureza Min</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend" style="width: 25px">
-                                        <div class="input-group-text">
-                                            <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkDurezaMin">
-                                        </div>
-                                    </div>
-                                    <input type="text" class="form-control onlynum" id="newDurezaMin" name="dureza" placeholder="Dureza Min">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">Dureza Max</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend" style="width: 25px">
-                                        <div class="input-group-text">
-                                            <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkDurezaMax">
-                                        </div>
-                                    </div>
-                                    <input type="text" class="form-control onlynum" id="newDurezaMax"  name="dureza_min" placeholder="Dureza Max">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">Nodularidad</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend" style="width: 25px">
-                                        <div class="input-group-text">
-                                            <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkNodularidad">
-                                        </div>
-                                    </div>
-                                    <input type="text" class="form-control onlynum" id="newNodularidad"  name="nodularidad" placeholder="Nodularidad">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">NOD/mm2</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend" style="width: 25px">
-                                        <div class="input-group-text">
-                                            <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkNod">
-                                        </div>
-                                    </div>
-                                    <input type="text" class="form-control onlynum" id="newNod"  name="nod" placeholder="NOD/mm2">
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="form-row mt-2 col-md-12">
-                            <div class="col-md-3">
-                                <label class="form-check-label">%Perlita</label>
-                                <input type="text" class="form-control onlynum" name="perlita" placeholder="% Perlita" required>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">%Ferrita</label>
-                                <input type="text" class="form-control onlynum" name="ferrita" placeholder="% Ferrita" required>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">%Carburos</label>
-                                <input type="text" class="form-control onlynum" name="carburos" placeholder="% Carburos" required>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">Grafito</label>
-                                <select class="form-control" name="grafito">
-                                    <option selected disabled>Grafito</option>
-                                    <option>IYII</option>
-                                    <option>A+B</option>
-                                    <option>III</option>
-                                    <option>A+E</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-row mt-2 col-md-12">
-                            <div class="col-md-3">
-                                <label class="form-check-label">Grafito Min</label>
-                                <input type="text" class="form-control onlynum" name="grafitotamanio" placeholder="Grafito Min" required>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">Grafito Max</label>
-                                <input type="text" class="form-control onlynum" name="grafitotamaniomin" placeholder="Grafito max" required>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">Esteadita</label>
-                                <input type="text" class="form-control onlynum" name="esteadita" placeholder="Esteadita" required>
-                            </div>
-                            <input type="hidden" value="metalurgico" name="opcion">
-                            <div class="col-md-3">
-                                <label class="form-check-label" style="visibility: hidden">Esteadita</label>
-                                <button id="btnGuardarMetalurgico" onclick="agregarMetalurgico()" class="btn btn-primary" type="button" >Guardar</button>
-                                <!--<button class="btn btn-primary nextBtn" type="button" >Siguiente</button>-->
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
-                <form id="formQuimicoAdd">
-                    <div class="row setup-content" id="step-2">
-                        <div class="form-row col-md-12 mt-2">
-                            <div class="col-md-3">
-                                <label class="form-check-label">% Si</label>
-                                <input type="text" required class="form-control onlyfloat" name="si" placeholder="% Si">
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">% Mn</label>
-                                <input type="text" required class="form-control onlyfloat" name="mn" placeholder="% Mn">
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">% P</label>
-                                <input type="text" required class="form-control onlyfloat" name="p" placeholder="% P">
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">% Mg</label>
-                                <input type="text" required class="form-control onlyfloat" name="mg" placeholder="% Mg">
-                            </div>
-                        </div>
-
-                        <div class="form-row mt-2 col-md-12">
-                            <div class="col-md-3">
-                                <label class="form-check-label">% Cr</label>
-                                <input type="text" required class="form-control onlyfloat" name="cr" placeholder="% Cr">
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">% Ni</label>
-                                <input type="text" required class="form-control onlyfloat" name="ni" placeholder="% Ni">
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">% Mo</label>
-                                <input type="text" required class="form-control onlyfloat" name="mo" placeholder="% Mo">
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">% Cu</label>
-                                <input type="text" required class="form-control onlyfloat" name="cu" placeholder="% Cu">
-                            </div>
-                        </div>
-
-                        <div class="form-row mt-2 col-md-12">
-                            <div class="col-md-3">
-                                <label class="form-check-label">% Al</label>
-                                <input type="text" required class="form-control onlyfloat" name="al" placeholder="% Al">
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">% Ti</label>
-                                <input type="text" required class="form-control onlyfloat" name="ti" placeholder="% Ti">
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">% V</label>
-                                <input type="text" required class="form-control onlyfloat" name="v" placeholder="% V">
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">% Sn</label>
-                                <input type="text" required class="form-control onlyfloat" name="sn" placeholder="% Sn">
-                            </div>
-                        </div>
-
-                        <div class="form-row mt-2 col-md-12">
-                            <div class="col-md-3">
-                                <label class="form-check-label">% Pb</label>
-                                <input type="text" required class="form-control onlyfloat" name="pb" placeholder="% Pb">
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">% C</label>
-                                <input type="text" class="form-control onlyfloat" name="c" placeholder="% C" required>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">% S</label>
-                                <input type="text" class="form-control onlyfloat" name="s" placeholder="% S" required>
-                            </div>
-                            <input type="hidden" value="quimico" name="opcion">
-                            <div class="col-md-3">
-                                <label class="form-check-label" style="visibility: hidden">% S</label>
-                                <button class="btn btn-primary pull-right" type="button" onclick="agregarQuimico()">Guardar</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
-                <form id="formTemperaturaAdd">
-                    <div class="row setup-content" id="step-3">
-                        <div class="form-row col-md-12 mt-2">
-                            <div class="col-md-3">
-                                <label class="form-check-label">Sangrado °C</label>
-                                <input type="text" class="form-control onlynum" name="sangrado" placeholder="Sangrado °C" required>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">Vaciado °C</label>
-                                <input type="text" class="form-control onlynum" name="vaciado" placeholder="Vaciado °C" required>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">Kg</label>
-                                <input type="text" class="form-control onlyfloat" name="kg" placeholder="Kg" required>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-check-label">Tiempo</label>
-                                <input type="text" class="form-control onlynum" name="tiempo" placeholder="Tiempo" required>
-                            </div>
-                        </div>
-                        <div class="form-row mt-2 col-md-12">
-                            <div class="col">
-                                <button class="btn btn-primary nextBtn pull-right" type="button" onclick="setdata()">Finalizar</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
 
                     <div class="row setup-content" id="step-5">
                         <div class="form-row col-md-12">
@@ -993,16 +1030,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                         <div class="form-row mt-2 col-md-12">
                             <div class="col-md-6">
                                 <input type="text" name="hoja" id="hoja">
-                              <!-- <select class="form-control" name="hoja" id="hoja">
+                              &lt;!&ndash; <select class="form-control" name="hoja" id="hoja">
                                    <option selected disabled >Hoja inspeccion</option>
-                               </select>-->
+                               </select>&ndash;&gt;
                             </div>
                         </div>
                     </div>
             </div>
         </div>
     </div>
-</div>
+</div>-->
 
 <!--Modal eliminar--->
 <div id="modalEliminar" class="modal fade">
@@ -1423,61 +1460,60 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         $('#inputVaciado').val(dataArr[35]);
         $('#inputKg').val(dataArr[36]);
         $('#inputTiempo').val(dataArr[37]);
-
     } );
 
     $('#checkCavidad').on('change', function (e) {
        if ($(this).prop('checked')){
-           $('#newCavidad:text').val('N/A');
-           $('#newCavidad').prop('disabled',true);
+           $('#newCavidad').val('N/A');
+           $('#newCavidad').css('pointer-events', 'none');
        }
        else{
-           $('#newCavidad:text').val('');
-           $('#newCavidad').prop('disabled',false);
+           $('#newCavidad').val('');
+           $('#newCavidad').css('pointer-events', 'all');
        }
     });
 
     $('#checkDurezaMin').on('change', function (e) {
         if ($(this).prop('checked')){
-            $('#newDurezaMin:text').val('N/A');
-            $('#newDurezaMin').prop('disabled',true);
+            $('#newDurezaMin').val('N/A');
+            $('#newDurezaMin').css('pointer-events','none');
         }
         else{
-            $('#newDurezaMin:text').val('');
-            $('#newDurezaMin').prop('disabled',false);
+            $('#newDurezaMin').val('');
+            $('#newDurezaMin').css('pointer-events','all');
         }
     });
 
     $('#checkDurezaMax').on('change', function (e) {
         if ($(this).prop('checked')){
-            $('#newDurezaMax:text').val('N/A');
-            $('#newDurezaMax').prop('disabled',true);
+            $('#newDurezaMax').val('N/A');
+            $('#newDurezaMax').css('pointer-events','none');
         }
         else{
-            $('#newDurezaMax:text').val('');
-            $('#newDurezaMax').prop('disabled',false);
+            $('#newDurezaMax').val('');
+            $('#newDurezaMax').css('pointer-events','all');
         }
     });
 
     $('#checkNodularidad').on('change', function (e) {
         if ($(this).prop('checked')){
-            $('#newNodularidad:text').val('N/A');
-            $('#newNodularidad').prop('disabled',true);
+            $('#newNodularidad').val('N/A');
+            $('#newNodularidad').css('pointer-events','none');
         }
         else{
-            $('#newNodularidad:text').val('');
-            $('#newNodularidad').prop('disabled',false);
+            $('#newNodularidad').val('');
+            $('#newNodularidad').css('pointer-events','all');
         }
     });
 
     $('#checkNod').on('change', function (e) {
         if ($(this).prop('checked')){
-            $('#newNod:text').val('N/A');
-            $('#newNod').prop('disabled',true);
+            $('#newNod').val('N/A');
+            $('#newNod').css('pointer-events','none');
         }
         else{
-            $('#newNod:text').val('');
-            $('#newNod').prop('disabled',false);
+            $('#newNod').val('');
+            $('#newNod').css('pointer-events','all');
         }
     });
 
@@ -1793,7 +1829,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         });
     }
     
-    function setdata() {
+/*    function setdata() {
         $.ajax({
             method: 'post',
             url: '../peticiones/InsertData.php',
@@ -1802,7 +1838,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 crearTabla();
             }
         });
-    }
+    }*/
 
     (function($) {
         $.fn.inputFilter = function(inputFilter) {
@@ -1865,6 +1901,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         if (ultimo_id_insert !== 0){ // se hace update
 
         } else { // se hace insert
+            let data = $('#formMetalurgicoAdd').serializeArray();
+            console.log(data);
+            
             $.ajax({
                 url: '../peticiones/InsertData.php',
                 method: 'post',

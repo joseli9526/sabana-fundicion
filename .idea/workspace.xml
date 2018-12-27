@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc6981f8-625e-47ed-a0ba-16cef83f0185" name="Default Changelist" comment="Cancel Buttons">
+    <list default="true" id="cc6981f8-625e-47ed-a0ba-16cef83f0185" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/peticiones/InsertData.php" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones/InsertData.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inicio.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates_c/0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e_0.file.inicio.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e_0.file.inicio.html.php" afterDir="false" />
     </list>
@@ -54,16 +55,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/inicio.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="619" column="32" selection-start-line="619" selection-start-column="32" selection-end-line="619" selection-end-column="32" />
+            <state relative-caret-position="177">
+              <caret line="1840" column="12" selection-start-line="1840" selection-start-column="12" selection-end-line="1840" selection-end-column="12" />
               <folding>
+                <element signature="n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
                 <element signature="n#style#0;n#button#0;n#div#2;n#div#4;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
                 <element signature="n#style#0;n#button#0;n#div#2;n#div#3;n#form#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#div#3;n#div#3;n#form#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#div#3;n#div#1;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#!!top" />
-                <element signature="n#div#2;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" />
+                <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" />
+                <element signature="e#45908#47986#0" />
                 <element signature="n#div#3;n#!!top" />
                 <element signature="n#div#4;n#!!top" />
                 <element signature="n#div#5;n#!!top" />
@@ -71,23 +77,35 @@
                 <element signature="e#52738#54278#0" />
                 <element signature="e#54308#58743#0" />
                 <element signature="e#64014#64746#0" />
+                <element signature="e#64793#65766#0" />
+                <element signature="e#66278#66294#0" />
+                <element signature="e#67158#67174#0" />
+                <element signature="e#65802#71515#0" />
                 <element signature="e#71553#72058#0" />
                 <element signature="e#72090#72670#0" />
                 <element signature="e#72700#73301#0" />
                 <element signature="e#73344#73763#0" />
                 <element signature="e#73798#74070#0" />
                 <element signature="e#74109#74399#0" />
-                <element signature="e#74428#74715#0" />
+                <element signature="e#80307#80621#0" />
                 <element signature="e#74785#75358#0" />
                 <element signature="e#75619#75957#0" />
                 <element signature="e#76008#76338#0" />
                 <element signature="e#76393#76665#0" />
                 <element signature="e#76714#76986#0" />
                 <element signature="e#77019#77044#0" />
-                <element signature="e#77080#77554#0" />
                 <element signature="e#77586#78048#0" />
                 <element signature="e#78187#78394#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/peticiones/InsertData.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -183,7 +201,6 @@
         <option value="$PROJECT_DIR$/peticiones/sabana/UpdateQuimico.php" />
         <option value="$PROJECT_DIR$/peticiones/sabana/UpdateTemperaturaInoculante.php" />
         <option value="$USER_HOME$/Downloads/sabana-20-12-2018-03-25-beta.sql" />
-        <option value="$PROJECT_DIR$/peticiones/InsertData.php" />
         <option value="$PROJECT_DIR$/peticiones/DeleteData.php" />
         <option value="$PROJECT_DIR$/templates/pie.html" />
         <option value="$PROJECT_DIR$/test.php" />
@@ -192,6 +209,7 @@
         <option value="$PROJECT_DIR$/templates/cabecera.html" />
         <option value="$PROJECT_DIR$/controllers/peticiones/crud.php" />
         <option value="$PROJECT_DIR$/peticiones/ReadOnlyData.php" />
+        <option value="$PROJECT_DIR$/peticiones/InsertData.php" />
         <option value="$PROJECT_DIR$/templates/inicio.html" />
       </list>
     </option>
@@ -352,18 +370,26 @@
       <workItem from="1545833584777" duration="263000" />
       <workItem from="1545833867064" duration="22925000" />
       <workItem from="1545861941716" duration="5138000" />
-      <workItem from="1545922051553" duration="4073000" />
+      <workItem from="1545922051553" duration="12961000" />
     </task>
+    <task id="LOCAL-00001" summary="Cancel Buttons">
+      <created>1545927358329</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1545927358329</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="337899000" />
+    <option name="totallyTimeSpent" value="346787000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16868381" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16868381" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -607,13 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/peticiones/InsertData.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="71" column="6" selection-start-line="71" selection-start-column="6" selection-end-line="71" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/peticiones/DeleteData.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -732,18 +751,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/peticiones/InsertData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/inicio.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="619" column="32" selection-start-line="619" selection-start-column="32" selection-end-line="619" selection-end-column="32" />
+        <state relative-caret-position="177">
+          <caret line="1840" column="12" selection-start-line="1840" selection-start-column="12" selection-end-line="1840" selection-end-column="12" />
           <folding>
+            <element signature="n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
             <element signature="n#style#0;n#button#0;n#div#2;n#div#4;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
             <element signature="n#style#0;n#button#0;n#div#2;n#div#3;n#form#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#div#3;n#div#3;n#form#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#div#3;n#div#1;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#div#1;n#!!top" />
-            <element signature="n#div#2;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" />
+            <element signature="e#45908#47986#0" />
             <element signature="n#div#3;n#!!top" />
             <element signature="n#div#4;n#!!top" />
             <element signature="n#div#5;n#!!top" />
@@ -751,20 +782,23 @@
             <element signature="e#52738#54278#0" />
             <element signature="e#54308#58743#0" />
             <element signature="e#64014#64746#0" />
+            <element signature="e#64793#65766#0" />
+            <element signature="e#66278#66294#0" />
+            <element signature="e#67158#67174#0" />
+            <element signature="e#65802#71515#0" />
             <element signature="e#71553#72058#0" />
             <element signature="e#72090#72670#0" />
             <element signature="e#72700#73301#0" />
             <element signature="e#73344#73763#0" />
             <element signature="e#73798#74070#0" />
             <element signature="e#74109#74399#0" />
-            <element signature="e#74428#74715#0" />
+            <element signature="e#80307#80621#0" />
             <element signature="e#74785#75358#0" />
             <element signature="e#75619#75957#0" />
             <element signature="e#76008#76338#0" />
             <element signature="e#76393#76665#0" />
             <element signature="e#76714#76986#0" />
             <element signature="e#77019#77044#0" />
-            <element signature="e#77080#77554#0" />
             <element signature="e#77586#78048#0" />
             <element signature="e#78187#78394#0" />
           </folding>
