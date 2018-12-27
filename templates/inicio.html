@@ -569,7 +569,8 @@
 
                                 </div>
                                 <div class="col-md-3">
-
+                                    <label style="visibility: hidden">s</label>
+                                    <button type="button" id="btnCancelarDos" style="display: none" onclick="cancelarActualizarQuimico()" class="btn btn-outline-danger form-control">Cancelar</button>
                                 </div>
                                 <div class="col-md-3">
                                     <label style="visibility: hidden">s</label>
@@ -609,12 +610,14 @@
 
                                 </div>
                                 <div class="col-md-3">
-                                    <label style="visibility: hidden">% S</label>
+                                    <label style="visibility: hidden">s</label>
+                                    <button type="button" id="btnCancelarTres" style="display: none" onclick="cancelarActualizarTemperatura()" class="btn btn-outline-danger form-control">Cancelar</button>
                                 </div>
                                 <div class="col-md-3">
                                     <label style="visibility: hidden">s</label>
                                     <button type="button" id="btnEditarTres" onclick="seleccionarEvento(this)" class="btn btn-outline-blue form-control">Editar</button>
                                 </div>
+
                             </div>
                             <input type="hidden" id="id3" name="id3">
                         </form>
@@ -1285,7 +1288,7 @@
 
     function eliminarClaseSelected(){
         $('#tableData tbody tr').each(function () {
-            console.log($(this)[0].className);
+            console.log($(this)[0]);
             $(this).removeClass('selected');
         });
     }
@@ -1473,6 +1476,39 @@
         $('#btnEditarUno').html('Editar');
     }
 
+    function cancelarActualizarQuimico() {
+        $('#inputSi').attr('disabled',true);
+        $('#inputMn').attr('disabled',true);
+        $('#inputP').attr('disabled',true);
+        $('#inputMg').attr('disabled',true);
+        $('#inputCr').attr('disabled',true);
+        $('#inputNi').attr('disabled',true);
+        $('#inputMo').attr('disabled',true);
+        $('#inputCu').attr('disabled',true);
+        $('#inputAl').attr('disabled',true);
+        $('#inputTi').attr('disabled',true);
+        $('#inputV').attr('disabled',true);
+        $('#inputSn').attr('disabled',true);
+        $('#inputPb').attr('disabled',true);
+        $('#inputC').attr('disabled',true);
+        $('#inputS').attr('disabled',true);
+        $('#btnCancelarDos').fadeOut('slow');
+        $('#btnEditarDos').removeClass('btn-success');
+        $('#btnEditarDos').addClass('btn-outline-blue');
+        $('#btnEditarDos').html('Editar');
+    }
+
+    function cancelarActualizarTemperatura() {
+        $('#inputSangrado').attr('disabled',true);
+        $('#inputVaciado').attr('disabled',true);
+        $('#inputKg').attr('disabled',true);
+        $('#inputTiempo').attr('disabled',true);
+        $('#btnCancelarTres').fadeOut('slow');
+        $('#btnEditarTres').removeClass('btn-success');
+        $('#btnEditarTres').addClass('btn-outline-blue');
+        $('#btnEditarTres').html('Editar');
+    }
+
     function seleccionarEvento(e) {
         if ($(e).hasClass('btn-outline-blue')) {
             if ($(e).attr('id') === 'btnEditarUno') {
@@ -1520,6 +1556,8 @@
                 $('#inputPb').attr('disabled',false);
                 $('#inputC').attr('disabled',false);
                 $('#inputS').attr('disabled',false);
+
+                $('#btnCancelarDos').fadeIn('slow');
             } else if($(e).attr('id') === 'btnEditarTres') {
                 $(e).removeClass('btn-outline-blue');
                 $(e).addClass('btn-success');
@@ -1530,6 +1568,8 @@
                 $('#inputVaciado').attr('disabled',false);
                 $('#inputKg').attr('disabled',false);
                 $('#inputTiempo').attr('disabled',false);
+
+                $('#btnCancelarTres').fadeIn('slow');
             }
         } else if ($(e).hasClass('btn-success')) {
             if ($(e).attr('id') === 'btnEditarUno') {
@@ -1564,6 +1604,7 @@
 
                 //hacer update
                 actualizarQuimico();
+                $('#btnCancelarDos').fadeOut('slow');
 
                 //des-habilitar form 2
                 $('#inputSi').attr('disabled',true);
@@ -1588,6 +1629,7 @@
 
                 //hacer update
                 actualizarTemperatura();
+                $('#btnCancelarTres').fadeOut('slow');
 
                 //des-habilitar form 3
                 $('#inputSangrado').attr('disabled',true);

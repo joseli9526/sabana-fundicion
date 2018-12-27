@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-12-27 09:23:26
+/* Smarty version 3.1.30, created on 2018-12-27 10:09:38
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\inicio.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c24ee6e6b86a0_92782222',
+  'unifunc' => 'content_5c24f9428e5b56_76937708',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\inicio.html',
-      1 => 1545924204,
+      1 => 1545926976,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie.html' => 1,
   ),
 ),false)) {
-function content_5c24ee6e6b86a0_92782222 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c24f9428e5b56_76937708 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -618,7 +618,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
                                 </div>
                                 <div class="col-md-3">
-
+                                    <label style="visibility: hidden">s</label>
+                                    <button type="button" id="btnCancelarDos" style="display: none" onclick="cancelarActualizarQuimico()" class="btn btn-outline-danger form-control">Cancelar</button>
                                 </div>
                                 <div class="col-md-3">
                                     <label style="visibility: hidden">s</label>
@@ -658,7 +659,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
                                 </div>
                                 <div class="col-md-3">
-                                    <label style="visibility: hidden">% S</label>
+                                    <label style="visibility: hidden">s</label>
+                                    <button type="button" id="btnCancelarTres" style="display: none" onclick="cancelarActualizarTemperatura()" class="btn btn-outline-danger form-control">Cancelar</button>
                                 </div>
                                 <div class="col-md-3">
                                     <label style="visibility: hidden">s</label>
@@ -1348,7 +1350,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
     function eliminarClaseSelected(){
         $('#tableData tbody tr').each(function () {
-            console.log($(this)[0].className);
+            console.log($(this)[0]);
             $(this).removeClass('selected');
         });
     }
@@ -1536,6 +1538,39 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         $('#btnEditarUno').html('Editar');
     }
 
+    function cancelarActualizarQuimico() {
+        $('#inputSi').attr('disabled',true);
+        $('#inputMn').attr('disabled',true);
+        $('#inputP').attr('disabled',true);
+        $('#inputMg').attr('disabled',true);
+        $('#inputCr').attr('disabled',true);
+        $('#inputNi').attr('disabled',true);
+        $('#inputMo').attr('disabled',true);
+        $('#inputCu').attr('disabled',true);
+        $('#inputAl').attr('disabled',true);
+        $('#inputTi').attr('disabled',true);
+        $('#inputV').attr('disabled',true);
+        $('#inputSn').attr('disabled',true);
+        $('#inputPb').attr('disabled',true);
+        $('#inputC').attr('disabled',true);
+        $('#inputS').attr('disabled',true);
+        $('#btnCancelarDos').fadeOut('slow');
+        $('#btnEditarDos').removeClass('btn-success');
+        $('#btnEditarDos').addClass('btn-outline-blue');
+        $('#btnEditarDos').html('Editar');
+    }
+
+    function cancelarActualizarTemperatura() {
+        $('#inputSangrado').attr('disabled',true);
+        $('#inputVaciado').attr('disabled',true);
+        $('#inputKg').attr('disabled',true);
+        $('#inputTiempo').attr('disabled',true);
+        $('#btnCancelarTres').fadeOut('slow');
+        $('#btnEditarTres').removeClass('btn-success');
+        $('#btnEditarTres').addClass('btn-outline-blue');
+        $('#btnEditarTres').html('Editar');
+    }
+
     function seleccionarEvento(e) {
         if ($(e).hasClass('btn-outline-blue')) {
             if ($(e).attr('id') === 'btnEditarUno') {
@@ -1583,6 +1618,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 $('#inputPb').attr('disabled',false);
                 $('#inputC').attr('disabled',false);
                 $('#inputS').attr('disabled',false);
+
+                $('#btnCancelarDos').fadeIn('slow');
             } else if($(e).attr('id') === 'btnEditarTres') {
                 $(e).removeClass('btn-outline-blue');
                 $(e).addClass('btn-success');
@@ -1593,6 +1630,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 $('#inputVaciado').attr('disabled',false);
                 $('#inputKg').attr('disabled',false);
                 $('#inputTiempo').attr('disabled',false);
+
+                $('#btnCancelarTres').fadeIn('slow');
             }
         } else if ($(e).hasClass('btn-success')) {
             if ($(e).attr('id') === 'btnEditarUno') {
@@ -1627,6 +1666,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
                 //hacer update
                 actualizarQuimico();
+                $('#btnCancelarDos').fadeOut('slow');
 
                 //des-habilitar form 2
                 $('#inputSi').attr('disabled',true);
@@ -1651,6 +1691,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
                 //hacer update
                 actualizarTemperatura();
+                $('#btnCancelarTres').fadeOut('slow');
 
                 //des-habilitar form 3
                 $('#inputSangrado').attr('disabled',true);
