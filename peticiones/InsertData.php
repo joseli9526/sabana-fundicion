@@ -83,19 +83,19 @@ if ($_POST['opcion'] == 'metalurgico') {
                     '$familia','$modelo',$si,$mn,$p,$mg,$cr,$ni,$mo,$cu,$al,$ti,$v,$sn,$pb,$c,$s,'$usuario','$dia','$semana','$mes','$anio','$hoja')";
 
     $web->ejecutar($sql);
+} else if ($_POST['opcion'] == 'temperatura') {
+    $olla = $_POST['olla'];
+    $familia = $_POST['familia'];
+    $modelo = $_POST['modelos'];
+    $sangrado = $_POST['sangrado'];
+    $vaciado = $_POST['vaciado'];
+    $kg = $_POST['kg'];
+    $tiempo = $_POST['tiempo'];
+    $hoja = $_POST['hoja'];
+
+    $sql = "INSERT INTO sabana (fecha,turno,no_olla,familia,modelo,sangrado,vaciado,kg,tiempo,usuario_temperatura,dia,semana,mes,anio,hoja_inspeccion)
+                                VALUES ('$fecha','$turno','$olla','$familia','$modelo',$sangrado,$vaciado,$kg,$tiempo,'$usuario',
+                                        '$dia','$semana','$mes','$anio','$hoja')";
+
+    $web->ejecutar($sql);
 }
-
-/*//obtener los valores de post
-
-
-$sangrado = $_POST['sangrado'];
-$vaciado = $_POST['vaciado'];
-$kg = $_POST['kg'];
-$tiempo = $_POST['tiempo'];
-$hoja = $_POST['hoja'];
-;
-
-$sql = "INSERT INTO sabana (fecha, turno, no_olla, modelo, cavidad, dureza_min, nodularidad, nod, perlita, carburos, grafito_tipo, grafito_tamanio, esteadita, porcentaje_si, porcentaje_mn, porcentaje_p, porcentaje_mg, porcentaje_cr, porcentaje_ni, porcentaje_mo, porcentaje_cu, porcentaje_al, porcentaje_ti, porcentaje_v, porcentaje_sn, porcentaje_pb, porcentaje_c, porcentaje_s, sangrado, vaciado, kg, tiempo, dia, semana, mes, anio, hoja_inspeccion, familia, ferrita, dureza_max, grafito_tamanio_max, usuario, status) VALUES (
-'$fecha','$turno',$olla,'$modelo',$cavidad,$dureza,$nodularidad,$nod,$perlita,$carburo,'$grafito',$tamanio_grafito,$esteadita,$si,$mn,$p,$mg,$cr,$ni,$mo,$cu,$al,$ti,$v,$sn,$pb,$c,$s,$sangrado,$vaciado,$kg,$tiempo,'$dia','$semana','$mes',$anio,'$hoja','$familia',$ferrita,$dureza_max,$tamanio_grafito_min,'$usuario',1)";
-
-$web->ejecutar($sql);*/

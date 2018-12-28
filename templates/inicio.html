@@ -935,25 +935,52 @@
                         <form id="formTemperaturaAdd">
                                 <div class="form-row col-md-12">
                                     <div class="col-md-3">
+                                        <label class="form-check-label">Familia</label>
+                                        <select class="form-control" name="familia" id="familiasTemperatura" onchange="obtenerModelosTemperatura();" required>
+                                            <option selected disabled value="">Familia</option>
+                                            {foreach $familias as $familia}
+                                            <option value={$familia.id}>{$familia.familia}</option>
+                                            {/foreach}
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">Modelo</label>
+                                        <select class="form-control" name="modelos" id="modelosTemperatura" onchange="obtenerHojasTemperatura()" required>
+                                            <option selected disabled value="">Modelo</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">No. Olla</label>
+                                        <input type="text" id="newOllaTemperatura" required class="form-control onlynum" placeholder="No. Olla" name="olla" autocomplete="off">
+
+                                    </div>
+                                    <div class="col-md-3">
                                         <label class="form-check-label">Sangrado °C</label>
-                                        <input type="text" class="form-control onlynum" name="sangrado" placeholder="Sangrado °C" required>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label class="form-check-label">Vaciado °C</label>
-                                        <input type="text" class="form-control onlynum" name="vaciado" placeholder="Vaciado °C" required>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label class="form-check-label">Kg</label>
-                                        <input type="text" class="form-control onlyfloat" name="kg" placeholder="Kg" required>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label class="form-check-label">Tiempo</label>
-                                        <input type="text" class="form-control onlynum" name="tiempo" placeholder="Tiempo" required>
+                                        <input type="text" id="newSangradoTemperatura" class="form-control onlynum" name="sangrado" placeholder="Sangrado °C" required>
                                     </div>
                                 </div>
+                            <div class="form-row col-md-12">
+                                <div class="col-md-3">
+                                    <label class="form-check-label">Vaciado °C</label>
+                                    <input type="text" id="newVaciadoTemperatura" class="form-control onlynum" name="vaciado" placeholder="Vaciado °C" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-check-label">Kg</label>
+                                    <input type="text" id="newKgTemperatura" class="form-control onlyfloat" name="kg" placeholder="Kg" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-check-label">Tiempo</label>
+                                    <input type="text" id="newTiempoTemperatura" class="form-control onlynum" name="tiempo" placeholder="Tiempo" required>
+                                </div>
+                                <div class="col-md-3">
+
+                                </div>
+                            </div>
+                            <input type="hidden" value="temperatura" name="opcion">
+                            <input type="hidden" name="hoja" id="hojaTemperatura">
                                 <div class="form-row mt-2 col-md-12">
                                     <div class="col">
-                                        <button class="btn btn-primary nextBtn pull-right" type="button" onclick="setdata()">Finalizar</button>
+                                        <button class="btn btn-primary nextBtn pull-right" type="submit">Guardar</button>
                                     </div>
                                 </div>
                             </form>
@@ -1226,7 +1253,7 @@
                      render: function ( data, type, row, meta ) {
                          if(type === 'display'){
                              //data = '<a href="basic.php?game=' + encodeURIComponent(data) + '">' + data + '</a>';
-                             data = '<a href="#modalinfo" data-toggle="modal" data-target="#modalinfo">' + data + '</a>';
+                             data = '<a href="#" onclick="abrirModalInfo();">' + data + '</a>';
                          }
                          return data;
                      }
@@ -1321,10 +1348,6 @@
 
     function eliminarClaseSelected(){
         t.draw();
-        $('#tableData tbody tr').each(function () {
-            console.log($(this)[0]);
-            $(this).removeClass('selected');
-        });
     }
 
     $('#tableData tbody').on( 'click', 'tr', function (evt) {
@@ -1348,7 +1371,7 @@
                 dataArr.push(value);
             });
         }
-
+//console.log(dataArr);
         //poner datos en el modal
         // metalurgico
         $('#selectFamilia').trigger('change');
@@ -1366,10 +1389,35 @@
         $('#inputPerlita').val(dataArr[12]);
         $('#inputFerrita').val(dataArr[13]);
         $('#inputCarburos').val(dataArr[14]);
-        $('#selectTipoGrafito option:contains("+dataArr[15+")').attr('selected','selected');
+        $("#selectTipoGrafito option:contains("+dataArr[15]+")").attr('selected','selected');
         $('#inputGrafitoMin').val(dataArr[16]);
         $('#inputGrafitoMax').val(dataArr[17]);
         $('#inputEsteadita').val(dataArr[18]);
+
+        if (dataArr[7] === 'N/A')
+            $('#checkCavidadEdit').attr('checked',true);
+        else
+            $('#checkCavidadEdit').attr('checked',false);
+        
+        if (dataArr[8] === 'N/A')
+            $('#checkDurezaMinEdit').attr('checked',true);
+        else
+            $('#checkDurezaMinEdit').attr('checked',false);
+
+        if (dataArr[9] === 'N/A')
+            $('#checkDurezaMaxEdit').attr('checked',true);
+        else
+            $('#checkDurezaMaxEdit').attr('checked',false);
+
+        if (dataArr[10] === 'N/A')
+            $('#checkNodularidadEdit').attr('checked',true);
+        else
+            $('#checkNodularidadEdit').attr('checked',false);
+
+        if (dataArr[11] === 'N/A')
+            $('#checkNodEdit').attr('checked',true);
+        else
+            $('#checkNodEdit').attr('checked',false);
 
         //quimico
         $('#id2').val(dataArr[1]);
@@ -1452,6 +1500,61 @@
         }
     });
 
+    $('#checkCavidadEdit').on('change', function (e) {
+        if ($(this).prop('checked')){
+            $('#inputCavidad').val('N/A');
+            $('#inputCavidad').css('pointer-events', 'none');
+        }
+        else{
+            $('#inputCavidad').val('');
+            $('#inputCavidad').css('pointer-events', 'all');
+        }
+    });
+
+    $('#checkDurezaMinEdit').on('change', function (e) {
+        if ($(this).prop('checked')){
+            $('#inputDurezaMin').val('N/A');
+            $('#inputDurezaMin').css('pointer-events','none');
+        }
+        else{
+            $('#inputDurezaMin').val('');
+            $('#inputDurezaMin').css('pointer-events','all');
+        }
+    });
+
+    $('#checkDurezaMaxEdit').on('change', function (e) {
+        if ($(this).prop('checked')){
+            $('#inputDurezaMax').val('N/A');
+            $('#inputDurezaMax').css('pointer-events','none');
+        }
+        else{
+            $('#inputDurezaMax').val('');
+            $('#inputDurezaMax').css('pointer-events','all');
+        }
+    });
+
+    $('#checkNodularidadEdit').on('change', function (e) {
+        if ($(this).prop('checked')){
+            $('#inputNodularidad').val('N/A');
+            $('#inputNodularidad').css('pointer-events','none');
+        }
+        else{
+            $('#inputNodularidad').val('');
+            $('#inputNodularidad').css('pointer-events','all');
+        }
+    });
+
+    $('#checkNodEdit').on('change', function (e) {
+        if ($(this).prop('checked')){
+            $('#inputNod').val('N/A');
+            $('#inputNod').css('pointer-events','none');
+        }
+        else{
+            $('#inputNod').val('');
+            $('#inputNod').css('pointer-events','all');
+        }
+    });
+
     $('#btnEliminar').click(function (){
         var dataArr = [];
         var rows = $('tr.selected');
@@ -1464,7 +1567,6 @@
     });
 
     function eliminarDato(id) {
-
         if( $('.deleteRow:checked').length > 0 ){  // at-least one checkbox checked
             var ids = [];
             $('.deleteRow').each(function(){
@@ -1503,6 +1605,11 @@
         $('#inputGrafitoMin').attr('disabled',true);
         $('#inputGrafitoMax').attr('disabled',true);
         $('#inputEsteadita').attr('disabled',true);
+        $('#checkCavidadEdit').attr('disabled',true);
+        $('#checkDurezaMinEdit').attr('disabled',true);
+        $('#checkDurezaMaxEdit').attr('disabled',true);
+        $('#checkNodularidadEdit').attr('disabled',true);
+        $('#checkNodEdit').attr('disabled',true);
         $('#btnCancelarUno').fadeOut('slow');
         $('#btnEditarUno').removeClass('btn-success');
         $('#btnEditarUno').addClass('btn-outline-blue');
@@ -1565,6 +1672,11 @@
                 $('#inputGrafitoMin').attr('disabled',false);
                 $('#inputGrafitoMax').attr('disabled',false);
                 $('#inputEsteadita').attr('disabled',false);
+                $('#checkCavidadEdit').attr('disabled',false);
+                $('#checkDurezaMinEdit').attr('disabled',false);
+                $('#checkDurezaMaxEdit').attr('disabled',false);
+                $('#checkNodularidadEdit').attr('disabled',false);
+                $('#checkNodEdit').attr('disabled',false);
 
                 $('#btnCancelarUno').fadeIn('slow');
 
@@ -1589,6 +1701,7 @@
                 $('#inputPb').attr('disabled',false);
                 $('#inputC').attr('disabled',false);
                 $('#inputS').attr('disabled',false);
+
 
                 $('#btnCancelarDos').fadeIn('slow');
             } else if($(e).attr('id') === 'btnEditarTres') {
@@ -1630,6 +1743,12 @@
                 $('#inputGrafitoMin').attr('disabled',true);
                 $('#inputGrafitoMax').attr('disabled',true);
                 $('#inputEsteadita').attr('disabled',true);
+                $('#checkCavidadEdit').attr('disabled',true);
+                $('#checkDurezaMinEdit').attr('disabled',true);
+                $('#checkDurezaMaxEdit').attr('disabled',true);
+                $('#checkNodularidadEdit').attr('disabled',true);
+                $('#checkNodEdit').attr('disabled',true);
+
             } else if($(e).attr('id') === 'btnEditarDos') {
                 $(e).removeClass('btn-success');
                 $(e).addClass('btn-outline-blue');
@@ -1673,6 +1792,13 @@
         }
     }
 
+    function abrirModalInfo() {
+        $('#modalinfo').modal('show');
+
+        /*if ($('#inputCavidad').val() === 'N/A')
+          $('#checkCavidadEdit').attr('checked',true);*/
+    }
+    
     function obtenerModelosUpdate() {
         let id = $('#selectFamilia').val();
         $.ajax({
@@ -1726,6 +1852,24 @@
         });
     }
 
+    function obtenerModelosTemperatura() {
+        let id = $('#familiasTemperatura').val();
+        $.ajax({
+            url: '../peticiones/modelos/select.php',
+            method: 'GET',
+            data: {id:id},
+            dataType: 'json',
+            async: false,
+            success: function (response) {
+                $('#modelosTemperatura').html('');
+                $('#modelosTemperatura').append('<option selected disabled="true">Modelo</option>');
+                $.each(response, function (key,value) {
+                    $('#modelosTemperatura').append('<option>'+value.modelo+'</option>');
+                });
+            }
+        });
+    }
+
     function obtenerHojas() {
         let modelo = $('#modelos option:selected').text();
         $.ajax({
@@ -1758,6 +1902,25 @@
 
                 $.each(response, function (key,value) {
                     $('#hojaquimico').val(value.hoja_inspeccion);
+//                    $('#hoja').append('<option>'+value.hoja_inspeccion+'</option>');
+                });
+            }
+        });
+    }
+
+    function obtenerHojasTemperatura() {
+        let modelo = $('#modelosTemperatura option:selected').text();
+        $.ajax({
+            url: '../peticiones/hojas_inspeccion/select.php',
+            method: 'GET',
+            data: {modelo:modelo},
+            dataType: 'json',
+            async: false,
+            success: function (response) {
+                $('#hojaTemperatura').val('');
+
+                $.each(response, function (key,value) {
+                    $('#hojaTemperatura').val(value.hoja_inspeccion);
 //                    $('#hoja').append('<option>'+value.hoja_inspeccion+'</option>');
                 });
             }
@@ -1935,22 +2098,34 @@
         e.preventDefault();
     });
 
-    function agregarQuimico() {
-        if (ultimo_id_insert !== 0) { // se hace update
-
-        } else { // se hace insert
-            $.ajax({
-               url: '../peticiones/InserData.php',
-               method: 'post',
-               data: $('#formQuimicoAdd').serialize(),
-               dataType: 'json',
-               success: function (response) {
-                   t.draw();
-                   ultimo_id_insert = response[0].id;
-               }
-            });
-        }
-    }
+    $('#formTemperaturaAdd').submit(function (e) {
+        $.ajax({
+            url: '../peticiones/InsertData.php',
+            method: 'post',
+            data: $('#formTemperaturaAdd').serialize()+'&familia='+$('#familiasQuimico option:selected').text(),
+            success: function () {
+                t.draw();
+                /* $('#requestform').modal('hide'); //ocultar modal de agregar
+                 //poner cajas y combos en blanco
+                 $("#familias option[value='']").prop('selected',true);
+                 $('#modelos option:contains("Modelo")').prop('selected',true);
+                 $('#newOlla').val('');
+                 $('#newCavidad').val('');
+                 $('#newDurezaMin').val('');
+                 $('#newDurezaMax').val('');
+                 $('#newNodularidad').val('');
+                 $('#newNod').val('');
+                 $('#newPerlita').val('');
+                 $('#newFerrita').val('');
+                 $('#newCarburos').val('');
+                 $('#inputTipoGrafito option:contains("Grafito")').prop('selected',true);
+                 $('#newGrafitoMin').val('');
+                 $('#newGrafitoMax').val('');
+                 $('#newEsteadita').val('');*/
+            }
+        });
+        e.preventDefault();
+    });
 
     $( "#f1" ).datepicker({ dateFormat: "yy-mm-dd" });
     $( "#f2" ).datepicker({ dateFormat: "yy-mm-dd" });

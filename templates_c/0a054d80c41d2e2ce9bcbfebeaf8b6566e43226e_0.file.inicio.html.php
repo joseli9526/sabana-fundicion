@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-12-28 14:06:29
+/* Smarty version 3.1.30, created on 2018-12-28 17:05:25
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\inicio.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c2682452114c9_15813056',
+  'unifunc' => 'content_5c26ac35e604e4_18718159',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\inicio.html',
-      1 => 1546027587,
+      1 => 1546038209,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie.html' => 1,
   ),
 ),false)) {
-function content_5c2682452114c9_15813056 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c26ac35e604e4_18718159 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -1006,25 +1006,63 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                         <form id="formTemperaturaAdd">
                                 <div class="form-row col-md-12">
                                     <div class="col-md-3">
+                                        <label class="form-check-label">Familia</label>
+                                        <select class="form-control" name="familia" id="familiasTemperatura" onchange="obtenerModelosTemperatura();" required>
+                                            <option selected disabled value="">Familia</option>
+                                            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['familias']->value, 'familia');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['familia']->value) {
+?>
+                                            <option value=<?php echo $_smarty_tpl->tpl_vars['familia']->value['id'];?>
+><?php echo $_smarty_tpl->tpl_vars['familia']->value['familia'];?>
+</option>
+                                            <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">Modelo</label>
+                                        <select class="form-control" name="modelos" id="modelosTemperatura" onchange="obtenerHojasTemperatura()" required>
+                                            <option selected disabled value="">Modelo</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">No. Olla</label>
+                                        <input type="text" id="newOllaTemperatura" required class="form-control onlynum" placeholder="No. Olla" name="olla" autocomplete="off">
+
+                                    </div>
+                                    <div class="col-md-3">
                                         <label class="form-check-label">Sangrado °C</label>
-                                        <input type="text" class="form-control onlynum" name="sangrado" placeholder="Sangrado °C" required>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label class="form-check-label">Vaciado °C</label>
-                                        <input type="text" class="form-control onlynum" name="vaciado" placeholder="Vaciado °C" required>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label class="form-check-label">Kg</label>
-                                        <input type="text" class="form-control onlyfloat" name="kg" placeholder="Kg" required>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label class="form-check-label">Tiempo</label>
-                                        <input type="text" class="form-control onlynum" name="tiempo" placeholder="Tiempo" required>
+                                        <input type="text" id="newSangradoTemperatura" class="form-control onlynum" name="sangrado" placeholder="Sangrado °C" required>
                                     </div>
                                 </div>
+                            <div class="form-row col-md-12">
+                                <div class="col-md-3">
+                                    <label class="form-check-label">Vaciado °C</label>
+                                    <input type="text" id="newVaciadoTemperatura" class="form-control onlynum" name="vaciado" placeholder="Vaciado °C" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-check-label">Kg</label>
+                                    <input type="text" id="newKgTemperatura" class="form-control onlyfloat" name="kg" placeholder="Kg" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-check-label">Tiempo</label>
+                                    <input type="text" id="newTiempoTemperatura" class="form-control onlynum" name="tiempo" placeholder="Tiempo" required>
+                                </div>
+                                <div class="col-md-3">
+
+                                </div>
+                            </div>
+                            <input type="hidden" value="temperatura" name="opcion">
+                            <input type="hidden" name="hoja" id="hojaTemperatura">
                                 <div class="form-row mt-2 col-md-12">
                                     <div class="col">
-                                        <button class="btn btn-primary nextBtn pull-right" type="button" onclick="setdata()">Finalizar</button>
+                                        <button class="btn btn-primary nextBtn pull-right" type="submit">Guardar</button>
                                     </div>
                                 </div>
                             </form>
@@ -1300,7 +1338,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                      render: function ( data, type, row, meta ) {
                          if(type === 'display'){
                              //data = '<a href="basic.php?game=' + encodeURIComponent(data) + '">' + data + '</a>';
-                             data = '<a href="#modalinfo" data-toggle="modal" data-target="#modalinfo">' + data + '</a>';
+                             data = '<a href="#" onclick="abrirModalInfo();">' + data + '</a>';
                          }
                          return data;
                      }
@@ -1395,10 +1433,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
     function eliminarClaseSelected(){
         t.draw();
-        $('#tableData tbody tr').each(function () {
-            console.log($(this)[0]);
-            $(this).removeClass('selected');
-        });
     }
 
     $('#tableData tbody').on( 'click', 'tr', function (evt) {
@@ -1422,7 +1456,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 dataArr.push(value);
             });
         }
-
+//console.log(dataArr);
         //poner datos en el modal
         // metalurgico
         $('#selectFamilia').trigger('change');
@@ -1440,10 +1474,35 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         $('#inputPerlita').val(dataArr[12]);
         $('#inputFerrita').val(dataArr[13]);
         $('#inputCarburos').val(dataArr[14]);
-        $('#selectTipoGrafito option:contains("+dataArr[15+")').attr('selected','selected');
+        $("#selectTipoGrafito option:contains("+dataArr[15]+")").attr('selected','selected');
         $('#inputGrafitoMin').val(dataArr[16]);
         $('#inputGrafitoMax').val(dataArr[17]);
         $('#inputEsteadita').val(dataArr[18]);
+
+        if (dataArr[7] === 'N/A')
+            $('#checkCavidadEdit').attr('checked',true);
+        else
+            $('#checkCavidadEdit').attr('checked',false);
+        
+        if (dataArr[8] === 'N/A')
+            $('#checkDurezaMinEdit').attr('checked',true);
+        else
+            $('#checkDurezaMinEdit').attr('checked',false);
+
+        if (dataArr[9] === 'N/A')
+            $('#checkDurezaMaxEdit').attr('checked',true);
+        else
+            $('#checkDurezaMaxEdit').attr('checked',false);
+
+        if (dataArr[10] === 'N/A')
+            $('#checkNodularidadEdit').attr('checked',true);
+        else
+            $('#checkNodularidadEdit').attr('checked',false);
+
+        if (dataArr[11] === 'N/A')
+            $('#checkNodEdit').attr('checked',true);
+        else
+            $('#checkNodEdit').attr('checked',false);
 
         //quimico
         $('#id2').val(dataArr[1]);
@@ -1526,6 +1585,61 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         }
     });
 
+    $('#checkCavidadEdit').on('change', function (e) {
+        if ($(this).prop('checked')){
+            $('#inputCavidad').val('N/A');
+            $('#inputCavidad').css('pointer-events', 'none');
+        }
+        else{
+            $('#inputCavidad').val('');
+            $('#inputCavidad').css('pointer-events', 'all');
+        }
+    });
+
+    $('#checkDurezaMinEdit').on('change', function (e) {
+        if ($(this).prop('checked')){
+            $('#inputDurezaMin').val('N/A');
+            $('#inputDurezaMin').css('pointer-events','none');
+        }
+        else{
+            $('#inputDurezaMin').val('');
+            $('#inputDurezaMin').css('pointer-events','all');
+        }
+    });
+
+    $('#checkDurezaMaxEdit').on('change', function (e) {
+        if ($(this).prop('checked')){
+            $('#inputDurezaMax').val('N/A');
+            $('#inputDurezaMax').css('pointer-events','none');
+        }
+        else{
+            $('#inputDurezaMax').val('');
+            $('#inputDurezaMax').css('pointer-events','all');
+        }
+    });
+
+    $('#checkNodularidadEdit').on('change', function (e) {
+        if ($(this).prop('checked')){
+            $('#inputNodularidad').val('N/A');
+            $('#inputNodularidad').css('pointer-events','none');
+        }
+        else{
+            $('#inputNodularidad').val('');
+            $('#inputNodularidad').css('pointer-events','all');
+        }
+    });
+
+    $('#checkNodEdit').on('change', function (e) {
+        if ($(this).prop('checked')){
+            $('#inputNod').val('N/A');
+            $('#inputNod').css('pointer-events','none');
+        }
+        else{
+            $('#inputNod').val('');
+            $('#inputNod').css('pointer-events','all');
+        }
+    });
+
     $('#btnEliminar').click(function (){
         var dataArr = [];
         var rows = $('tr.selected');
@@ -1538,7 +1652,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     });
 
     function eliminarDato(id) {
-
         if( $('.deleteRow:checked').length > 0 ){  // at-least one checkbox checked
             var ids = [];
             $('.deleteRow').each(function(){
@@ -1577,6 +1690,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         $('#inputGrafitoMin').attr('disabled',true);
         $('#inputGrafitoMax').attr('disabled',true);
         $('#inputEsteadita').attr('disabled',true);
+        $('#checkCavidadEdit').attr('disabled',true);
+        $('#checkDurezaMinEdit').attr('disabled',true);
+        $('#checkDurezaMaxEdit').attr('disabled',true);
+        $('#checkNodularidadEdit').attr('disabled',true);
+        $('#checkNodEdit').attr('disabled',true);
         $('#btnCancelarUno').fadeOut('slow');
         $('#btnEditarUno').removeClass('btn-success');
         $('#btnEditarUno').addClass('btn-outline-blue');
@@ -1639,6 +1757,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 $('#inputGrafitoMin').attr('disabled',false);
                 $('#inputGrafitoMax').attr('disabled',false);
                 $('#inputEsteadita').attr('disabled',false);
+                $('#checkCavidadEdit').attr('disabled',false);
+                $('#checkDurezaMinEdit').attr('disabled',false);
+                $('#checkDurezaMaxEdit').attr('disabled',false);
+                $('#checkNodularidadEdit').attr('disabled',false);
+                $('#checkNodEdit').attr('disabled',false);
 
                 $('#btnCancelarUno').fadeIn('slow');
 
@@ -1663,6 +1786,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 $('#inputPb').attr('disabled',false);
                 $('#inputC').attr('disabled',false);
                 $('#inputS').attr('disabled',false);
+
 
                 $('#btnCancelarDos').fadeIn('slow');
             } else if($(e).attr('id') === 'btnEditarTres') {
@@ -1704,6 +1828,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 $('#inputGrafitoMin').attr('disabled',true);
                 $('#inputGrafitoMax').attr('disabled',true);
                 $('#inputEsteadita').attr('disabled',true);
+                $('#checkCavidadEdit').attr('disabled',true);
+                $('#checkDurezaMinEdit').attr('disabled',true);
+                $('#checkDurezaMaxEdit').attr('disabled',true);
+                $('#checkNodularidadEdit').attr('disabled',true);
+                $('#checkNodEdit').attr('disabled',true);
+
             } else if($(e).attr('id') === 'btnEditarDos') {
                 $(e).removeClass('btn-success');
                 $(e).addClass('btn-outline-blue');
@@ -1747,6 +1877,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         }
     }
 
+    function abrirModalInfo() {
+        $('#modalinfo').modal('show');
+
+        /*if ($('#inputCavidad').val() === 'N/A')
+          $('#checkCavidadEdit').attr('checked',true);*/
+    }
+    
     function obtenerModelosUpdate() {
         let id = $('#selectFamilia').val();
         $.ajax({
@@ -1800,6 +1937,24 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         });
     }
 
+    function obtenerModelosTemperatura() {
+        let id = $('#familiasTemperatura').val();
+        $.ajax({
+            url: '../peticiones/modelos/select.php',
+            method: 'GET',
+            data: {id:id},
+            dataType: 'json',
+            async: false,
+            success: function (response) {
+                $('#modelosTemperatura').html('');
+                $('#modelosTemperatura').append('<option selected disabled="true">Modelo</option>');
+                $.each(response, function (key,value) {
+                    $('#modelosTemperatura').append('<option>'+value.modelo+'</option>');
+                });
+            }
+        });
+    }
+
     function obtenerHojas() {
         let modelo = $('#modelos option:selected').text();
         $.ajax({
@@ -1832,6 +1987,25 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
                 $.each(response, function (key,value) {
                     $('#hojaquimico').val(value.hoja_inspeccion);
+//                    $('#hoja').append('<option>'+value.hoja_inspeccion+'</option>');
+                });
+            }
+        });
+    }
+
+    function obtenerHojasTemperatura() {
+        let modelo = $('#modelosTemperatura option:selected').text();
+        $.ajax({
+            url: '../peticiones/hojas_inspeccion/select.php',
+            method: 'GET',
+            data: {modelo:modelo},
+            dataType: 'json',
+            async: false,
+            success: function (response) {
+                $('#hojaTemperatura').val('');
+
+                $.each(response, function (key,value) {
+                    $('#hojaTemperatura').val(value.hoja_inspeccion);
 //                    $('#hoja').append('<option>'+value.hoja_inspeccion+'</option>');
                 });
             }
@@ -2009,22 +2183,34 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         e.preventDefault();
     });
 
-    function agregarQuimico() {
-        if (ultimo_id_insert !== 0) { // se hace update
-
-        } else { // se hace insert
-            $.ajax({
-               url: '../peticiones/InserData.php',
-               method: 'post',
-               data: $('#formQuimicoAdd').serialize(),
-               dataType: 'json',
-               success: function (response) {
-                   t.draw();
-                   ultimo_id_insert = response[0].id;
-               }
-            });
-        }
-    }
+    $('#formTemperaturaAdd').submit(function (e) {
+        $.ajax({
+            url: '../peticiones/InsertData.php',
+            method: 'post',
+            data: $('#formTemperaturaAdd').serialize()+'&familia='+$('#familiasQuimico option:selected').text(),
+            success: function () {
+                t.draw();
+                /* $('#requestform').modal('hide'); //ocultar modal de agregar
+                 //poner cajas y combos en blanco
+                 $("#familias option[value='']").prop('selected',true);
+                 $('#modelos option:contains("Modelo")').prop('selected',true);
+                 $('#newOlla').val('');
+                 $('#newCavidad').val('');
+                 $('#newDurezaMin').val('');
+                 $('#newDurezaMax').val('');
+                 $('#newNodularidad').val('');
+                 $('#newNod').val('');
+                 $('#newPerlita').val('');
+                 $('#newFerrita').val('');
+                 $('#newCarburos').val('');
+                 $('#inputTipoGrafito option:contains("Grafito")').prop('selected',true);
+                 $('#newGrafitoMin').val('');
+                 $('#newGrafitoMax').val('');
+                 $('#newEsteadita').val('');*/
+            }
+        });
+        e.preventDefault();
+    });
 
     $( "#f1" ).datepicker({ dateFormat: "yy-mm-dd" });
     $( "#f2" ).datepicker({ dateFormat: "yy-mm-dd" });
