@@ -50,24 +50,24 @@ class CRUD extends Sabana {
     }
 
     function updateMetalurgico($id, $olla, $familia, $modelo, $cavidad, $dur_min, $dur_max, $nodularidad, $nod, $perlita, $ferrita,
-             $carburos, $tipo_grafito, $grafito_min, $grafito_max, $esteadita) {
+             $carburos, $tipo_grafito, $grafito_min, $grafito_max, $esteadita, $usuario) {
 
         $sql = "UPDATE sabana SET no_olla = $olla, familia = '$familia', modelo = '$modelo', cavidad = $cavidad, dureza_min = '$dur_min', dureza_max = '$dur_max',
                   nodularidad = '$nodularidad', nod = '$nod', perlita = '$perlita', ferrita = '$ferrita', carburos = '$carburos', grafito_tipo = '$tipo_grafito',
-                  grafito_tamanio = '$grafito_min', grafito_tamanio_max = '$grafito_max', esteadita = '$esteadita' WHERE id = $id";
+                  grafito_tamanio = '$grafito_min', grafito_tamanio_max = '$grafito_max', esteadita = '$esteadita', usuario_metalurgico = '$usuario' WHERE id = $id";
 echo $sql;
         $this->ejecutar($sql);
     }
 
-    function updateQuimico($id, $si, $mn, $p, $mg, $cr, $ni, $mo, $cu, $al, $ti, $v, $sn, $pb, $c, $s) {
+    function updateQuimico($id, $si, $mn, $p, $mg, $cr, $ni, $mo, $cu, $al, $ti, $v, $sn, $pb, $c, $s, $usuario) {
         $sql = "UPDATE sabana SET porcentaje_si = $si, porcentaje_mn = $mn, porcentaje_p = $p, porcentaje_mg = $mg, porcentaje_cr = $cr,
                   porcentaje_ni = $ni, porcentaje_mo = $mo, porcentaje_cu = $cu, porcentaje_al = $al, porcentaje_ti = $ti,
-                  porcentaje_v = $v, porcentaje_sn = $sn, porcentaje_pb = $pb, porcentaje_c = $c, porcentaje_s = $s WHERE id = $id";
+                  porcentaje_v = $v, porcentaje_sn = $sn, porcentaje_pb = $pb, porcentaje_c = $c, porcentaje_s = $s, usuario_quimico = '$usuario' WHERE id = $id";
         $this->ejecutar($sql);
     }
 
-    function updateTemperaturaInoculante($id, $sangrado, $vaciado, $kg, $tiempo){
-        $sql = "UPDATE sabana SET sangrado = $sangrado, vaciado = $vaciado, kg = $kg, tiempo = $tiempo WHERE id = $id";
+    function updateTemperaturaInoculante($id, $sangrado, $vaciado, $kg, $tiempo, $usuario){
+        $sql = "UPDATE sabana SET sangrado = $sangrado, vaciado = $vaciado, kg = $kg, tiempo = $tiempo, usuario_temperatura = '$usuario' WHERE id = $id";
         $this->ejecutar($sql);
     }
 }

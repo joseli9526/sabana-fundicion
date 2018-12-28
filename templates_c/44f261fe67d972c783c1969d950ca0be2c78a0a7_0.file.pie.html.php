@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-12-24 12:35:23
+/* Smarty version 3.1.30, created on 2018-12-27 17:25:38
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\pie.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c2126eb7834d0_96779070',
+  'unifunc' => 'content_5c255f723da0c6_27285902',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '44f261fe67d972c783c1969d950ca0be2c78a0a7' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\pie.html',
-      1 => 1545676501,
+      1 => 1545953132,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c2126eb7834d0_96779070 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c255f723da0c6_27285902 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <footer>
     

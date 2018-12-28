@@ -74,7 +74,8 @@ if( !empty($requestData['search']['value']) ) {   // if there is a search parame
 }
 $query=mysqli_query($conn, $sql) or die("employee-grid-data.php: get employees");
 $totalFiltered = mysqli_num_rows($query); // when there is a search parameter then we have to modify total number filtered rows as per search result.
-$sql.=" ORDER BY ". $columns[$requestData['order'][0]['column']]."   ".$requestData['order'][0]['dir']."   LIMIT ".$requestData['start']." ,".$requestData['length']."   ";
+$sql.=" ORDER BY id desc LIMIT ".$requestData['start']." ,".$requestData['length']."   ";
+//$sql.=" ORDER BY ". $columns[$requestData['order'][0]['column']]."   ".$requestData['order'][0]['dir']."   LIMIT ".$requestData['start']." ,".$requestData['length']."   ";
 /* $requestData['order'][0]['column'] contains colmun index, $requestData['order'][0]['dir'] contains order such as asc/desc , $requestData['start'] contains start row number ,$requestData['length'] contains limit length. */
 $query=mysqli_query($conn, $sql) or die("employee-grid-data.php: get employees");
 
@@ -100,6 +101,7 @@ while( $datum=mysqli_fetch_array($query) ) {  // preparing an array
     $data_aux[] = $datum['grafito_tamanio'];
     $data_aux[] = $datum['grafito_tamanio_max'];
     $data_aux[] = $datum['esteadita'];
+    $data_aux[] = $datum['usuario_metalurgico'];
     $data_aux[] = $datum['porcentaje_si'];
     $data_aux[] = $datum['porcentaje_mn'];
     $data_aux[] = $datum['porcentaje_p'];
@@ -115,10 +117,12 @@ while( $datum=mysqli_fetch_array($query) ) {  // preparing an array
     $data_aux[] = $datum['porcentaje_pb'];
     $data_aux[] = $datum['porcentaje_c'];
     $data_aux[] = $datum['porcentaje_s'];
+    $data_aux[] = $datum['usuario_quimico'];
     $data_aux[] = $datum['sangrado'];
     $data_aux[] = $datum['vaciado'];
     $data_aux[] = $datum['kg'];
     $data_aux[] = $datum['tiempo'];
+    $data_aux[] = $datum['usuario_temperatura'];
     $data_aux[] = $datum['dia'];
     $data_aux[] = $datum['semana'];
     $data_aux[] = $datum['mes'];

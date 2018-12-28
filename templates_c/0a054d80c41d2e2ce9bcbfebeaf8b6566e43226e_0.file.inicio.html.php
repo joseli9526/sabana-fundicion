@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-12-27 13:29:31
+/* Smarty version 3.1.30, created on 2018-12-28 14:06:29
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\inicio.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c25281b543865_81376180',
+  'unifunc' => 'content_5c2682452114c9_15813056',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\inicio.html',
-      1 => 1545938969,
+      1 => 1546027587,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie.html' => 1,
   ),
 ),false)) {
-function content_5c25281b543865_81376180 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c2682452114c9_15813056 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -437,64 +437,105 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                             <div class="form-row col-md-12">
                                 <div class="col-md-3">
                                     <label>No. Olla</label>
-                                    <input id="inputOlla" name="inputOlla" type="text" class="form-control onlynum" disabled>
+                                    <input id="inputOlla" name="inputOlla" type="text" class="form-control onlynum" autocomplete="off" disabled>
                                 </div>
                                 <div class="col-md-3">
-                                    <label>Cavidad</label>
-                                    <input id="inputCavidad" name="inputCavidad" type="text" class="form-control onlynum" disabled>
+                                    <label class="form-check-label">Cavidad</label>
+                                    <div class="input-group" style="margin-top: 7px">
+                                        <div class="input-group-prepend" style="width: 25px">
+                                            <div class="input-group-text">
+                                                <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkCavidadEdit" disabled>
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control onlynum" name="inputCavidad" id="inputCavidad" placeholder="Cavidad" autocomplete="off" disabled>
+                                    </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <label>Dureza Min</label>
-                                    <input id="inputDurezaMin" name="inputDurezaMin" type="text" class="form-control onlynum" disabled>
+                                    <label class="form-check-label">Dureza Min</label>
+                                    <div class="input-group" style="margin-top: 7px">
+                                        <div class="input-group-prepend" style="width: 25px">
+                                            <div class="input-group-text">
+                                                <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkDurezaMinEdit" disabled>
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control onlynum" name="inputDurezaMin" id="inputDurezaMin" placeholder="Cavidad" autocomplete="off" disabled>
+                                    </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <label>Dureza Max</label>
-                                    <input id="inputDurezaMax" name="inputDurezaMax" type="text" class="form-control onlynum" disabled>
+                                    <label class="form-check-label">Dureza Max</label>
+                                    <div class="input-group" style="margin-top: 7px">
+                                        <div class="input-group-prepend" style="width: 25px">
+                                            <div class="input-group-text">
+                                                <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkDurezaMaxEdit" disabled>
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control onlynum" name="inputDurezaMax" id="inputDurezaMax" placeholder="Cavidad" autocomplete="off" disabled>
+                                    </div>
                                 </div>
                             </div>
-
                             <div class="form-row col-md-12">
                                 <div class="col-md-3">
-                                    <label>% Nodularidad</label>
-                                    <input id="inputNodularidad" name="inputNodularidad" type="text" class="form-control onlynum" disabled>
+                                    <label class="form-check-label">% Nodularidad</label>
+                                    <div class="input-group" style="margin-top: 7px">
+                                        <div class="input-group-prepend" style="width: 25px">
+                                            <div class="input-group-text">
+                                                <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkNodularidadEdit" disabled>
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control onlynum" name="inputNodularidad" id="inputNodularidad" placeholder="Cavidad" autocomplete="off" disabled>
+                                    </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <label>NOD/mm2</label>
-                                    <input id="inputNod" name="inputNod" type="text" class="form-control onlynum" disabled>
+                                    <label class="form-check-label">NOD/mm2</label>
+                                    <div class="input-group" style="margin-top: 7px">
+                                        <div class="input-group-prepend" style="width: 25px">
+                                            <div class="input-group-text">
+                                                <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkNodEdit" disabled>
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control onlynum" name="inputNod" id="inputNod" placeholder="Cavidad" autocomplete="off" disabled>
+                                    </div>
                                 </div>
                                 <div class="col-md-3">
                                     <label>% Perlita</label>
-                                    <input id="inputPerlita" name="inputPerlita" type="text" class="form-control onlynum" disabled>
+                                    <input id="inputPerlita" name="inputPerlita" type="text" class="form-control onlynum" autocomplete="off" disabled>
                                 </div>
                                 <div class="col-md-3">
                                     <label>% Ferrita</label>
-                                    <input id="inputFerrita" name="inputFerrita" type="text" class="form-control onlynum" disabled>
+                                    <input id="inputFerrita" name="inputFerrita" type="text" class="form-control onlynum" autocomplete="off" disabled>
                                 </div>
                             </div>
 
                             <div class="form-row col-md-12">
                                 <div class="col-md-3">
                                     <label>% Carburos</label>
-                                    <input id="inputCarburos" name="inputCarburos" type="text" class="form-control onlynum" disabled>
+                                    <input id="inputCarburos" name="inputCarburos" type="text" class="form-control onlynum" autocomplete="off" disabled>
                                 </div>
                                 <div class="col-md-3">
                                     <label>Tipo Grafito</label>
-                                    <input id="inputTipoGrafito" name="inputTipoGrafito" type="text" class="form-control onlynum" disabled>
+                                    <select name="inputTipoGrafito" id="selectTipoGrafito" class="form-control" disabled>
+                                        <option disabled value="">Grafito</option>
+                                        <option>IYII</option>
+                                        <option>A+B</option>
+                                        <option>III</option>
+                                        <option>A+E</option>
+                                    </select>
+                                    <!--<input id="inputTipoGrafito" name="inputTipoGrafito" type="text" class="form-control onlynum" disabled>-->
                                 </div>
                                 <div class="col-md-3">
                                     <label>Grafito Tamaño Min</label>
-                                    <input id="inputGrafitoMin" name="inputGrafitoMin" type="text" class="form-control onlynum" disabled>
+                                    <input id="inputGrafitoMin" name="inputGrafitoMin" type="text" class="form-control onlynum" autocomplete="off" disabled>
                                 </div>
                                 <div class="col-md-3">
                                     <label>Grafito Tamaño Max</label>
-                                    <input id="inputGrafitoMax" name="inputGrafitoMax" type="text" class="form-control onlynum" disabled>
+                                    <input id="inputGrafitoMax" name="inputGrafitoMax" type="text" class="form-control onlynum" autocomplete="off" disabled>
                                 </div>
                             </div>
 
                             <div class="form-row col-md-12">
                                 <div class="col-md-3">
                                     <label>Esteadita</label>
-                                    <input id="inputEsteadita" name="inputEsteadita" type="text" class="form-control onlynum" disabled>
+                                    <input id="inputEsteadita" name="inputEsteadita" type="text" class="form-control onlynum" autocomplete="off" disabled>
                                 </div>
                                 <div class="col-md-3">
 
@@ -555,6 +596,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
                             <div class="form-row col-md-12">
                                 <div class="col-md-3">
+                                    <label>% Al</label>
+                                    <input id="inputAl" name="inputAl" type="text" class="form-control onlyfloat" disabled>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>% Ti</label>
+                                    <input id="inputTi" name="inputTi" type="text" class="form-control onlyfloat" disabled>
+                                </div>
+                                <div class="col-md-3">
                                     <label>% V</label>
                                     <input id="inputV" name="inputV" type="text" class="form-control onlyfloat" disabled>
                                 </div>
@@ -562,6 +611,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     <label>% Sn</label>
                                     <input id="inputSn" name="inputSn" type="text" class="form-control onlyfloat" disabled>
                                 </div>
+                            </div>
+
+                            <div class="form-row col-md-12">
                                 <div class="col-md-3">
                                     <label>% Pb</label>
                                     <input id="inputPb" name="inputPb" type="text" class="form-control onlyfloat" disabled>
@@ -570,15 +622,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     <label>% C</label>
                                     <input id="inputC" name="inputC" type="text" class="form-control onlyfloat" disabled>
                                 </div>
-                            </div>
-
-                            <div class="form-row col-md-12">
                                 <div class="col-md-3">
                                     <label>% S</label>
                                     <input id="inputS" name="inputS" type="text" class="form-control onlyfloat" disabled>
-                                </div>
-                                <div class="col-md-3">
-
                                 </div>
                                 <div class="col-md-3">
                                     <label style="visibility: hidden">s</label>
@@ -703,7 +749,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                 <div class="form-row col-md-12">
                                     <div class="col-md-3">
                                         <label class="form-check-label">Familia</label>
-                                        <select class="form-control" name="familia"  id="familias" onchange="obtenerModelos();" required>
+                                        <select class="form-control" name="familia" id="familias" onchange="obtenerModelos();" required>
                                             <option selected disabled value="">Familia</option>
                                             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['familias']->value, 'familia');
@@ -729,7 +775,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     </div>
                                     <div class="col-md-3">
                                         <label class="form-check-label">No. Olla</label>
-                                        <input type="text" required class="form-control onlynum" placeholder="No. Olla" name="olla">
+                                        <input type="text" id="newOlla" required class="form-control onlynum" placeholder="No. Olla" name="olla" autocomplete="off">
                                     </div>
                                     <div class="col-md-3">
                                         <label class="form-check-label">Cavidad</label>
@@ -739,7 +785,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                                     <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkCavidad">
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control onlynum" name="cavidad" id="newCavidad" placeholder="Cavidad" required>
+                                            <input type="text" class="form-control onlynum" name="cavidad" id="newCavidad" placeholder="Cavidad" autocomplete="off" required>
                                         </div>
                                     </div>
                                 </div>
@@ -753,7 +799,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                                     <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkDurezaMin">
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control onlynum" id="newDurezaMin" name="dureza" placeholder="Dureza Min" required>
+                                            <input type="text" class="form-control onlynum" id="newDurezaMin" name="dureza" placeholder="Dureza Min" autocomplete="off" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -764,7 +810,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                                     <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkDurezaMax">
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control onlynum" id="newDurezaMax"  name="dureza_min" placeholder="Dureza Max" required>
+                                            <input type="text" class="form-control onlynum" id="newDurezaMax"  name="dureza_min" placeholder="Dureza Max" autocomplete="off" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -775,7 +821,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                                     <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkNodularidad">
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control onlynum" id="newNodularidad"  name="nodularidad" placeholder="Nodularidad" required>
+                                            <input type="text" class="form-control onlynum" id="newNodularidad"  name="nodularidad" placeholder="Nodularidad" autocomplete="off" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -786,7 +832,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                                     <input type="checkbox" style="margin-left: -15px" title="N/A" id="checkNod">
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control onlynum" id="newNod"  name="nod" placeholder="NOD/mm2" required>
+                                            <input type="text" class="form-control onlynum" id="newNod"  name="nod" placeholder="NOD/mm2" autocomplete="off" required>
                                         </div>
                                     </div>
                                 </div>
@@ -794,19 +840,19 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                 <div class="form-row mt-2 col-md-12">
                                     <div class="col-md-3">
                                         <label class="form-check-label">%Perlita</label>
-                                        <input type="text" class="form-control onlynum" name="perlita" placeholder="% Perlita" required>
+                                        <input type="text" id="newPerlita" class="form-control onlynum" name="perlita" placeholder="% Perlita" autocomplete="off" required>
                                     </div>
                                     <div class="col-md-3">
                                         <label class="form-check-label">%Ferrita</label>
-                                        <input type="text" class="form-control onlynum" name="ferrita" placeholder="% Ferrita" required>
+                                        <input type="text" id="newFerrita" class="form-control onlynum" name="ferrita" placeholder="% Ferrita" autocomplete="off" required>
                                     </div>
                                     <div class="col-md-3">
                                         <label class="form-check-label">%Carburos</label>
-                                        <input type="text" class="form-control onlynum" name="carburos" placeholder="% Carburos" required>
+                                        <input type="text" id="newCarburos" class="form-control onlynum" name="carburos" placeholder="% Carburos" autocomplete="off" required>
                                     </div>
                                     <div class="col-md-3">
                                         <label class="form-check-label">Grafito</label>
-                                        <select class="form-control" name="grafito" required>
+                                        <select class="form-control" id="newGrafito" name="grafito" required>
                                             <option selected disabled value="">Grafito</option>
                                             <option>IYII</option>
                                             <option>A+B</option>
@@ -819,108 +865,143 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                 <div class="form-row mt-2 col-md-12">
                                     <div class="col-md-3">
                                         <label class="form-check-label">Grafito Min</label>
-                                        <input type="text" class="form-control onlynum" name="grafitotamanio" placeholder="Grafito Min" required>
+                                        <input type="text" id="newGrafitoMin" class="form-control onlynum" name="grafitotamanio" placeholder="Grafito Min" autocomplete="off" required>
                                     </div>
                                     <div class="col-md-3">
                                         <label class="form-check-label">Grafito Max</label>
-                                        <input type="text" class="form-control onlynum" name="grafitotamaniomin" placeholder="Grafito max" required>
+                                        <input type="text" id="newGrafitoMax" class="form-control onlynum" name="grafitotamaniomin" placeholder="Grafito max" autocomplete="off" required>
                                     </div>
                                     <div class="col-md-3">
                                         <label class="form-check-label">Esteadita</label>
-                                        <input type="text" class="form-control onlynum" name="esteadita" placeholder="Esteadita" required>
+                                        <input type="text" id="newEsteadita" class="form-control onlynum" name="esteadita" placeholder="Esteadita" autocomplete="off" required>
                                     </div>
                                     <input type="hidden" value="metalurgico" name="opcion">
+                                    <input type="hidden" name="hoja" id="hoja">
                                     <div class="col-md-3">
                                         <label class="form-check-label" style="visibility: hidden">Esteadita</label>
-                                        <button id="btnGuardarMetalurgico" class="btn btn-primary" type="submit" >Guardar</button>
-                                        <!--<button id="btnGuardarMetalurgico" onclick="agregarMetalurgico()" class="btn btn-primary" type="button" >Guardar</button>-->
+                                        <button id="btnGuardarMetalurgico" class="btn btn-primary" style="margin-top: 20px" type="submit">Guardar</button>
                                         <!--<button class="btn btn-primary nextBtn" type="button" >Siguiente</button>-->
                                     </div>
                                 </div>
                         </form>
                     </div>
-
                     <div class="tab-pane fade" id="pills-profile2" role="tabpanel" aria-labelledby="pills-profile-tab2">
                         <form id="formQuimicoAdd">
                                 <div class="form-row col-md-12">
                                     <div class="col-md-3">
-                                        <label class="form-check-label">% Si</label>
-                                        <input type="text" required class="form-control onlyfloat" name="si" placeholder="% Si">
+                                        <label class="form-check-label">Familia</label>
+                                        <select class="form-control" name="familia" id="familiasQuimico" onchange="obtenerModelosQuimico();" required>
+                                            <option selected disabled value="">Familia</option>
+                                            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['familias']->value, 'familia');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['familia']->value) {
+?>
+                                            <option value=<?php echo $_smarty_tpl->tpl_vars['familia']->value['id'];?>
+><?php echo $_smarty_tpl->tpl_vars['familia']->value['familia'];?>
+</option>
+                                            <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+                                        </select>
                                     </div>
                                     <div class="col-md-3">
+                                        <label class="form-check-label">Modelo</label>
+                                        <select class="form-control" name="modelos" id="modelosQuimico" onchange="obtenerHojasQuimico()" required>
+                                            <option selected disabled value="">Modelo</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">No. Olla</label>
+                                        <input type="text" id="newOllaQuimico" required class="form-control onlynum" placeholder="No. Olla" name="olla" autocomplete="off">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">% Si</label>
+                                        <input type="text" id="newSi" required class="form-control onlyfloat" name="si" placeholder="% Si">
+                                    </div>
+                                </div>
+
+                                <div class="form-row mt-2 col-md-12">
+                                    <div class="col-md-3">
                                         <label class="form-check-label">% Mn</label>
-                                        <input type="text" required class="form-control onlyfloat" name="mn" placeholder="% Mn">
+                                        <input type="text" id="newMn" required class="form-control onlyfloat" name="mn" placeholder="% Mn">
                                     </div>
                                     <div class="col-md-3">
                                         <label class="form-check-label">% P</label>
-                                        <input type="text" required class="form-control onlyfloat" name="p" placeholder="% P">
+                                        <input type="text" id="newP" required class="form-control onlyfloat" name="p" placeholder="% P">
                                     </div>
                                     <div class="col-md-3">
                                         <label class="form-check-label">% Mg</label>
-                                        <input type="text" required class="form-control onlyfloat" name="mg" placeholder="% Mg">
+                                        <input type="text" id="newMg" required class="form-control onlyfloat" name="mg" placeholder="% Mg">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-check-label">% Cr</label>
+                                        <input type="text" id="newCr" required class="form-control onlyfloat" name="cr" placeholder="% Cr">
                                     </div>
                                 </div>
 
                                 <div class="form-row mt-2 col-md-12">
                                     <div class="col-md-3">
-                                        <label class="form-check-label">% Cr</label>
-                                        <input type="text" required class="form-control onlyfloat" name="cr" placeholder="% Cr">
-                                    </div>
-                                    <div class="col-md-3">
                                         <label class="form-check-label">% Ni</label>
-                                        <input type="text" required class="form-control onlyfloat" name="ni" placeholder="% Ni">
+                                        <input type="text" id="newNi" required class="form-control onlyfloat" name="ni" placeholder="% Ni">
                                     </div>
                                     <div class="col-md-3">
                                         <label class="form-check-label">% Mo</label>
-                                        <input type="text" required class="form-control onlyfloat" name="mo" placeholder="% Mo">
+                                        <input type="text" id="newMo" required class="form-control onlyfloat" name="mo" placeholder="% Mo">
                                     </div>
                                     <div class="col-md-3">
                                         <label class="form-check-label">% Cu</label>
-                                        <input type="text" required class="form-control onlyfloat" name="cu" placeholder="% Cu">
+                                        <input type="text" id="newCu" required class="form-control onlyfloat" name="cu" placeholder="% Cu">
                                     </div>
-                                </div>
-
-                                <div class="form-row mt-2 col-md-12">
                                     <div class="col-md-3">
                                         <label class="form-check-label">% Al</label>
-                                        <input type="text" required class="form-control onlyfloat" name="al" placeholder="% Al">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label class="form-check-label">% Ti</label>
-                                        <input type="text" required class="form-control onlyfloat" name="ti" placeholder="% Ti">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label class="form-check-label">% V</label>
-                                        <input type="text" required class="form-control onlyfloat" name="v" placeholder="% V">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label class="form-check-label">% Sn</label>
-                                        <input type="text" required class="form-control onlyfloat" name="sn" placeholder="% Sn">
+                                        <input type="text" id="newAl" required class="form-control onlyfloat" name="al" placeholder="% Al">
                                     </div>
                                 </div>
 
-                                <div class="form-row mt-2 col-md-12">
-                                    <div class="col-md-3">
-                                        <label class="form-check-label">% Pb</label>
-                                        <input type="text" required class="form-control onlyfloat" name="pb" placeholder="% Pb">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label class="form-check-label">% C</label>
-                                        <input type="text" class="form-control onlyfloat" name="c" placeholder="% C" required>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label class="form-check-label">% S</label>
-                                        <input type="text" class="form-control onlyfloat" name="s" placeholder="% S" required>
-                                    </div>
+                            <div class="form-row mt-2 col-md-12">
+                                <div class="col-md-3">
+                                    <label class="form-check-label">% Ti</label>
+                                    <input type="text" id="newTi" required class="form-control onlyfloat" name="ti" placeholder="% Ti">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-check-label">% V</label>
+                                    <input type="text" id="newV" required class="form-control onlyfloat" name="v" placeholder="% V">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-check-label">% Sn</label>
+                                    <input type="text" id="newSn" required class="form-control onlyfloat" name="sn" placeholder="% Sn">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-check-label">% Pb</label>
+                                    <input type="text" id="newPb" required class="form-control onlyfloat" name="pb" placeholder="% Pb">
+                                </div>
+                            </div>
+
+                            <div class="form-row mt-2 col-md-12">
+                                <div class="col-md-3">
+                                   <label class="form-check-label">% C</label>
+                                   <input type="text" id="newC" class="form-control onlyfloat" name="c" placeholder="% C" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-check-label">% S</label>
+                                    <input type="text" id="newS" class="form-control onlyfloat" name="s" placeholder="% S" required>
+                                </div>
+                                <div class="col-md-3">
+
+                                 </div>
                                     <input type="hidden" value="quimico" name="opcion">
-                                    <div class="col-md-3">
-                                        <label class="form-check-label" style="visibility: hidden">% S</label>
-                                        <button class="btn btn-primary pull-right" type="button" onclick="agregarQuimico()">Guardar</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-
+                                    <input type="hidden" name="hoja" id="hojaquimico">
+                                 <div class="col-md-3">
+                                    <label class="form-check-label" style="visibility: hidden">% S</label>
+                                    <button class="btn btn-primary pull-right" type="submit">Guardar</button>
+                                 </div>
+                            </div>
+                        </form>
+                    </div>
                     <div class="tab-pane fade" id="pills-contact2" role="tabpanel" aria-labelledby="pills-contact-tab2">
                         <form id="formTemperaturaAdd">
                                 <div class="form-row col-md-12">
@@ -957,7 +1038,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     </div>
 </div>
 
-
 <!--<div class="modal fade" id="" tabindex="-1" role="dialog"  aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content" style="width: 600px">
@@ -993,7 +1073,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                         </div>
                         <div class="form-row mt-2 col-md-12">
                             <div class="col-md-6">
-                                <input type="text" name="hoja" id="hoja">
+
                               &lt;!&ndash; <select class="form-control" name="hoja" id="hoja">
                                    <option selected disabled >Hoja inspeccion</option>
                                </select>&ndash;&gt;
@@ -1093,7 +1173,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                     </div>
                     <div class="card-content collapse show" style="margin-top: -30px">
                         <div class="table-responsive" id="tabla">
-                            <table class="display table " id="tableData" width="100%" style="text-align: center;">
+                            <table class="display table"  id="tableData" width="100%" style="text-align: center;">
                                 <thead class="thead-default" style="color: black; font-family: 'Comfortaa', cursive, 'Times New Roman', Times, serif; font-weight: bold">
                                 <tr>
                                     <th></th>
@@ -1103,15 +1183,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     <th></th>
                                     <th></th>
                                     <th></th>
-                                    <th colspan="12" style="color: black; background: orangered">Reporte metalurgico de ollas coladas</th>
+                                    <th colspan="13" style="color: black; background: orangered">Reporte metalurgico de ollas coladas</th>
                                     <th colspan="13" style="color: black; background: green">Análisis quimico</th>
-                                    <th colspan="2" style="color: black; background: green">Determ. C & S</th>
+                                    <th colspan="3" style="color: black; background: green">Determ. C & S</th>
                                     <th colspan="2" style="color: black; background: yellow">Temperatura</th>
-                                    <th colspan="2" style="color: black; background: yellow">Inoculante</th>
+                                    <th colspan="3" style="color: black; background: yellow">Inoculante</th>
                                     <th colspan="7">Referencias notas</th>
                                 </tr>
                                 <tr>
-                                    <th style="pointer-events:none"></th>
+                                    <th></th>
                                     <th>Id</th>
                                     <th>Fecha</th>
                                     <th>Turno</th>
@@ -1130,6 +1210,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     <th>Grafito tamaño min</th>
                                     <th>Grafito tamaño max</th>
                                     <th>Esteadita</th>
+                                    <th>Usuario</th>
                                     <th>% Si</th>
                                     <th>% Mn</th>
                                     <th>% P</th>
@@ -1145,10 +1226,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     <th>% Pb</th>
                                     <th>% C</th>
                                     <th>% S</th>
+                                    <th>Usuario</th>
                                     <th>Sangrado °C</th>
                                     <th>Vaciado °C</th>
                                     <th>Kg</th>
                                     <th>Tiempo</th>
+                                    <th>Usuario</th>
                                     <th>Dia</th>
                                     <th>Semana</th>
                                     <th>Mes</th>
@@ -1223,9 +1306,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                      }
                  }
              ],
+             "autoWidth": true,
              fixedColumns:   {
                  leftColumns: 7
-
              },
              destroy: true,
             "language": {
@@ -1357,35 +1440,35 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         $('#inputPerlita').val(dataArr[12]);
         $('#inputFerrita').val(dataArr[13]);
         $('#inputCarburos').val(dataArr[14]);
-        $('#inputTipoGrafito').val(dataArr[15]);
+        $('#selectTipoGrafito option:contains("+dataArr[15+")').attr('selected','selected');
         $('#inputGrafitoMin').val(dataArr[16]);
         $('#inputGrafitoMax').val(dataArr[17]);
         $('#inputEsteadita').val(dataArr[18]);
 
         //quimico
         $('#id2').val(dataArr[1]);
-        $('#inputSi').val(dataArr[19]);
-        $('#inputMn').val(dataArr[20]);
-        $('#inputP').val(dataArr[21]);
-        $('#inputMg').val(dataArr[22]);
-        $('#inputCr').val(dataArr[23]);
-        $('#inputNi').val(dataArr[24]);
-        $('#inputMo').val(dataArr[25]);
-        $('#inputCu').val(dataArr[26]);
-        $('#inputAl').val(dataArr[27]);
-        $('#inputTi').val(dataArr[28]);
-        $('#inputV').val(dataArr[29]);
-        $('#inputSn').val(dataArr[30]);
-        $('#inputPb').val(dataArr[31]);
-        $('#inputC').val(dataArr[32]);
-        $('#inputS').val(dataArr[33]);
+        $('#inputSi').val(dataArr[20]);
+        $('#inputMn').val(dataArr[21]);
+        $('#inputP').val(dataArr[22]);
+        $('#inputMg').val(dataArr[23]);
+        $('#inputCr').val(dataArr[24]);
+        $('#inputNi').val(dataArr[25]);
+        $('#inputMo').val(dataArr[26]);
+        $('#inputCu').val(dataArr[27]);
+        $('#inputAl').val(dataArr[28]);
+        $('#inputTi').val(dataArr[29]);
+        $('#inputV').val(dataArr[30]);
+        $('#inputSn').val(dataArr[31]);
+        $('#inputPb').val(dataArr[32]);
+        $('#inputC').val(dataArr[33]);
+        $('#inputS').val(dataArr[34]);
 
         //Temperatura e inoculante
         $('#id3').val(dataArr[1]);
-        $('#inputSangrado').val(dataArr[34]);
-        $('#inputVaciado').val(dataArr[35]);
-        $('#inputKg').val(dataArr[36]);
-        $('#inputTiempo').val(dataArr[37]);
+        $('#inputSangrado').val(dataArr[36]);
+        $('#inputVaciado').val(dataArr[37]);
+        $('#inputKg').val(dataArr[38]);
+        $('#inputTiempo').val(dataArr[39]);
     } );
 
     $('#checkCavidad').on('change', function (e) {
@@ -1490,7 +1573,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         $('#inputPerlita').attr('disabled',true);
         $('#inputFerrita').attr('disabled',true);
         $('#inputCarburos').attr('disabled',true);
-        $('#inputTipoGrafito').attr('disabled',true);
+        $('#selectTipoGrafito').attr('disabled',true);
         $('#inputGrafitoMin').attr('disabled',true);
         $('#inputGrafitoMax').attr('disabled',true);
         $('#inputEsteadita').attr('disabled',true);
@@ -1552,7 +1635,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 $('#inputPerlita').attr('disabled',false);
                 $('#inputFerrita').attr('disabled',false);
                 $('#inputCarburos').attr('disabled',false);
-                $('#inputTipoGrafito').attr('disabled',false);
+                $('#selectTipoGrafito').attr('disabled',false);
                 $('#inputGrafitoMin').attr('disabled',false);
                 $('#inputGrafitoMax').attr('disabled',false);
                 $('#inputEsteadita').attr('disabled',false);
@@ -1617,7 +1700,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 $('#inputPerlita').attr('disabled',true);
                 $('#inputFerrita').attr('disabled',true);
                 $('#inputCarburos').attr('disabled',true);
-                $('#inputTipoGrafito').attr('disabled',true);
+                $('#selectTipoGrafito').attr('disabled',true);
                 $('#inputGrafitoMin').attr('disabled',true);
                 $('#inputGrafitoMax').attr('disabled',true);
                 $('#inputEsteadita').attr('disabled',true);
@@ -1699,6 +1782,24 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         });
     }
 
+    function obtenerModelosQuimico() {
+        let id = $('#familiasQuimico').val();
+        $.ajax({
+            url: '../peticiones/modelos/select.php',
+            method: 'GET',
+            data: {id:id},
+            dataType: 'json',
+            async: false,
+            success: function (response) {
+                $('#modelosQuimico').html('');
+                $('#modelosQuimico').append('<option selected disabled="true">Modelo</option>');
+                $.each(response, function (key,value) {
+                    $('#modelosQuimico').append('<option>'+value.modelo+'</option>');
+                });
+            }
+        });
+    }
+
     function obtenerHojas() {
         let modelo = $('#modelos option:selected').text();
         $.ajax({
@@ -1708,10 +1809,29 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
             dataType: 'json',
             async: false,
             success: function (response) {
-                $('#hoja:text').val('');
+                $('#hoja').val('');
 
                 $.each(response, function (key,value) {
-                    $('#hoja:text').val(value.hoja_inspeccion);
+                    $('#hoja').val(value.hoja_inspeccion);
+//                    $('#hoja').append('<option>'+value.hoja_inspeccion+'</option>');
+                });
+            }
+        });
+    }
+
+    function obtenerHojasQuimico() {
+        let modelo = $('#modelosQuimico option:selected').text();
+        $.ajax({
+            url: '../peticiones/hojas_inspeccion/select.php',
+            method: 'GET',
+            data: {modelo:modelo},
+            dataType: 'json',
+            async: false,
+            success: function (response) {
+                $('#hojaquimico').val('');
+
+                $.each(response, function (key,value) {
+                    $('#hojaquimico').val(value.hoja_inspeccion);
 //                    $('#hoja').append('<option>'+value.hoja_inspeccion+'</option>');
                 });
             }
@@ -1788,35 +1908,43 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         return/^-?\d*[.,]?\d*$/.test(value); });
 
     $('#checkMetalurgico').on('change',function () {
+        t.columns.adjust().draw();
         if ($('#checkMetalurgico').prop('checked')){ //activar columnas de metalurgico
-            t.columns( [7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22] ).visible( true );
+            t.columns( [7,8,9,10,11,12,13,14,15,16,17,18,19] ).visible( true );
         } else { // desactivar columnas de metalurgico
-            t.columns( [7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22] ).visible( false );
+            t.columns( [7,8,9,10,11,12,13,14,15,16,17,18,19] ).visible( false );
         }
     });
 
     $('#checkQuimico').on('change',function () {
         if ($('#checkQuimico').prop('checked')){ //activar columnas de quimico
-            t.columns( [19,20,21,22,23,24,25,26,27,28,29,30,31,32,33] ).visible( true );
+            t.columns( [20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,25] ).visible( true );
+            t.columns.adjust().draw();
         } else { // desactivar columnas de metalurgico
-            t.columns( [19,20,21,22,23,24,25,26,27,28,29,30,31,32,33] ).visible( false );
+            t.columns( [20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35] ).visible( false );
+            t.columns.adjust().draw();
         }
     });
 
     $('#checkTemperatura').on('change',function () {
         if ($('#checkTemperatura').prop('checked')){ //activar columnas de metalurgico
-            t.columns( [34,35,36,37] ).visible( true );
+            t.columns( [36,37,38,39,40] ).visible( true );
+            t.columns.adjust().draw();
         } else { // desactivar columnas de metalurgico
-            t.columns( [34,35,36,37] ).visible( false );
+            t.columns( [36,37,38,39,40] ).visible( false );
+            t.columns.adjust().draw();
         }
     });
 
     $('#checkNotas').on('change',function () {
         if ($('#checkNotas').prop('checked')){ //activar columnas de notas
-            t.columns( [38,39,40,41,42,43,44] ).visible( true );
+            t.columns( [41,42,43,44,45,46,47] ).visible( true );
+            t.columns.adjust().draw();
         } else { // desactivar columnas de notas
-            t.columns( [38,39,40,41,42,43,44] ).visible( false );
+            t.columns( [41,42,43,44,45,46,47] ).visible( false );
+            t.columns.adjust().draw();
         }
+
     });
 
     function recargarTabla() {
@@ -1827,33 +1955,59 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         $.ajax({
             url: '../peticiones/InsertData.php',
             method: 'post',
-            data: $('#formMetalurgicoAdd').serialize(),
-            dataType: 'json',
-            success: function (response) {
+            data: $('#formMetalurgicoAdd').serialize()+'&familia='+$('#familias option:selected').text(),
+            success: function () {
                 t.draw();
-                ultimo_id_insert = response[0].id;
+               /* $('#requestform').modal('hide'); //ocultar modal de agregar
+                //poner cajas y combos en blanco
+                $("#familias option[value='']").prop('selected',true);
+                $('#modelos option:contains("Modelo")').prop('selected',true);
+                $('#newOlla').val('');
+                $('#newCavidad').val('');
+                $('#newDurezaMin').val('');
+                $('#newDurezaMax').val('');
+                $('#newNodularidad').val('');
+                $('#newNod').val('');
+                $('#newPerlita').val('');
+                $('#newFerrita').val('');
+                $('#newCarburos').val('');
+                $('#inputTipoGrafito option:contains("Grafito")').prop('selected',true);
+                $('#newGrafitoMin').val('');
+                $('#newGrafitoMax').val('');
+                $('#newEsteadita').val('');*/
             }
         });
         e.preventDefault();
     });
 
-    function agregarMetalurgico() {
-        if (ultimo_id_insert !== 0){ // se hace update
-
-        } else { // se hace insert
-
-            $.ajax({
-                url: '../peticiones/InsertData.php',
-                method: 'post',
-                data: $('#formMetalurgicoAdd').serialize(),
-                dataType: 'json',
-                success: function (response) {
-                    t.draw();
-                    ultimo_id_insert = response[0].id;
-                }
-            });
-        }
-    }
+    $('#formQuimicoAdd').submit(function (e) {
+        $.ajax({
+            url: '../peticiones/InsertData.php',
+            method: 'post',
+            data: $('#formQuimicoAdd').serialize()+'&familia='+$('#familiasQuimico option:selected').text(),
+            success: function () {
+                t.draw();
+                /* $('#requestform').modal('hide'); //ocultar modal de agregar
+                 //poner cajas y combos en blanco
+                 $("#familias option[value='']").prop('selected',true);
+                 $('#modelos option:contains("Modelo")').prop('selected',true);
+                 $('#newOlla').val('');
+                 $('#newCavidad').val('');
+                 $('#newDurezaMin').val('');
+                 $('#newDurezaMax').val('');
+                 $('#newNodularidad').val('');
+                 $('#newNod').val('');
+                 $('#newPerlita').val('');
+                 $('#newFerrita').val('');
+                 $('#newCarburos').val('');
+                 $('#inputTipoGrafito option:contains("Grafito")').prop('selected',true);
+                 $('#newGrafitoMin').val('');
+                 $('#newGrafitoMax').val('');
+                 $('#newEsteadita').val('');*/
+            }
+        });
+        e.preventDefault();
+    });
 
     function agregarQuimico() {
         if (ultimo_id_insert !== 0) { // se hace update
