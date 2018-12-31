@@ -128,7 +128,7 @@ while( $datum=mysqli_fetch_array($query) ) {  // preparing an array
     $data_aux[] = $datum['mes'];
     $data_aux[] = $datum['anio'];
     $data_aux[] = $datum['hoja_inspeccion'];
-    $data_aux[] = $datum['usuario'];
+    //$data_aux[] = $datum['usuario'];
     $data_aux[] = $datum['status'];
     $response[] = $data_aux;
 }

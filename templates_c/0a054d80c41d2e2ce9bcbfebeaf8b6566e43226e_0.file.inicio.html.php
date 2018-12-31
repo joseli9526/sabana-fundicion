@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-12-28 17:05:25
+/* Smarty version 3.1.30, created on 2018-12-31 13:38:10
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\inicio.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c26ac35e604e4_18718159',
+  'unifunc' => 'content_5c2a70222e8324_64424610',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\inicio.html',
-      1 => 1546038209,
+      1 => 1546285088,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie.html' => 1,
   ),
 ),false)) {
-function content_5c26ac35e604e4_18718159 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c2a70222e8324_64424610 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -1076,6 +1076,74 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     </div>
 </div>
 
+<!-- Modal add user -->
+<div class="modal" id="modaladduser" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Crear usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row col-md-12 mt-2">
+                    <div class="col-md-6">
+                        <label class="form-check-label">Nombre:</label>
+                        <input type="text" id="nombreusuarioadd" required class="form-control"  placeholder="Nombre">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-check-label">Correo:</label>
+                        <input type="email" id="correousuarioadd" required class="form-control" placeholder="Correo">
+                    </div><br><br><br><br>
+                    <div class="alert alert-success" style="display: none" role="alert" id="alertausuario">
+                        Usuario creado correctamente!
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" onclick="crearUsuario()">Crear</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal cambiar pass -->
+<div class="modal" id="modalpass" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Cambiar contraseña</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row col-md-12 mt-2">
+                    <div class="col-md-6">
+                        <label class="form-check-label">Nueva contraseña:</label>
+                        <input type="password" id="pass1" required class="form-control"  placeholder="">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-check-label">Confirmar contraseña:</label>
+                        <input type="password" id="pass2" required class="form-control" placeholder="">
+                    </div>
+                    <input type="hidden" id="validarpass" value="contrasena">
+                </div><br>
+                <div class="alert alert-success" style="display: none" role="alert" id="alertapassword">
+                    Contraseña actualizada correctamente!
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" onclick="actualizarPass()">Cambiar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--<div class="modal fade" id="" tabindex="-1" role="dialog"  aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content" style="width: 600px">
@@ -1226,7 +1294,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     <th colspan="3" style="color: black; background: green">Determ. C & S</th>
                                     <th colspan="2" style="color: black; background: yellow">Temperatura</th>
                                     <th colspan="3" style="color: black; background: yellow">Inoculante</th>
-                                    <th colspan="7">Referencias notas</th>
+                                    <th colspan="6">Referencias notas</th>
                                 </tr>
                                 <tr>
                                     <th></th>
@@ -1275,7 +1343,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     <th>Mes</th>
                                     <th>Año</th>
                                     <th>Hoja inspección</th>
-                                    <th>Usuario</th>
                                     <th></th>
                                 </tr>
                                 </thead>
@@ -2112,13 +2179,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
     $('#checkNotas').on('change',function () {
         if ($('#checkNotas').prop('checked')){ //activar columnas de notas
-            t.columns( [41,42,43,44,45,46,47] ).visible( true );
+            t.columns( [41,42,43,44,45,46] ).visible( true );
             t.columns.adjust().draw();
         } else { // desactivar columnas de notas
-            t.columns( [41,42,43,44,45,46,47] ).visible( false );
+            t.columns( [41,42,43,44,45,46] ).visible( false );
             t.columns.adjust().draw();
         }
-
     });
 
     function recargarTabla() {
@@ -2224,6 +2290,47 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         $('#f1').val('');
         $('#f2').val('');
 
+    }
+
+    function crearUsuario() {
+        let nombre = $('#nombreusuarioadd').val();
+        let correo = $('#correousuarioadd').val();
+
+        $.ajax({
+           url: '../admin/Usuarios.php',
+           method: 'post',
+           data: {nombre:nombre,correo:correo},
+           success: function () {
+               $('#nombreusuarioadd').val('');
+               $('#correousuarioadd').val('');
+               $('#alertausuario').fadeIn('slow');
+               setTimeout(function() {
+                   $('#alertausuario').fadeOut('slow');
+               }, 2000);
+           } 
+        });
+    }
+    
+    function actualizarPass() {
+        let pass1 = $('#pass1').val();
+        let pass2 = $('#pass2').val();
+        let opcion = $('#validarpass').val();
+        
+        if (pass1 === pass2) {
+            $.ajax({
+                url: '../admin/Usuarios.php',
+                method: 'post',
+                data: {password:pass2,accion:opcion},
+                success: function () {
+                    $('#pass1').val('');
+                    $('#pass2').val('');
+                    $('#alertapassword').fadeIn('slow');
+                    setTimeout(function() {
+                        $('#alertapassword').fadeOut('slow');
+                    }, 2000);
+                }
+            })
+        } 
     }
 <?php echo '</script'; ?>
 >

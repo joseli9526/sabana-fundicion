@@ -47,6 +47,7 @@ class Sabana {
 
 include ('controllers/LoginController.php');
 include ('controllers/peticiones/crud.php');
+include ('controllers/peticiones/usuarios.php');
 include ('controllers/modelos/crud_modelos.php');
 include ('controllers/familias/crud_familia.php');
 include ('controllers/hojas_inspeccion/crud_hojas_inspeccion.php');

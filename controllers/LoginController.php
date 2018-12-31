@@ -21,6 +21,7 @@ class LoginController extends Sabana {
             unset($resultado['password']);
             $_SESSION['username'] = $resultado[0]['name'];
             $_SESSION['rol'] = $resultado[0]['rol'];
+            $_SESSION['correo'] = $resultado[0]['email'];
 
             if ($_SESSION['rol'] == '') {
                 $templates->assign('familias',$familias);

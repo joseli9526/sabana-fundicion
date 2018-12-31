@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc6981f8-625e-47ed-a0ba-16cef83f0185" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/admin/Usuarios.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/peticiones/usuarios.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/peticiones/crud.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/peticiones/crud.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peticiones/InsertData.php" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones/InsertData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/peticiones/ReadOnlyData.php" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones/ReadOnlyData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sabana.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/sabana.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cabecera.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cabecera.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inicio.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates_c/0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e_0.file.inicio.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e_0.file.inicio.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/2a939f4537161b3d352a4d29c7fe1bca8ab2695c_0.file.cabecera.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/2a939f4537161b3d352a4d29c7fe1bca8ab2695c_0.file.cabecera.html.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,11 +58,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/inicio.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="2128" selection-start-line="2128" selection-end-line="2128" />
+            <state relative-caret-position="181">
+              <caret line="1016" column="73" selection-start-line="1016" selection-start-column="73" selection-end-line="1016" selection-end-column="73" />
               <folding>
                 <element signature="n#div#0;n#!!top" />
                 <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
@@ -77,64 +82,29 @@
                 <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#div#3;n#div#1;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#!!top" />
+                <element signature="n#div#2;n#!!top" />
                 <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" />
                 <element signature="n#style#0;n#label#0;n#div#3;n#div#3;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#3;n#div#3;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" />
-                <element signature="e#51404#53409#1" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="e#53378#55383#1" />
                 <element signature="n#div#3;n#!!top" />
                 <element signature="n#div#4;n#!!top" />
                 <element signature="n#div#5;n#!!top" />
                 <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#5;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#7;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-                <element signature="e#62893#67324#0" />
-                <element signature="e#68032#71572#0" />
-                <element signature="e#70742#71011#0" />
-                <element signature="e#71066#71349#0" />
-                <element signature="e#71404#71687#0" />
-                <element signature="e#71744#72035#0" />
-                <element signature="e#72084#72343#0" />
-                <element signature="e#73314#73583#0" />
-                <element signature="e#73638#73921#0" />
-                <element signature="e#73976#74259#0" />
-                <element signature="e#74316#74607#0" />
-                <element signature="e#74656#74915#0" />
-                <element signature="e#72386#72637#0" />
-                <element signature="e#72671#73403#0" />
-                <element signature="e#73450#74424#0" />
-                <element signature="e#74467#75346#0" />
-                <element signature="e#75393#75800#0" />
-                <element signature="e#75836#81769#0" />
-                <element signature="e#81801#82051#0" />
-                <element signature="e#82093#82598#0" />
-                <element signature="e#82630#83210#0" />
-                <element signature="e#83249#83857#0" />
-                <element signature="e#88954#89562#0" />
-                <element signature="e#83887#84478#0" />
-                <element signature="e#84515#85127#0" />
-                <element signature="e#90888#91500#0" />
-                <element signature="e#85170#85589#0" />
-                <element signature="e#85624#85896#0" />
-                <element signature="e#85935#86225#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/peticiones/sabana/UpdateTemperaturaInoculante.php">
+        <entry file="file://$PROJECT_DIR$/admin/Usuarios.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="13" column="70" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/peticiones/InsertData.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="100" column="1" lean-forward="true" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
+            <state relative-caret-position="168">
+              <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -142,17 +112,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/peticiones/ReadOnlyData.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="115" column="42" selection-start-line="115" selection-start-column="42" selection-end-line="115" selection-end-column="42" />
+            <state relative-caret-position="486">
+              <caret line="130" column="6" selection-start-line="130" selection-start-column="6" selection-end-line="130" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a5a6bfab-9d88-43a3-906f-b30327b6fdf4/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="137" column="112" selection-start-line="137" selection-start-column="112" selection-end-line="137" selection-end-column="112" />
+            <state relative-caret-position="98">
+              <caret line="135" selection-start-line="135" selection-end-line="135" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -212,7 +182,6 @@
         <option value="$USER_HOME$/Documents/Plantillas/Admins/chameleon-free-bootstrap-admin-template-master/index.html" />
         <option value="$PROJECT_DIR$/controllers/familias/crud_familia.php" />
         <option value="$PROJECT_DIR$/js/date.js" />
-        <option value="$PROJECT_DIR$/sabana.class.php" />
         <option value="$PROJECT_DIR$/peticiones/familia/select.php" />
         <option value="$PROJECT_DIR$/controllers/modelos/crud_modelos.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
@@ -227,13 +196,10 @@
         <option value="$PROJECT_DIR$/admin/test.php" />
         <option value="$PROJECT_DIR$/templates/test.html" />
         <option value="$PROJECT_DIR$/peticiones/modelos/select.php" />
-        <option value="$PROJECT_DIR$/controllers/LoginController.php" />
         <option value="$USER_HOME$/Downloads/sabana-20-12-2018-03-25-beta.sql" />
         <option value="$PROJECT_DIR$/peticiones/DeleteData.php" />
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/peticiones/CreateExcel.php" />
-        <option value="$PROJECT_DIR$/templates/cabecera.html" />
-        <option value="$PROJECT_DIR$/peticiones/ReadOnlyData.php" />
         <option value="$PROJECT_DIR$/js/dataTables.fixedColumns.js" />
         <option value="$PROJECT_DIR$/templates/pie.html" />
         <option value="$PROJECT_DIR$/peticiones/sabana/UpdateQuimico.php" />
@@ -241,8 +207,14 @@
         <option value="$PROJECT_DIR$/peticiones/sabana/UpdateMetalurgico.php" />
         <option value="$PROJECT_DIR$/controllers/peticiones/crud.php" />
         <option value="$PROJECT_DIR$/peticiones/InsertData.php" />
-        <option value="$PROJECT_DIR$/templates/inicio.html" />
+        <option value="$PROJECT_DIR$/peticiones/ReadOnlyData.php" />
+        <option value="$PROJECT_DIR$/sabana.class.php" />
+        <option value="$PROJECT_DIR$/controllers/LoginController.php" />
+        <option value="$PROJECT_DIR$/templates/cabecera.html" />
+        <option value="$PROJECT_DIR$/controllers/peticiones/usuarios.php" />
+        <option value="$PROJECT_DIR$/admin/Usuarios.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a5a6bfab-9d88-43a3-906f-b30327b6fdf4/console.sql" />
+        <option value="$PROJECT_DIR$/templates/inicio.html" />
       </list>
     </option>
   </component>
@@ -264,6 +236,11 @@
             <path>
               <item name="SabanaFundicionCambios2" type="b2602c69:ProjectViewProjectNode" />
               <item name="SabanaFundicionCambios2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SabanaFundicionCambios2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SabanaFundicionCambios2" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SabanaFundicionCambios2" type="b2602c69:ProjectViewProjectNode" />
@@ -312,8 +289,8 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../produccion" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Proyectos" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -399,7 +376,9 @@
       <workItem from="1545861941716" duration="5138000" />
       <workItem from="1545922051553" duration="27230000" />
       <workItem from="1546011856941" duration="11799000" />
-      <workItem from="1546032887340" duration="5410000" />
+      <workItem from="1546032887340" duration="8986000" />
+      <workItem from="1546265582338" duration="11000" />
+      <workItem from="1546281038908" duration="4398000" />
     </task>
     <task id="LOCAL-00001" summary="Cancel Buttons">
       <created>1545927358329</created>
@@ -429,17 +408,24 @@
       <option name="project" value="LOCAL" />
       <updated>1546031440747</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Crud Complete">
+      <created>1546038440523</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1546038440523</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="378265000" />
+    <option name="totallyTimeSpent" value="386250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1732224" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17776097" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -459,31 +445,8 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.32980332" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28895614" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Console" order="7" weight="0.3277311" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32941177" />
-      <window_info anchor="bottom" id="SQL Generator" order="13" weight="0.32941177" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -493,24 +456,10 @@
     <MESSAGE value="Disable Inputs" />
     <MESSAGE value="Disable class selected" />
     <MESSAGE value="Check Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Check Update" />
+    <MESSAGE value="Crud Complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Crud Complete" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/peticiones/familia/select.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/mysql/bin/sabana.sql" />
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dataTables.altEditor.free.js" />
     <entry file="file://$USER_HOME$/Documents/dataTables.altEditor.free/script.js" />
     <entry file="file://$PROJECT_DIR$/script.js" />
@@ -734,16 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/cabecera.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-886">
-          <caret line="98" selection-start-line="98" selection-end-line="98" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/dataTables.fixedColumns.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -764,13 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="26" column="55" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/peticiones/sabana/UpdateQuimico.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
@@ -785,17 +717,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/peticiones/sabana/UpdateTemperaturaInoculante.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="70" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/peticiones/InsertData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1536">
+          <caret line="100" column="1" lean-forward="true" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sabana.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/peticiones/crud.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
+        <state relative-caret-position="1296">
           <caret line="54" column="113" selection-start-line="54" selection-start-column="113" selection-end-line="54" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cabecera.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="143" column="115" selection-start-line="143" selection-start-column="115" selection-end-line="143" selection-end-column="115" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/peticiones/usuarios.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/peticiones/ReadOnlyData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="130" column="6" selection-start-line="130" selection-start-column="6" selection-end-line="130" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/Usuarios.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a5a6bfab-9d88-43a3-906f-b30327b6fdf4/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="135" selection-start-line="135" selection-end-line="135" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/inicio.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="2128" selection-start-line="2128" selection-end-line="2128" />
+        <state relative-caret-position="181">
+          <caret line="1016" column="73" selection-start-line="1016" selection-start-column="73" selection-end-line="1016" selection-end-column="73" />
           <folding>
             <element signature="n#div#0;n#!!top" />
             <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
@@ -815,74 +813,20 @@
             <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#div#3;n#div#1;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#div#1;n#!!top" />
+            <element signature="n#div#2;n#!!top" />
             <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" />
             <element signature="n#style#0;n#label#0;n#div#3;n#div#3;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#3;n#div#3;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
             <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" />
-            <element signature="e#51404#53409#1" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="e#53378#55383#1" />
             <element signature="n#div#3;n#!!top" />
             <element signature="n#div#4;n#!!top" />
             <element signature="n#div#5;n#!!top" />
             <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#5;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#7;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="e#62893#67324#0" />
-            <element signature="e#68032#71572#0" />
-            <element signature="e#70742#71011#0" />
-            <element signature="e#71066#71349#0" />
-            <element signature="e#71404#71687#0" />
-            <element signature="e#71744#72035#0" />
-            <element signature="e#72084#72343#0" />
-            <element signature="e#73314#73583#0" />
-            <element signature="e#73638#73921#0" />
-            <element signature="e#73976#74259#0" />
-            <element signature="e#74316#74607#0" />
-            <element signature="e#74656#74915#0" />
-            <element signature="e#72386#72637#0" />
-            <element signature="e#72671#73403#0" />
-            <element signature="e#73450#74424#0" />
-            <element signature="e#74467#75346#0" />
-            <element signature="e#75393#75800#0" />
-            <element signature="e#75836#81769#0" />
-            <element signature="e#81801#82051#0" />
-            <element signature="e#82093#82598#0" />
-            <element signature="e#82630#83210#0" />
-            <element signature="e#83249#83857#0" />
-            <element signature="e#88954#89562#0" />
-            <element signature="e#83887#84478#0" />
-            <element signature="e#84515#85127#0" />
-            <element signature="e#90888#91500#0" />
-            <element signature="e#85170#85589#0" />
-            <element signature="e#85624#85896#0" />
-            <element signature="e#85935#86225#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/peticiones/sabana/UpdateTemperaturaInoculante.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="70" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/peticiones/InsertData.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="100" column="1" lean-forward="true" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/peticiones/ReadOnlyData.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="115" column="42" selection-start-line="115" selection-start-column="42" selection-end-line="115" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a5a6bfab-9d88-43a3-906f-b30327b6fdf4/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="137" column="112" selection-start-line="137" selection-start-column="112" selection-end-line="137" selection-end-column="112" />
         </state>
       </provider>
     </entry>

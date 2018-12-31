@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-12-26 15:15:59
+/* Smarty version 3.1.30, created on 2018-12-31 13:10:26
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\cabecera.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c23ef8f3f0a30_86249322',
+  'unifunc' => 'content_5c2a69a2d4e601_85274358',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2a939f4537161b3d352a4d29c7fe1bca8ab2695c' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\cabecera.html',
-      1 => 1545858955,
+      1 => 1546283415,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c23ef8f3f0a30_86249322 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c2a69a2d4e601_85274358 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -137,6 +137,14 @@ function content_5c23ef8f3f0a30_86249322 (Smarty_Internal_Template $_smarty_tpl)
                     <li class="nav-item d-none d-md-block"></li>
                 </ul>
                 <ul class="nav navbar-nav float-right">
+                    <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag-add" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="la la-plus"></i><span class="selected-language"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-flag-add">
+                            <div class="arrow_box">
+                                <a class="dropdown-item" data-toggle="modal" data-target="#modaladduser" ><i class="la la-user-plus"></i> Usuarios</a>
+                                <!--<a class="dropdown-item" data-toggle="" data-target="" ><i class="la la-user-plus"></i> Usuarios</a>-->
+                            </div>
+                        </div>
+                    </li>
                     <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="la la-download"></i><span class="selected-language"></span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-flag">
                             <div class="arrow_box">
@@ -158,7 +166,7 @@ function content_5c23ef8f3f0a30_86249322 (Smarty_Internal_Template $_smarty_tpl)
                                 <span class="avatar avatar-online"><img src="../images/user.jpg" alt="avatar">
                                 <span class="user-name text-bold-700 ml-1"><?php echo $_smarty_tpl->tpl_vars['username']->value;?>
 </span></span></a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="ft-unlock"></i>Cambiar contraseña</a>
+                                <div class="dropdown-divider"></div><a  data-toggle="modal" data-target="#modalpass"  class="dropdown-item" href="#"><i class="ft-unlock"></i>Cambiar contraseña</a>
                                 <div class="dropdown-divider"></div><a class="dropdown-item" href="../admin/Login.php?action=salir"><i class="ft-power"></i> Salir</a>
                             </div>
                         </div>
