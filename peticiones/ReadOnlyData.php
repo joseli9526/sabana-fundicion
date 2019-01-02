@@ -82,7 +82,7 @@ $query=mysqli_query($conn, $sql) or die("employee-grid-data.php: get employees")
 $response = array();
 while( $datum=mysqli_fetch_array($query) ) {  // preparing an array
     $data_aux = array();
-    $data_aux[] = "<input type='checkbox' class='deleteRow' value='".$datum['id']."'  /> " ;
+    $data_aux[] = "<input type='checkbox' class='deleteRow' value='".$datum['id']."'/>" ;
     $data_aux[] = $datum['id'];
     $data_aux[] = $datum['fecha'];
     $data_aux[] = $datum['turno'];

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-12-31 13:10:26
+/* Smarty version 3.1.30, created on 2019-01-02 11:34:32
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\cabecera.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c2a69a2d4e601_85274358',
+  'unifunc' => 'content_5c2cf6283050d0_40588935',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2a939f4537161b3d352a4d29c7fe1bca8ab2695c' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\cabecera.html',
-      1 => 1546283415,
+      1 => 1546450470,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c2a69a2d4e601_85274358 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c2cf6283050d0_40588935 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -149,7 +149,7 @@ function content_5c2a69a2d4e601_85274358 (Smarty_Internal_Template $_smarty_tpl)
                         <div class="dropdown-menu" aria-labelledby="dropdown-flag">
                             <div class="arrow_box">
                                 <!--<a class="dropdown-item" href="#" id="btnPdf"><i class="la la-file-pdf-o"></i> PDF</a>-->
-                                <a class="dropdown-item" data-toggle="modal" data-target="#modalexcel" id="btnExcel"><i class="la la-file-excel-o"></i> Excel</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#modalexcel" id="btnExcel"><i style="color: green" class="la la-file-excel-o"></i> Excel</a>
                             </div>
                         </div>
                     </li>
