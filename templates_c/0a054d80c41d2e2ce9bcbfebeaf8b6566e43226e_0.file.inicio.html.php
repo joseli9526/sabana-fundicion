@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-01-02 16:22:51
+/* Smarty version 3.1.30, created on 2019-01-02 17:04:36
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\inicio.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c2d39bb853390_64627656',
+  'unifunc' => 'content_5c2d43840695a3_24248638',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\inicio.html',
-      1 => 1546467768,
+      1 => 1546470089,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie.html' => 1,
   ),
 ),false)) {
-function content_5c2d39bb853390_64627656 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c2d43840695a3_24248638 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -1192,8 +1192,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <button  data-toggle="modal" data-target="#requestform" style="margin-left: 5px; margin-top: 5px;" type="button" title="Agregar" class="btn btn-success btn-circle mr-1 mb-1"><i class="fas fa-plus"></i></button>
-                        <button style="margin-left: 5px; margin-top: 5px;" title="Eliminar"  class="btn btn-danger btn-circle mr-1 mb-1 btn-lg" id="deleteTriger"><i class="far fa-trash-alt"></i></button>
+                        <button id="btnModalAdd" onclick="abrirModalAdd()" style="margin-left: 5px; margin-top: 5px;" type="button" title="Agregar" class="btn btn-success btn-circle mr-1 mb-1"><i class="fas fa-plus"></i></button>
+                        <button style="margin-left: 5px; margin-top: 5px;" title="Eliminar" class="btn btn-danger btn-circle mr-1 mb-1 btn-lg" id="deleteTriger"><i class="far fa-trash-alt"></i></button>
                         <button data-toggle="modal" data-target="#modalfilter" style="margin-left: 5px; margin-top: 5px;" id="btnOcultar" title="filtrar" class="btn btn-circle btn-info mr-1 mb-1"><i class="fas fa-filter"></i></button>
                         <button  id="btnEliminarModal" data-toggle="modal" data-target="#modalEliminar" class="btn btn-danger btn-min-width mr-1 mb-1" disabled style="margin-top: 5px; visibility: hidden">Eliminar</button>
                         <h4 class="card-title"></h4>
@@ -1644,7 +1644,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         $.each($(rowData),function(key,value){
             dataArr.push(value[0]);
         });
-
         eliminarDato(dataArr[0]); // id
     });
 
@@ -2114,10 +2113,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     }
 
     function abrirModalInfo() {
+        $('#pills-home-tab').trigger('click');
         $('#modalinfo').modal('show');
 
         /*if ($('#inputCavidad').val() === 'N/A')
           $('#checkCavidadEdit').attr('checked',true);*/
+    }
+
+    function abrirModalAdd() {
+        $('#pills-home-tab2').trigger('click');
+        $('#requestform').modal('show');
     }
     
     function obtenerModelosUpdate() {
@@ -2458,7 +2463,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
         $('#f1').val('');
         $('#f2').val('');
-
     }
 
     function crearUsuario() {

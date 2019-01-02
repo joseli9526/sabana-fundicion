@@ -1132,8 +1132,8 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <button  data-toggle="modal" data-target="#requestform" style="margin-left: 5px; margin-top: 5px;" type="button" title="Agregar" class="btn btn-success btn-circle mr-1 mb-1"><i class="fas fa-plus"></i></button>
-                        <button style="margin-left: 5px; margin-top: 5px;" title="Eliminar"  class="btn btn-danger btn-circle mr-1 mb-1 btn-lg" id="deleteTriger"><i class="far fa-trash-alt"></i></button>
+                        <button id="btnModalAdd" onclick="abrirModalAdd()" style="margin-left: 5px; margin-top: 5px;" type="button" title="Agregar" class="btn btn-success btn-circle mr-1 mb-1"><i class="fas fa-plus"></i></button>
+                        <button style="margin-left: 5px; margin-top: 5px;" title="Eliminar" class="btn btn-danger btn-circle mr-1 mb-1 btn-lg" id="deleteTriger"><i class="far fa-trash-alt"></i></button>
                         <button data-toggle="modal" data-target="#modalfilter" style="margin-left: 5px; margin-top: 5px;" id="btnOcultar" title="filtrar" class="btn btn-circle btn-info mr-1 mb-1"><i class="fas fa-filter"></i></button>
                         <button  id="btnEliminarModal" data-toggle="modal" data-target="#modalEliminar" class="btn btn-danger btn-min-width mr-1 mb-1" disabled style="margin-top: 5px; visibility: hidden">Eliminar</button>
                         <h4 class="card-title"></h4>
@@ -1581,7 +1581,6 @@
         $.each($(rowData),function(key,value){
             dataArr.push(value[0]);
         });
-
         eliminarDato(dataArr[0]); // id
     });
 
@@ -2051,10 +2050,16 @@
     }
 
     function abrirModalInfo() {
+        $('#pills-home-tab').trigger('click');
         $('#modalinfo').modal('show');
 
         /*if ($('#inputCavidad').val() === 'N/A')
           $('#checkCavidadEdit').attr('checked',true);*/
+    }
+
+    function abrirModalAdd() {
+        $('#pills-home-tab2').trigger('click');
+        $('#requestform').modal('show');
     }
     
     function obtenerModelosUpdate() {
@@ -2395,7 +2400,6 @@
 
         $('#f1').val('');
         $('#f2').val('');
-
     }
 
     function crearUsuario() {
