@@ -24,3 +24,21 @@ $modelo = $_POST['selectModelo'];
 $usuario = $_SESSION['username'];
 
 $web->updateMetalurgico($id,$olla,$familia,$modelo,$cavidad,$dureza_min,$dureza_max,$nodularidad,$nod,$perlita,$ferrita,$carburos,$tipo_grafito,$grafitoMin,$grafitoMax,$esteadita,$usuario);
+
+$sql = "SELECT dureza_min,dureza_max,nodularidad,nod,perlita,ferrita,carburos,grafito_tipo, grafito_tamanio,grafito_tamanio_max,
+       esteadita, porcentaje_si,porcentaje_mn,porcentaje_p,porcentaje_mg,porcentaje_cr,porcentaje_ni,porcentaje_mo,porcentaje_cu,
+       porcentaje_al,porcentaje_ti,porcentaje_v,porcentaje_sn,porcentaje_pb,porcentaje_c,porcentaje_s,sangrado,vaciado,kg,tiempo 
+FROM sabana WHERE id = $id";
+
+$datos = $web->getAll($sql);
+
+$contador = 0;
+
+for ($i = 0; $i < sizeof($datos[0])/2; $i++)
+    if ($datos[0][$i] == '')
+        $contador++;
+
+if ($contador == 0) {
+    $sql = "UPDATE sabana SET status = 1 WHERE id = $id";
+    $web->ejecutar($sql);
+}

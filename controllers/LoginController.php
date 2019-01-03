@@ -23,13 +23,13 @@ class LoginController extends Sabana {
             $_SESSION['rol'] = $resultado[0]['rol'];
             $_SESSION['correo'] = $resultado[0]['email'];
 
-            if ($_SESSION['rol'] == '') {
+           // if ($_SESSION['rol'] == '') {
                 $templates->assign('familias',$familias);
                 $templates->assign('modelos',$modelos);
                 $templates->assign('rol', $_SESSION['rol']);
                 $templates->assign('username', $_SESSION['username']);
                 $templates->display('inicio.html');
-            }
+            //}
         } else
             header('Location: ../index.php');
     }
@@ -40,7 +40,7 @@ class LoginController extends Sabana {
     }
 
     function cambiarContrasena($user, $nuevo_pass){
-        $sql = "UPDATE users SET password = md5('$nuevo_pass') WHERE user = '$user'";
+        $sql = "UPDATE users SET password = md5('$nuevo_pass') WHERE name = '$user'";
         $this->conn->exec($sql);
     }
 }

@@ -3,11 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="cc6981f8-625e-47ed-a0ba-16cef83f0185" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/peticiones/InsertData.php" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones/InsertData.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/peticiones/ReadOnlyData.php" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones/ReadOnlyData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/peticiones/sabana/UpdateMetalurgico.php" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones/sabana/UpdateMetalurgico.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/peticiones/sabana/UpdateQuimico.php" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones/sabana/UpdateQuimico.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/peticiones/sabana/UpdateTemperaturaInoculante.php" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones/sabana/UpdateTemperaturaInoculante.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sabana.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/sabana.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/cabecera.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cabecera.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inicio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pie.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pie.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates_c/0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e_0.file.inicio.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e_0.file.inicio.html.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates_c/2a939f4537161b3d352a4d29c7fe1bca8ab2695c_0.file.cabecera.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/2a939f4537161b3d352a4d29c7fe1bca8ab2695c_0.file.cabecera.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/44f261fe67d972c783c1969d950ca0be2c78a0a7_0.file.pie.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/44f261fe67d972c783c1969d950ca0be2c78a0a7_0.file.pie.html.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +55,13 @@
         <item name="sabanafundicion@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="sabanafundicion: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="sabana: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="sabanafundicion@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sabanafundicion: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="users: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
@@ -54,13 +69,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/inicio.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="1770" column="48" lean-forward="true" selection-start-line="1770" selection-start-column="48" selection-end-line="1770" selection-end-column="48" />
+            <state relative-caret-position="366">
+              <caret line="1219" column="46" selection-start-line="1219" selection-start-column="46" selection-end-line="1219" selection-end-column="46" />
               <folding>
-                <element signature="n#style#0;n#!!top" />
                 <element signature="n#div#0;n#!!top" />
                 <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#!!top" />
@@ -69,18 +83,11 @@
                 <element signature="n#div#3;n#!!top" />
                 <element signature="n#div#4;n#!!top" />
                 <element signature="n#div#5;n#!!top" />
+                <element signature="e#54223#56171#1" />
                 <element signature="n#div#6;n#!!top" />
-                <element signature="n#div#7;n#!!top" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#7;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#8;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/peticiones/InsertData.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
@@ -88,8 +95,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/peticiones/ReadOnlyData.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2016">
-              <caret line="84" column="86" selection-start-line="84" selection-start-column="86" selection-end-line="84" selection-end-column="86" />
+            <state relative-caret-position="136">
+              <caret line="130" column="38" lean-forward="true" selection-start-line="130" selection-start-column="38" selection-end-line="130" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/peticiones/sabana/UpdateMetalurgico.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="27" selection-start-line="27" selection-end-line="43" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/peticiones/sabana/UpdateQuimico.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="28" selection-start-line="28" selection-end-line="44" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/peticiones/sabana/UpdateTemperaturaInoculante.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -97,7 +131,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a5a6bfab-9d88-43a3-906f-b30327b6fdf4/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3240">
+            <state relative-caret-position="278">
               <caret line="135" selection-start-line="135" selection-end-line="135" selection-end-column="20" />
             </state>
           </provider>
@@ -129,10 +163,12 @@
       <find>3</find>
       <find>selected</find>
       <find>cancelarActualizarMetalurgico</find>
-      <find>abrirModalInfo</find>
       <find>eliminarClaseSelected</find>
       <find>cancelarActualizarQuimico</find>
       <find>cancelarUpdate</find>
+      <find>abrirModalInfo</find>
+      <find>abrir</find>
+      <find>abrirModalAdd</find>
     </findStrings>
     <replaceStrings>
       <replace>#6b6f80</replace>
@@ -162,7 +198,6 @@
         <option value="$PROJECT_DIR$/js/date.js" />
         <option value="$PROJECT_DIR$/peticiones/familia/select.php" />
         <option value="$PROJECT_DIR$/controllers/modelos/crud_modelos.php" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/controllers/hojas_inspeccion/crud_hojas_inspeccion.php" />
         <option value="$PROJECT_DIR$/peticiones/hojas_inspeccion/select.php" />
         <option value="$PROJECT_DIR$/peticiones/ReadData.php" />
@@ -179,20 +214,21 @@
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/peticiones/CreateExcel.php" />
         <option value="$PROJECT_DIR$/js/dataTables.fixedColumns.js" />
-        <option value="$PROJECT_DIR$/templates/pie.html" />
-        <option value="$PROJECT_DIR$/peticiones/sabana/UpdateQuimico.php" />
-        <option value="$PROJECT_DIR$/peticiones/sabana/UpdateTemperaturaInoculante.php" />
-        <option value="$PROJECT_DIR$/peticiones/sabana/UpdateMetalurgico.php" />
         <option value="$PROJECT_DIR$/controllers/peticiones/crud.php" />
-        <option value="$PROJECT_DIR$/sabana.class.php" />
-        <option value="$PROJECT_DIR$/controllers/LoginController.php" />
         <option value="$PROJECT_DIR$/controllers/peticiones/usuarios.php" />
         <option value="$PROJECT_DIR$/admin/Usuarios.php" />
+        <option value="$PROJECT_DIR$/templates/pie.html" />
+        <option value="$PROJECT_DIR$/sabana.class.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/controllers/LoginController.php" />
+        <option value="$PROJECT_DIR$/templates/cabecera.html" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a5a6bfab-9d88-43a3-906f-b30327b6fdf4/console.sql" />
+        <option value="$PROJECT_DIR$/templates/inicio.html" />
         <option value="$PROJECT_DIR$/peticiones/ReadOnlyData.php" />
         <option value="$PROJECT_DIR$/peticiones/InsertData.php" />
-        <option value="$PROJECT_DIR$/templates/cabecera.html" />
-        <option value="$PROJECT_DIR$/templates/inicio.html" />
+        <option value="$PROJECT_DIR$/peticiones/sabana/UpdateMetalurgico.php" />
+        <option value="$PROJECT_DIR$/peticiones/sabana/UpdateQuimico.php" />
+        <option value="$PROJECT_DIR$/peticiones/sabana/UpdateTemperaturaInoculante.php" />
       </list>
     </option>
   </component>
@@ -207,6 +243,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -222,12 +259,23 @@
             <path>
               <item name="SabanaFundicionCambios2" type="b2602c69:ProjectViewProjectNode" />
               <item name="SabanaFundicionCambios2" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="configs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SabanaFundicionCambios2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SabanaFundicionCambios2" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SabanaFundicionCambios2" type="b2602c69:ProjectViewProjectNode" />
               <item name="SabanaFundicionCambios2" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SabanaFundicionCambios2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SabanaFundicionCambios2" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="smarty" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SabanaFundicionCambios2" type="b2602c69:ProjectViewProjectNode" />
@@ -249,7 +297,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -347,7 +394,8 @@
       <workItem from="1546265582338" duration="11000" />
       <workItem from="1546281038908" duration="4467000" />
       <workItem from="1546438380591" duration="20973000" />
-      <workItem from="1546467753284" duration="306000" />
+      <workItem from="1546467753284" duration="6907000" />
+      <workItem from="1546525020317" duration="7096000" />
     </task>
     <task id="LOCAL-00001" summary="Cancel Buttons">
       <created>1545927358329</created>
@@ -391,17 +439,31 @@
       <option name="project" value="LOCAL" />
       <updated>1546285465254</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Cancel Buttons">
+      <created>1546468115741</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1546468115741</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add User">
+      <created>1546470640719</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1546470640719</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="407598000" />
+    <option name="totallyTimeSpent" value="421295000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18229954" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18532526" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -411,7 +473,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Console" order="7" sideWeight="0.49924356" weight="0.4" />
+      <window_info anchor="bottom" id="Database Console" order="7" sideWeight="0.49924356" weight="0.6151261" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32941177" />
       <window_info anchor="bottom" id="Database Changes" order="10" weight="0.32941177" />
@@ -428,19 +490,16 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Cancel Buttons" />
     <MESSAGE value="Disable Inputs" />
     <MESSAGE value="Disable class selected" />
     <MESSAGE value="Check Update" />
     <MESSAGE value="Crud Complete" />
     <MESSAGE value="Notifications" />
-    <option name="LAST_COMMIT_MESSAGE" value="Notifications" />
+    <MESSAGE value="Cancel Buttons" />
+    <MESSAGE value="Add User" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add User" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dataTables.altEditor.free.js" />
-    <entry file="file://$USER_HOME$/Documents/dataTables.altEditor.free/script.js" />
-    <entry file="file://$PROJECT_DIR$/script.js" />
-    <entry file="file://$PROJECT_DIR$/test.html" />
     <entry file="file://$PROJECT_DIR$/peticion.php" />
     <entry file="file://$PROJECT_DIR$/controllers/familias/crud_familia.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -453,13 +512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/configuration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -486,13 +538,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/test.html" />
-    <entry file="file://$PROJECT_DIR$/peticiones/ReadData.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/peticiones/modelos/select.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -670,55 +715,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pie.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="122" lean-forward="true" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="122" />
-          <folding>
-            <element signature="n#footer#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/peticiones/sabana/UpdateQuimico.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/peticiones/sabana/UpdateMetalurgico.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="25" column="189" selection-start-line="25" selection-start-column="189" selection-end-line="25" selection-end-column="189" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/peticiones/sabana/UpdateTemperaturaInoculante.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="70" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sabana.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/peticiones/crud.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1296">
           <caret line="54" column="113" selection-start-line="54" selection-start-column="113" selection-end-line="54" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -736,23 +736,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pie.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+          <folding>
+            <element signature="n#footer#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/configuration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sabana.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/cabecera.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-584">
-          <caret line="127" selection-start-line="127" selection-end-line="127" />
+        <state relative-caret-position="313">
+          <caret line="119" column="25" selection-start-line="119" selection-start-column="25" selection-end-line="119" selection-end-column="25" />
           <folding>
-            <element signature="n#style#0;n#i#0;n#a#0;n#div#0;n#div#0;n#li#1;n#ul#1;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/smarty/Smarty.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-504" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/smarty/Autoloader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-864" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/smarty/debug.tpl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/smarty/SmartyBC.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a5a6bfab-9d88-43a3-906f-b30327b6fdf4/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="135" selection-start-line="135" selection-end-line="135" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/inicio.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="1770" column="48" lean-forward="true" selection-start-line="1770" selection-start-column="48" selection-end-line="1770" selection-end-column="48" />
+        <state relative-caret-position="366">
+          <caret line="1219" column="46" selection-start-line="1219" selection-start-column="46" selection-end-line="1219" selection-end-column="46" />
           <folding>
-            <element signature="n#style#0;n#!!top" />
             <element signature="n#div#0;n#!!top" />
             <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#div#1;n#!!top" />
@@ -761,30 +815,53 @@
             <element signature="n#div#3;n#!!top" />
             <element signature="n#div#4;n#!!top" />
             <element signature="n#div#5;n#!!top" />
+            <element signature="e#54223#56171#1" />
             <element signature="n#div#6;n#!!top" />
-            <element signature="n#div#7;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#7;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#8;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/peticiones/ReadData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/peticiones/InsertData.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="894">
+          <caret line="100" column="1" lean-forward="true" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/peticiones/ReadOnlyData.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2016">
-          <caret line="84" column="86" selection-start-line="84" selection-start-column="86" selection-end-line="84" selection-end-column="86" />
+        <state relative-caret-position="136">
+          <caret line="130" column="38" lean-forward="true" selection-start-line="130" selection-start-column="38" selection-end-line="130" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a5a6bfab-9d88-43a3-906f-b30327b6fdf4/console.sql">
+    <entry file="file://$PROJECT_DIR$/peticiones/sabana/UpdateMetalurgico.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3240">
-          <caret line="135" selection-start-line="135" selection-end-line="135" selection-end-column="20" />
+        <state relative-caret-position="126">
+          <caret line="27" selection-start-line="27" selection-end-line="43" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/peticiones/sabana/UpdateQuimico.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="28" selection-start-line="28" selection-end-line="44" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/peticiones/sabana/UpdateTemperaturaInoculante.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
         </state>
       </provider>
     </entry>

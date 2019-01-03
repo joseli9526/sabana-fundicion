@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-01-02 17:04:36
+/* Smarty version 3.1.30, created on 2019-01-03 09:28:13
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\inicio.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c2d43840695a3_24248638',
+  'unifunc' => 'content_5c2e2a0d3093b9_59023718',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\inicio.html',
-      1 => 1546470089,
+      1 => 1546529291,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie.html' => 1,
   ),
 ),false)) {
-function content_5c2d43840695a3_24248638 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c2e2a0d3093b9_59023718 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -157,7 +157,7 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
         height: 40px;
         line-height: 40px;
         margin: 5px;
-        font-size: 30px;
+        font-size: 25px;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
@@ -1147,7 +1147,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 <!---- Modal filter--->
 <div class="modal" id="modalfilter" tabindex="-1" role="dialog">
     <div class="modal-dialog" style="width: 300px" role="document">
-        <div class="modal-content">
+        <div class="modal-content" style="height: 545px">
             <div class="modal-header">
                 <h5 class="modal-title">Filtrar</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1193,14 +1193,17 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 <div class="card">
                     <div class="card-header">
                         <button id="btnModalAdd" onclick="abrirModalAdd()" style="margin-left: 5px; margin-top: 5px;" type="button" title="Agregar" class="btn btn-success btn-circle mr-1 mb-1"><i class="fas fa-plus"></i></button>
-                        <button style="margin-left: 5px; margin-top: 5px;" title="Eliminar" class="btn btn-danger btn-circle mr-1 mb-1 btn-lg" id="deleteTriger"><i class="far fa-trash-alt"></i></button>
+                        <?php if ($_smarty_tpl->tpl_vars['rol']->value != 'usuario') {?>
+                            <button style="margin-left: 5px; margin-top: 5px;" title="Eliminar" disabled class="btn btn-danger btn-circle mr-1 mb-1 btn-lg" id="deleteTriger"><i class="far fa-trash-alt"></i></button>
+                        <?php }?>
                         <button data-toggle="modal" data-target="#modalfilter" style="margin-left: 5px; margin-top: 5px;" id="btnOcultar" title="filtrar" class="btn btn-circle btn-info mr-1 mb-1"><i class="fas fa-filter"></i></button>
-                        <button  id="btnEliminarModal" data-toggle="modal" data-target="#modalEliminar" class="btn btn-danger btn-min-width mr-1 mb-1" disabled style="margin-top: 5px; visibility: hidden">Eliminar</button>
+
+                        <!--<button id="btnEliminarModal" data-toggle="modal" data-target="#modalEliminar" class="btn btn-danger btn-min-width mr-1 mb-1" disabled style="margin-top: 5px; visibility: hidden">Eliminar</button>-->
+
                         <h4 class="card-title"></h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <!--<div class="heading-elements" style="margin-top: -50px; background: transparent">-->
-
                             <ul class="list-inline mb-0">
                                 <li><a><input id="txtBuscar" class="mainLoginInput" type="text" placeholder="&#61442; Buscar..."></a></li>
                                 <li><a data-action="reload"><i class="ft-rotate-cw" onclick="recargarTabla()"></i></a></li>
@@ -1274,10 +1277,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     <th>Mes</th>
                                     <th>Año</th>
                                     <th>Hoja inspección</th>
-                                    <th></th>
+                                    <th>Status</th>
                                 </tr>
                                 </thead>
-                                <tbody>
+                                <tbody style="color: black">
 
                                 </tbody>
                             </table>
@@ -1296,6 +1299,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
 
 
+
 <?php echo '<script'; ?>
 >
     var t = null;
@@ -1307,16 +1311,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     });
 
     function crearTabla() {
+        //alert('<?php echo $_smarty_tpl->tpl_vars['rol']->value;?>
+');
          t =  $('#tableData').DataTable({
              serverSide: true,
-
              ajax:{
                  url :"../peticiones/ReadOnlyData.php", // json datasource
                  type: "post",  // method  , by default get
                  error: function(){  // error handling
-                     $(".employee-grid-error").html("");
-                     $("#employee-grid").append('<tbody class="employee-grid-error"><tr><th colspan="3">No data found in the server</th></tr></tbody>');
-                     $("#employee-grid_processing").css("display","none");
+                   console.log('error al mostrar datos')
                  }
              },
              columnDefs: [
@@ -1325,11 +1328,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                      "orderable": false,
                      "searchable": false
                  },
-                 /*{
-                     "targets": [ 5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35 ],
-                     "visible": false,
-                     "searchable": false
-                 },*/
                  {
                      targets:1,
                      render: function ( data, type, row, meta ) {
@@ -1341,7 +1339,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                      }
                  }
              ],
-             "autoWidth": false,
              fixedColumns:   {
                  leftColumns: 7
              },
@@ -1373,7 +1370,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
              dom: "frtiS",
              scrollY: 300,
              scrollX: true,
-
              deferRender: true,
              scroller: {
                  loadingIndicator: true
@@ -1436,13 +1432,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
         if ( $(this).hasClass('selected') ) {
             $(this).removeClass('selected');
-            $('#btnEliminarModal').prop('disabled',true);
+            $('#deleteTriger').prop('disabled',true);
             $(this).find("td:first input:checkbox").prop("checked",false);
         }
         else {
             t.$('tr.selected').removeClass('selected');
             $(this).addClass('selected');
-            $('#btnEliminarModal').prop('disabled',false);
+            $('#deleteTriger').prop('disabled',false);
             $(this).find("td:first input:checkbox").prop("checked",true);
 
             var dataArr = [];
@@ -1800,6 +1796,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     }
 
     function cancelarUpdate() {
+        $('#deleteTriger').prop('disabled',true);
         if (opcionEditar === 1) {
             $('#inputOlla').attr('disabled',true);
             $('#selectFamilia').attr('disabled',true);
@@ -2062,6 +2059,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
     function cerrarModalUpdate() {
         $('#modalinfo').modal('hide');
+        $('#deleteTriger').prop('disabled',true);
         cancelarActualizarMetalurgico();
         cancelarActualizarQuimico();
         cancelarActualizarTemperatura();
@@ -2072,44 +2070,45 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         $('#requestform').modal('hide');
         //limpiar campos
         //metalurgico
-        $("#familias option[value='']").prop('selected', true);
-        //$("#modelos option[value='']").prop('selected', true);
-        $("#modelos").find('option').remove().end().append("<option selected disabled value=''>Modelo</option>");
+        $("#familias option[value='']").prop('selected', true).css('border-color', '#babfc7');
+        $("#familias").css('border-color', '#babfc7');
+        $("#modelos").find('option').remove().end().append("<option selected disabled value=''>Modelo</option>").css('border-color', '#babfc7');;
 
-        $('#newOlla').val('');
-        $('#newCavidad').val('');
-        $('#newDurezaMin').val('');
-        $('#newDurezaMax').val('');
-        $('#newNodularidad').val('');
-        $('#newNod').val('');
-        $('#newPerlita').val('');
-        $('#newFerrita').val('');
-        $('#newCarburos').val('');
-        $("#newGrafito option[value='']").prop('selected', true);
-        $('#newGrafitoMin').val('');
-        $('#newGrafitoMax').val('');
-        $('#newEsteadita').val('');
+        $('#newOlla').val('').css('border-color', '#babfc7');
+        $('#newCavidad').val('').css('border-color', '#babfc7');
+        $('#newDurezaMin').val('').css('border-color', '#babfc7');
+        $('#newDurezaMax').val('').css('border-color', '#babfc7');
+        $('#newNodularidad').val('').css('border-color', '#babfc7');
+        $('#newNod').val('').css('border-color', '#babfc7');
+        $('#newPerlita').val('').css('border-color', '#babfc7');
+        $('#newFerrita').val('').css('border-color', '#babfc7');
+        $('#newCarburos').val('').css('border-color', '#babfc7');
+        $("#newGrafito option[value='']").prop('selected', true).css('border-color', '#babfc7');
+        $("#newGrafito").css('border-color', '#babfc7');
+        $('#newGrafitoMin').val('').css('border-color', '#babfc7');
+        $('#newGrafitoMax').val('').css('border-color', '#babfc7');
+        $('#newEsteadita').val('').css('border-color', '#babfc7');
         //quimico
-        $('#newSi').val('');
-        $('#newMn').val('');
-        $('#newP').val('');
-        $('#newMg').val('');
-        $('#newCr').val('');
-        $('#newNi').val('');
-        $('#newMo').val('');
-        $('#newCu').val('');
-        $('#newAl').val('');
-        $('#newTi').val('');
-        $('#newV').val('');
-        $('#newSn').val('');
-        $('#newPb').val('');
-        $('#newC').val('');
-        $('#newS').val('');
+        $('#newSi').val('').css('border-color', '#babfc7');
+        $('#newMn').val('').css('border-color', '#babfc7');
+        $('#newP').val('').css('border-color', '#babfc7');
+        $('#newMg').val('').css('border-color', '#babfc7');
+        $('#newCr').val('').css('border-color', '#babfc7');
+        $('#newNi').val('').css('border-color', '#babfc7');
+        $('#newMo').val('').css('border-color', '#babfc7');
+        $('#newCu').val('').css('border-color', '#babfc7');
+        $('#newAl').val('').css('border-color', '#babfc7');
+        $('#newTi').val('').css('border-color', '#babfc7');
+        $('#newV').val('').css('border-color', '#babfc7');
+        $('#newSn').val('').css('border-color', '#babfc7');
+        $('#newPb').val('').css('border-color', '#babfc7');
+        $('#newC').val('').css('border-color', '#babfc7');
+        $('#newS').val('').css('border-color', '#babfc7');
         //temperatura
-        $('#newSangradoTemperatura').val('');
-        $('#newVaciadoTemperatura').val('');
-        $('#newKgTemperatura').val('');
-        $('#newTiempoTemperatura').val('');
+        $('#newSangradoTemperatura').val('').css('border-color', '#babfc7');
+        $('#newVaciadoTemperatura').val('').css('border-color', '#babfc7');
+        $('#newKgTemperatura').val('').css('border-color', '#babfc7');
+        $('#newTiempoTemperatura').val('').css('border-color', '#babfc7');
     }
 
     function abrirModalInfo() {
@@ -2515,7 +2514,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         }
         else if (target === '#pills-profile2') {
             opcionInsertar = 2;
-            //$(e.relatedTarget).css('background','green');
         } else if (target === '#pills-home'){
             opcionEditar = 1;
         } else if (target === '#pills-profile') {
@@ -2524,9 +2522,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
             opcionEditar = 3;
         } else {
             opcionInsertar = 3;
-            //$(e.relatedTarget).css('background','yellow');
         }
-        //alert(target);
     });
 <?php echo '</script'; ?>
 >

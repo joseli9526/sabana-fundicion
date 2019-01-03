@@ -61,7 +61,7 @@ $columns = array(
 // getting total number records without any search
 $sql = "SELECT * ";
 $sql.=" FROM sabana";
-$query=mysqli_query($conn, $sql) or die("employee-grid-data.php: get employees");
+$query=mysqli_query($conn, $sql);
 $totalData = mysqli_num_rows($query);
 $totalFiltered = $totalData;  // when there is no search parameter then total number rows = total number filtered rows.
 
@@ -72,12 +72,12 @@ if( !empty($requestData['search']['value']) ) {   // if there is a search parame
     $sql.=" OR familia LIKE '".$requestData['search']['value']."%' )";
     //$sql.=" OR employee_age LIKE '".$requestData['search']['value']."%' )";
 }
-$query=mysqli_query($conn, $sql) or die("employee-grid-data.php: get employees");
+$query=mysqli_query($conn, $sql);
 $totalFiltered = mysqli_num_rows($query); // when there is a search parameter then we have to modify total number filtered rows as per search result.
 $sql.=" ORDER BY id desc LIMIT ".$requestData['start']." ,".$requestData['length']."   ";
 //$sql.=" ORDER BY ". $columns[$requestData['order'][0]['column']]."   ".$requestData['order'][0]['dir']."   LIMIT ".$requestData['start']." ,".$requestData['length']."   ";
 /* $requestData['order'][0]['column'] contains colmun index, $requestData['order'][0]['dir'] contains order such as asc/desc , $requestData['start'] contains start row number ,$requestData['length'] contains limit length. */
-$query=mysqli_query($conn, $sql) or die("employee-grid-data.php: get employees");
+$query=mysqli_query($conn, $sql);
 
 $response = array();
 while( $datum=mysqli_fetch_array($query) ) {  // preparing an array
@@ -129,7 +129,11 @@ while( $datum=mysqli_fetch_array($query) ) {  // preparing an array
     $data_aux[] = $datum['anio'];
     $data_aux[] = $datum['hoja_inspeccion'];
     //$data_aux[] = $datum['usuario'];
-    $data_aux[] = $datum['status'];
+    if ($datum['status'] == 1)
+        $data_aux[] = "<img alt='' src='../images/verde.png' width='30' height='30'>";
+    else
+        $data_aux[] = "<img alt='' src='../images/amarillo.png' width='30' height='30'>";
+    //$data_aux[] = $datum['status'];
     $response[] = $data_aux;
 }
 

@@ -46,10 +46,10 @@ if ($_POST['opcion'] == 'metalurgico') {
 
     $sql = "INSERT INTO sabana (fecha,turno,no_olla,familia,modelo,cavidad,dureza_min,dureza_max,
                     nodularidad,nod,perlita,ferrita,carburos,grafito_tipo,grafito_tamanio,grafito_tamanio_max,
-                    esteadita,usuario_metalurgico,dia,semana,mes,anio,hoja_inspeccion) VALUES ('$fecha','$turno',$olla,'$familia','$modelo','$cavidad','$dureza',
+                    esteadita,usuario_metalurgico,dia,semana,mes,anio,hoja_inspeccion,status) VALUES ('$fecha','$turno',$olla,'$familia','$modelo','$cavidad','$dureza',
                                                            '$dureza_max','$nodularidad','$nod','$perlita','$ferrita','$carburo',
                                                            '$grafito','$tamanio_grafito_min','$tamanio_grafito','$esteadita','$usuario',
-                                                           '$dia','$semana','$mes','$anio','$hoja')";
+                                                           '$dia','$semana','$mes','$anio','$hoja',2)";
     $web->ejecutar($sql);
 
     //echo $sql; die();
@@ -79,8 +79,8 @@ if ($_POST['opcion'] == 'metalurgico') {
 
     $sql = "INSERT INTO sabana (fecha,turno,no_olla,familia,modelo,porcentaje_si,porcentaje_mn,porcentaje_p,porcentaje_mg,porcentaje_cr,
                     porcentaje_ni,porcentaje_mo,porcentaje_cu,porcentaje_al,porcentaje_ti,porcentaje_v,porcentaje_sn,porcentaje_pb,
-                    porcentaje_c,porcentaje_s,usuario_quimico,dia,semana,mes,anio,hoja_inspeccion) VALUES ('$fecha','$turno','$olla',
-                    '$familia','$modelo',$si,$mn,$p,$mg,$cr,$ni,$mo,$cu,$al,$ti,$v,$sn,$pb,$c,$s,'$usuario','$dia','$semana','$mes','$anio','$hoja')";
+                    porcentaje_c,porcentaje_s,usuario_quimico,dia,semana,mes,anio,hoja_inspeccion,status) VALUES ('$fecha','$turno','$olla',
+                    '$familia','$modelo',$si,$mn,$p,$mg,$cr,$ni,$mo,$cu,$al,$ti,$v,$sn,$pb,$c,$s,'$usuario','$dia','$semana','$mes','$anio','$hoja',2)";
 
     $web->ejecutar($sql);
 } else if ($_POST['opcion'] == 'temperatura') {
@@ -93,9 +93,9 @@ if ($_POST['opcion'] == 'metalurgico') {
     $tiempo = $_POST['tiempo'];
     $hoja = $_POST['hoja'];
 
-    $sql = "INSERT INTO sabana (fecha,turno,no_olla,familia,modelo,sangrado,vaciado,kg,tiempo,usuario_temperatura,dia,semana,mes,anio,hoja_inspeccion)
+    $sql = "INSERT INTO sabana (fecha,turno,no_olla,familia,modelo,sangrado,vaciado,kg,tiempo,usuario_temperatura,dia,semana,mes,anio,hoja_inspeccion,status)
                                 VALUES ('$fecha','$turno','$olla','$familia','$modelo',$sangrado,$vaciado,$kg,$tiempo,'$usuario',
-                                        '$dia','$semana','$mes','$anio','$hoja')";
+                                        '$dia','$semana','$mes','$anio','$hoja',2)";
 
     $web->ejecutar($sql);
 }

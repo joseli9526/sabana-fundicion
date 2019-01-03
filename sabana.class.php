@@ -2,6 +2,7 @@
 include ('configs/configuration.php');
 require_once ('lib/smarty/Smarty.class.php');
 session_start();
+
 class Sabana {
     /**
      * @var PDO
