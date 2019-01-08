@@ -37,8 +37,8 @@
 				</span>
             <form class="login100-form validate-form p-b-33 p-t-5" method="post" action="admin/Login.php">
 
-                <div class="wrap-input100 validate-input" data-validate = "Escribe correo">
-                    <input class="input100" type="email" name="email" placeholder="Correo">
+                <div class="wrap-input100 ">
+                    <input class="input100" type="text" name="email" placeholder="Correo / Usuario">
                     <span class="focus-input100" data-placeholder="&#xe82a;"></span>
                 </div>
 

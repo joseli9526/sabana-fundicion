@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-01-03 09:28:13
+/* Smarty version 3.1.30, created on 2019-01-08 11:37:17
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\inicio.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c2e2a0d3093b9_59023718',
+  'unifunc' => 'content_5c34dfcd2b8619_89956064',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\inicio.html',
-      1 => 1546529291,
+      1 => 1546967940,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie.html' => 1,
   ),
 ),false)) {
-function content_5c2e2a0d3093b9_59023718 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c34dfcd2b8619_89956064 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -1031,12 +1031,38 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                         <input type="text" id="nombreusuarioadd" required class="form-control"  placeholder="Nombre">
                     </div>
                     <div class="col-md-6">
+                        <label class="form-check-label">Apellido:</label>
+                        <input type="text" id="apellidousuarioadd" required class="form-control"  placeholder="Apellido">
+                    </div>
+                </div>
+                <div class="form-row col-md-12 mt-2">
+                    <div class="col-md-6">
+                        <label class="form-check-label">Usuario:</label>
+                        <input type="text" id="userusuarioadd" required class="form-control"  placeholder="Usuario">
+                    </div>
+                    <div class="col-md-6">
                         <label class="form-check-label">Correo:</label>
                         <input type="email" id="correousuarioadd" required class="form-control" placeholder="Correo">
-                    </div><br><br><br><br>
-                    <div class="alert alert-success" style="display: none" role="alert" id="alertausuario">
-                        Usuario creado correctamente!
                     </div>
+                </div>
+                <div class="form-row col-md-12 mt-2">
+                    <div class="col-md-6">
+                        <label class="form-check-label">Contraseña:</label>
+                        <input type="password" id="passusuarioadd" required class="form-control"  placeholder="Contraseña">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-check-label">Rol:</label>
+                        <select class="form-control" id="selectrolusuarioadd">
+                            <option selected disabled value="">Seleccionar rol</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Supervisor</option>
+                            <option value="3">Usuario</option>
+                        </select>
+                    </div>
+                </div>
+                <br><br>
+                <div class="alert alert-success" style="text-align: center; font-size: 15px; display: none" role="alert" id="alertausuario">
+                    Usuario creado correctamente!
                 </div>
             </div>
             <div class="modal-footer">
@@ -1223,6 +1249,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     <th></th>
                                     <th></th>
                                     <th></th>
+                                    <th></th>
                                     <th colspan="13" style="color: black; background: orangered">Reporte metalurgico de ollas coladas</th>
                                     <th colspan="13" style="color: black; background: green">Análisis quimico</th>
                                     <th colspan="3" style="color: black; background: green">Determ. C & S</th>
@@ -1232,6 +1259,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                 </tr>
                                 <tr>
                                     <th></th>
+                                    <th>Status</th>
                                     <th>Id</th>
                                     <th>Fecha</th>
                                     <th>Turno</th>
@@ -1277,7 +1305,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     <th>Mes</th>
                                     <th>Año</th>
                                     <th>Hoja inspección</th>
-                                    <th>Status</th>
                                 </tr>
                                 </thead>
                                 <tbody style="color: black">
@@ -1311,8 +1338,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     });
 
     function crearTabla() {
-        //alert('<?php echo $_smarty_tpl->tpl_vars['rol']->value;?>
-');
+        let rol = '<?php echo $_smarty_tpl->tpl_vars['rol']->value;?>
+';
+
          t =  $('#tableData').DataTable({
              serverSide: true,
              ajax:{
@@ -1329,14 +1357,26 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                      "searchable": false
                  },
                  {
-                     targets:1,
+                     targets:2,
                      render: function ( data, type, row, meta ) {
                          if(type === 'display'){
                              //data = '<a href="basic.php?game=' + encodeURIComponent(data) + '">' + data + '</a>';
-                             data = '<a href="#" onclick="abrirModalInfo();">' + data + '</a>';
+                             if (rol !== 'usuario')
+                                data = '<a href="#" onclick="abrirModalInfo();">' + data + '</a>';
                          }
                          return data;
-                     }
+                     },
+                 },
+                 {
+                     targets:46,
+                     render: function ( data, type, row, meta ) {
+                         if(type === 'display'){
+                             //data = '<a href="basic.php?game=' + encodeURIComponent(data) + '">' + data + '</a>';
+                             //if (rol !== 'usuario')
+                                 data = '<a href="#" onclick="abrirPDF(\'' + row[46] + '\');" >'+data+'</a>';
+                         }
+                         return data;
+                     },
                  }
              ],
              fixedColumns:   {
@@ -1368,44 +1408,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 }
             },
              dom: "frtiS",
-             scrollY: 300,
+             scrollY: $(window).height()-280,
+             //scrollY: 300,
              scrollX: true,
              deferRender: true,
              scroller: {
                  loadingIndicator: true
              }
-         /*   buttons: [
-                'copy', $.extend(true, {}, buttonCommon, {
-                    extend: "csv"
-                }), $.extend(true, {}, buttonCommon, {
-                    extend: "excel"
-                }), $.extend(true, {}, buttonCommon, {
-                    extend: "pdf",
-                    orientation: 'landscape',
-                    pageSize: 'A2',
-                    title: null,
-                    exportOptions: {
-                        columns: [ 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41 ]
-                    },
-                    customize: function(doc) {
-                        doc.defaultStyle.alignment = 'center';
-                        doc.styles.tableHeader.alignment = 'center';
-
-                        doc['footer'] = (function (page, pages) {
-                            return {
-                                image: b64_2,
-                                margin: [1010, -220, -820, 0]
-                            }
-                        });
-
-                        doc.content.splice(0, 0, {
-                            margin: [-76, -35, 40, 20],
-                            alignment: 'left',
-                            image: b64
-                        });
-                    }
-                })
-            ]*/
         });
     }
 
@@ -1429,7 +1438,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     }
 
     $('#tableData tbody').on( 'click', 'tr', function (evt) {
-
         if ( $(this).hasClass('selected') ) {
             $(this).removeClass('selected');
             $('#deleteTriger').prop('disabled',true);
@@ -1449,28 +1457,28 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 dataArr.push(value);
             });
         }
-//console.log(dataArr);
+        //console.log(dataArr);
         //poner datos en el modal
         // metalurgico
         $('#selectFamilia').trigger('change');
-        $('#id1').val(dataArr[1]);
-        $('#inputFecha').val(dataArr[2]);
-        $('#inputTurno').val(dataArr[3]);
-        $('#inputOlla').val(dataArr[4]);
-        $("#selectFamilia option:contains("+dataArr[5]+")").attr('selected', 'selected');
-        $("#selectModelo option:contains("+dataArr[6]+")").attr('selected', 'selected');
-        $('#inputCavidad').val(dataArr[7]);
-        $('#inputDurezaMin').val(dataArr[8]);
-        $('#inputDurezaMax').val(dataArr[9]);
-        $('#inputNodularidad').val(dataArr[10]);
-        $('#inputNod').val(dataArr[11]);
-        $('#inputPerlita').val(dataArr[12]);
-        $('#inputFerrita').val(dataArr[13]);
-        $('#inputCarburos').val(dataArr[14]);
-        $("#selectTipoGrafito option:contains("+dataArr[15]+")").attr('selected','selected');
-        $('#inputGrafitoMin').val(dataArr[16]);
-        $('#inputGrafitoMax').val(dataArr[17]);
-        $('#inputEsteadita').val(dataArr[18]);
+        $('#id1').val(dataArr[2]);
+        $('#inputFecha').val(dataArr[3]);
+        $('#inputTurno').val(dataArr[4]);
+        $('#inputOlla').val(dataArr[5]);
+        $("#selectFamilia option:contains("+dataArr[6]+")").attr('selected', 'selected');
+        $("#selectModelo option:contains("+dataArr[7]+")").attr('selected', 'selected');
+        $('#inputCavidad').val(dataArr[8]);
+        $('#inputDurezaMin').val(dataArr[9]);
+        $('#inputDurezaMax').val(dataArr[10]);
+        $('#inputNodularidad').val(dataArr[11]);
+        $('#inputNod').val(dataArr[12]);
+        $('#inputPerlita').val(dataArr[13]);
+        $('#inputFerrita').val(dataArr[14]);
+        $('#inputCarburos').val(dataArr[15]);
+        $("#selectTipoGrafito option:contains("+dataArr[16]+")").attr('selected','selected');
+        $('#inputGrafitoMin').val(dataArr[17]);
+        $('#inputGrafitoMax').val(dataArr[18]);
+        $('#inputEsteadita').val(dataArr[19]);
 
         if (dataArr[7] === 'N/A')
             $('#checkCavidadEdit').attr('checked',true);
@@ -1498,29 +1506,29 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
             $('#checkNodEdit').attr('checked',false);
 
         //quimico
-        $('#id2').val(dataArr[1]);
-        $('#inputSi').val(dataArr[20]);
-        $('#inputMn').val(dataArr[21]);
-        $('#inputP').val(dataArr[22]);
-        $('#inputMg').val(dataArr[23]);
-        $('#inputCr').val(dataArr[24]);
-        $('#inputNi').val(dataArr[25]);
-        $('#inputMo').val(dataArr[26]);
-        $('#inputCu').val(dataArr[27]);
-        $('#inputAl').val(dataArr[28]);
-        $('#inputTi').val(dataArr[29]);
-        $('#inputV').val(dataArr[30]);
-        $('#inputSn').val(dataArr[31]);
-        $('#inputPb').val(dataArr[32]);
-        $('#inputC').val(dataArr[33]);
-        $('#inputS').val(dataArr[34]);
+        $('#id2').val(dataArr[2]);
+        $('#inputSi').val(dataArr[21]);
+        $('#inputMn').val(dataArr[22]);
+        $('#inputP').val(dataArr[23]);
+        $('#inputMg').val(dataArr[24]);
+        $('#inputCr').val(dataArr[25]);
+        $('#inputNi').val(dataArr[26]);
+        $('#inputMo').val(dataArr[27]);
+        $('#inputCu').val(dataArr[28]);
+        $('#inputAl').val(dataArr[29]);
+        $('#inputTi').val(dataArr[30]);
+        $('#inputV').val(dataArr[31]);
+        $('#inputSn').val(dataArr[32]);
+        $('#inputPb').val(dataArr[33]);
+        $('#inputC').val(dataArr[34]);
+        $('#inputS').val(dataArr[35]);
 
         //Temperatura e inoculante
-        $('#id3').val(dataArr[1]);
-        $('#inputSangrado').val(dataArr[36]);
-        $('#inputVaciado').val(dataArr[37]);
-        $('#inputKg').val(dataArr[38]);
-        $('#inputTiempo').val(dataArr[39]);
+        $('#id3').val(dataArr[2]);
+        $('#inputSangrado').val(dataArr[37]);
+        $('#inputVaciado').val(dataArr[38]);
+        $('#inputKg').val(dataArr[39]);
+        $('#inputTiempo').val(dataArr[40]);
     } );
 
     $('#checkCavidad').on('change', function (e) {
@@ -1966,7 +1974,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 $('#inputPb').attr('disabled',false);
                 $('#inputC').attr('disabled',false);
                 $('#inputS').attr('disabled',false);
-
 
                 $('#btnCancelarTres').fadeIn('slow');
             } else if(opcionEditar === 3) {
@@ -2466,21 +2473,32 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
     function crearUsuario() {
         let nombre = $('#nombreusuarioadd').val();
+        let apellido = $('#apellidousuarioadd').val();
         let correo = $('#correousuarioadd').val();
+        let contrasena = $('#passusuarioadd').val();
+        let usuario = $('#userusuarioadd').val();
+        let rol = $('#selectrolusuarioadd option:selected').text();
 
-        $.ajax({
-           url: '../admin/Usuarios.php',
-           method: 'post',
-           data: {nombre:nombre,correo:correo},
-           success: function () {
-               $('#nombreusuarioadd').val('');
-               $('#correousuarioadd').val('');
-               $('#alertausuario').fadeIn('slow');
-               setTimeout(function() {
-                   $('#alertausuario').fadeOut('slow');
-               }, 2000);
-           } 
-        });
+        if ((nombre && correo && apellido && contrasena && usuario) !== '') {
+            $.ajax({
+                url: '../admin/Usuarios.php',
+                method: 'post',
+                data: {accion:'add',nombre:nombre,apellido:apellido,usuario:usuario,correo:correo,contrasena:contrasena,rol:rol},
+                success: function () {
+                    $('#nombreusuarioadd').val('');
+                    $('#correousuarioadd').val('');
+                    $('#apellidousuarioadd').val('');
+                    $('#passusuarioadd').val('');
+                    $('#userusuarioadd').val('');
+                    $('#alertausuario').fadeIn('slow');
+                    setTimeout(function() {
+                        $('#alertausuario').fadeOut('slow');
+                    }, 2000);
+                }
+            });
+        } else {
+            alert('Debe llenar todos los campos');
+        }
     }
     
     function actualizarPass() {
@@ -2524,6 +2542,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
             opcionInsertar = 3;
         }
     });
+
+    function abrirPDF(file) {
+        window.open('../filespdf/'+file+'.pdf');
+    }
 <?php echo '</script'; ?>
 >
 <?php }

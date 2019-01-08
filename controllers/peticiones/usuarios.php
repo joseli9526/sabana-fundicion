@@ -2,8 +2,10 @@
 
 class Usuarios extends Sabana {
 
-    function createUser($nombre, $email) {
-        $sql = "INSERT INTO users (email, password, rol, name) VALUES ('$email',md5('Arbomex01'),'','$nombre')";
+    function createUser($nombre, $email,$user,$apellido,$pass,$rol) {
+        $sql = "INSERT INTO users (email, password,  name,user,apellido,rol) 
+                VALUES ('$email',md5('$pass'),'$nombre','$user','$apellido','$rol')";
+        echo $sql;
         $this->ejecutar($sql);
     }
 

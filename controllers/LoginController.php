@@ -3,12 +3,12 @@ date_default_timezone_set('America/Mexico_City');
 
 class LoginController extends Sabana {
 
-    function login2($email, $password){
+    function login2($email, $user, $password){
         $templates = $this->templateEngine();
 
         $pass = md5($password);
 
-        $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$pass'";
+        $sql = "SELECT * FROM users WHERE email = '$email' or user = '$user' AND password = '$pass'";
         $resultado = $this->fetchAll($sql);
 
         $sql = "SELECT * FROM familia";
@@ -20,6 +20,7 @@ class LoginController extends Sabana {
         if (isset($resultado[0])){
             unset($resultado['password']);
             $_SESSION['username'] = $resultado[0]['name'];
+            $_SESSION['apellido'] = $resultado[0]['apellido'];
             $_SESSION['rol'] = $resultado[0]['rol'];
             $_SESSION['correo'] = $resultado[0]['email'];
 
@@ -28,6 +29,7 @@ class LoginController extends Sabana {
                 $templates->assign('modelos',$modelos);
                 $templates->assign('rol', $_SESSION['rol']);
                 $templates->assign('username', $_SESSION['username']);
+                $templates->assign('apellido',$_SESSION['apellido']);
                 $templates->display('inicio.html');
             //}
         } else

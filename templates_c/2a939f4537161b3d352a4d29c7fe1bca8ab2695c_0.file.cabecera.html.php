@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-01-03 09:10:03
+/* Smarty version 3.1.30, created on 2019-01-08 12:26:07
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\cabecera.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c2e25cbdc0478_46021226',
+  'unifunc' => 'content_5c34eb3f781ae8_83269032',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2a939f4537161b3d352a4d29c7fe1bca8ab2695c' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\cabecera.html',
-      1 => 1546528201,
+      1 => 1546971950,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c2e25cbdc0478_46021226 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c34eb3f781ae8_83269032 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,6 +50,7 @@ function content_5c2e25cbdc0478_46021226 (Smarty_Internal_Template $_smarty_tpl)
     <link rel="stylesheet" type="text/css" href="../theme-assets/css/core/menu/menu-types/vertical-menu.css">
     <link rel="stylesheet" type="text/css" href="../theme-assets/css/core/colors/palette-gradient.css">
     <!-- END Page Level CSS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <!--BEGIN DATATABLE-->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/3.2.6/css/fixedColumns.dataTables.min.css">
@@ -124,7 +125,7 @@ function content_5c2e25cbdc0478_46021226 (Smarty_Internal_Template $_smarty_tpl)
     </style>
     <!-- END Custom CSS-->
 </head>
-<body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-color="bg-chartbg" data-col="2-columns">
+<body class="vertical-layout vertical-menu 2-columns menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-color="bg-chartbg" data-col="2-columns">
 
 <!-- fixed-top-->
 <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light">
@@ -138,10 +139,15 @@ function content_5c2e25cbdc0478_46021226 (Smarty_Internal_Template $_smarty_tpl)
                 </ul>
                 <ul class="nav navbar-nav float-right">
                     <?php if ($_smarty_tpl->tpl_vars['rol']->value != 'usuario') {?>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal" data-target="#modaladduser" ><i class="la la-user-plus"></i> </a>
-                    </li>
+                        <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-database"></i><span class="selected-language"></span></a>
+                            <div class="dropdown-menu" aria-labelledby="">
+                                <div class="arrow_box">
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#modaladduser"><i class="la la-user-plus"></i>Usuarios</a>
+                                </div>
+                            </div>
+                        </li>
                     <?php }?>
+
                     <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="la la-download"></i><span class="selected-language"></span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-flag">
                             <div class="arrow_box">
@@ -162,8 +168,9 @@ function content_5c2e25cbdc0478_46021226 (Smarty_Internal_Template $_smarty_tpl)
                             <div class="arrow_box_right"><a class="dropdown-item" href="#">
                                 <span class="avatar avatar-online"><img src="../images/user.jpg" alt="avatar">
                                 <span class="user-name text-bold-700 ml-1"><?php echo $_smarty_tpl->tpl_vars['username']->value;?>
+ <?php echo $_smarty_tpl->tpl_vars['apellido']->value;?>
 </span></span></a>
-                                <div class="dropdown-divider"></div><a  data-toggle="modal" data-target="#modalpass"  class="dropdown-item" href="#"><i class="ft-unlock"></i>Cambiar contraseña</a>
+                                <div class="dropdown-divider"></div><a data-toggle="modal" data-target="#modalpass"  class="dropdown-item" href="#"><i class="ft-unlock"></i>Cambiar contraseña</a>
                                 <div class="dropdown-divider"></div><a class="dropdown-item" href="../admin/Login.php?action=salir"><i class="ft-power"></i> Salir</a>
                             </div>
                         </div>
@@ -176,16 +183,15 @@ function content_5c2e25cbdc0478_46021226 (Smarty_Internal_Template $_smarty_tpl)
 
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 
-
-  <div class="main-menu menu-fixed " data-scroll-to-active="true" data-img="theme-assets/images/backgrounds/02.jpg" style="height: 10px;">
+<div class="main-menu menu-fixed " data-scroll-to-active="true" data-img="theme-assets/images/backgrounds/02.jpg" style="height: 10px;">
     <div class="navbar-header" style="background: #262d47">
         <ul class="">
-            <li class="nav-item mr-auto"><a class="navbar-brand" href="index.html">
-                <h3 class="brand-text" style="color:white; ">Sabana Fundición</h3></a></li>
+            <li class="nav-item mr-auto">
+                <a class="navbar-brand">
+                    <h3 class="brand-text" style="color:white; ">Sabana Fundición</h3>
+                </a>
+            </li>
         </ul>
     </div>
-    
-</div>   
- 
-<?php }
+</div><?php }
 }

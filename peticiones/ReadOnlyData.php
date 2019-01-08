@@ -81,8 +81,80 @@ $query=mysqli_query($conn, $sql);
 
 $response = array();
 while( $datum=mysqli_fetch_array($query) ) {  // preparing an array
+    $contador = 0;
     $data_aux = array();
     $data_aux[] = "<input type='checkbox' class='deleteRow' value='".$datum['id']."'/>" ;
+    if ($datum['dureza_min'] == '')
+        $contador++;
+    if ($datum['dureza_max'] == '')
+        $contador++;
+    if ($datum['nodularidad'] == '')
+        $contador++;
+    if ($datum['nod'] == '')
+        $contador++;
+    if ($datum['perlita'] == '')
+        $contador++;
+    if ($datum['ferrita'] == '')
+        $contador++;
+    if ($datum['carburos'] == '')
+        $contador++;
+    if ($datum['grafito_tipo'] == '')
+        $contador++;
+    if ($datum['grafito_tamanio'] == '')
+        $contador++;
+    if ($datum['grafito_tamanio_max'] == '')
+        $contador++;
+    if ($datum['esteadita'] == '')
+        $contador++;
+    if ($datum['porcentaje_si'] == '')
+        $contador++;
+    if ($datum['porcentaje_mn'] == '')
+        $contador++;
+    if ($datum['porcentaje_p'] == '')
+        $contador++;
+    if ($datum['porcentaje_mg'] == '')
+        $contador++;
+    if ($datum['porcentaje_cr'] == '')
+        $contador++;
+    if ($datum['porcentaje_ni'] == '')
+        $contador++;
+    if ($datum['porcentaje_mo'] == '')
+        $contador++;
+    if ($datum['porcentaje_cu'] == '')
+        $contador++;
+    if ($datum['porcentaje_al'] == '')
+        $contador++;
+    if ($datum['porcentaje_ti'] == '')
+        $contador++;
+    if ($datum['porcentaje_v'] == '')
+        $contador++;
+    if ($datum['porcentaje_sn'] == '')
+        $contador++;
+    if ($datum['porcentaje_pb'] == '')
+        $contador++;
+    if ($datum['porcentaje_c'] == '')
+        $contador++;
+    if ($datum['porcentaje_s'] == '')
+        $contador++;
+    if ($datum['sangrado'] == '')
+        $contador++;
+    if ($datum['vaciado'] == '')
+        $contador++;
+    if ($datum['kg'] == '')
+        $contador++;
+    if ($datum['tiempo'] == '')
+        $contador++;
+
+    if ($contador == 0) {
+        $data_aux[] = "<img alt='' src='../images/verde.png' width='30' height='30'>";
+        $sql = "UPDATE sabana SET status = 1 WHERE id = ".$datum['id'];
+        mysqli_query($conn,$sql);
+    }
+    else {
+        $data_aux[] = "<img alt='' src='../images/amarillo.png' width='30' height='30'>";
+        $sql = "UPDATE sabana SET status = 0 WHERE id = ".$datum['id'];
+        mysqli_query($conn,$sql);
+    }
     $data_aux[] = $datum['id'];
     $data_aux[] = $datum['fecha'];
     $data_aux[] = $datum['turno'];
@@ -128,12 +200,7 @@ while( $datum=mysqli_fetch_array($query) ) {  // preparing an array
     $data_aux[] = $datum['mes'];
     $data_aux[] = $datum['anio'];
     $data_aux[] = $datum['hoja_inspeccion'];
-    //$data_aux[] = $datum['usuario'];
-    if ($datum['status'] == 1)
-        $data_aux[] = "<img alt='' src='../images/verde.png' width='30' height='30'>";
-    else
-        $data_aux[] = "<img alt='' src='../images/amarillo.png' width='30' height='30'>";
-    //$data_aux[] = $datum['status'];
+
     $response[] = $data_aux;
 }
 
