@@ -9,7 +9,7 @@ $vaciado = $_POST['inputVaciado'];
 $kg = $_POST['inputKg'];
 $tiempo = $_POST['inputTiempo'];
 $id = $_POST['id3'];
-$usuario = $_SESSION['username'];
+$usuario = $_SESSION['user'];
 
 $web->updateTemperaturaInoculante($id,$sangrado,$vaciado,$kg,$tiempo,$usuario);
 

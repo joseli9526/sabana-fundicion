@@ -8,7 +8,7 @@ $meses = ['','Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','
 $web = new CRUD;
 $web->conexion();
 
-$usuario = $_SESSION['username'];
+$usuario = $_SESSION['user'];
 $fecha = date('Y-m-d');
 $dia = $dias[date('w')];
 $semana = date('W');

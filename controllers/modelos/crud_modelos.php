@@ -16,4 +16,21 @@ class Crud_Modelos extends Sabana {
         $sql = "SELECT modelo FROM modelos INNER JOIN familia ON modelos.id_familia = familia.id WHERE familia.familia ='$familia'";
         return $this->fetchAll($sql);
     }
+
+    function insertData($modelo,$id_familia) {
+        $sql = "INSERT INTO modelos (id,modelo,id_familia) VALUES (null,'$modelo',$id_familia)";
+        $this->ejecutar($sql);
+    }
+
+    function insertDataFile($modelo,$id_familia,$file) {
+        $sql = "INSERT INTO hoja_inspeccion (id, hoja_inspeccion) VALUES (null,'$file')";
+        $this->ejecutar($sql);
+
+        $sql = "SELECT MAX(id) FROM hoja_inspeccion";
+        $ultimo_id = $this->fetchAll($sql);
+        $ultimo_id = $ultimo_id['id'];
+
+        $sql = "INSERT INTO modelos (id,modelo,id_familia,id_hoja_inspeccion) VALUES (null,'$modelo',$id_familia,$ultimo_id)";
+        $this->ejecutar($sql);
+    }
 }

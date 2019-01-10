@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-01-08 12:26:07
+/* Smarty version 3.1.30, created on 2019-01-09 15:58:15
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\cabecera.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c34eb3f781ae8_83269032',
+  'unifunc' => 'content_5c366e772d95f8_16039426',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2a939f4537161b3d352a4d29c7fe1bca8ab2695c' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\cabecera.html',
-      1 => 1546971950,
+      1 => 1547071074,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c34eb3f781ae8_83269032 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c366e772d95f8_16039426 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +34,7 @@ function content_5c34eb3f781ae8_83269032 (Smarty_Internal_Template $_smarty_tpl)
     <title>Sabana Fundición</title>
 
     <link rel="apple-touch-icon" href="../theme-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../theme-assets/images/ico/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
 
@@ -138,16 +138,6 @@ function content_5c34eb3f781ae8_83269032 (Smarty_Internal_Template $_smarty_tpl)
                     <li class="nav-item d-none d-md-block"></li>
                 </ul>
                 <ul class="nav navbar-nav float-right">
-                    <?php if ($_smarty_tpl->tpl_vars['rol']->value != 'usuario') {?>
-                        <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-database"></i><span class="selected-language"></span></a>
-                            <div class="dropdown-menu" aria-labelledby="">
-                                <div class="arrow_box">
-                                    <a class="dropdown-item" data-toggle="modal" data-target="#modaladduser"><i class="la la-user-plus"></i>Usuarios</a>
-                                </div>
-                            </div>
-                        </li>
-                    <?php }?>
-
                     <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="la la-download"></i><span class="selected-language"></span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-flag">
                             <div class="arrow_box">
@@ -156,6 +146,35 @@ function content_5c34eb3f781ae8_83269032 (Smarty_Internal_Template $_smarty_tpl)
                             </div>
                         </div>
                     </li>
+                    <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag3" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-database"></i><span class="selected-language"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-flag">
+                            <div class="arrow_box">
+                                <!--<a class="dropdown-item" href="#" id="btnPdf"><i class="la la-file-pdf-o"></i> PDF</a>-->
+                                <a class="dropdown-item" onclick="abrirModalAddModelo()" id="btnAddModelos"><i class="fas fa-plus"></i>Agregar modelo</a>
+                            </div>
+                        </div>
+                    </li>
+                    <?php if ($_smarty_tpl->tpl_vars['rol']->value != 'usuario') {?>
+                    <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users"></i><span class="selected-language"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="">
+                            <div class="arrow_box">
+                                <a class="dropdown-item" style="padding: 10px 5px" data-toggle="modal" data-target="#modaladduser"><i class="la la-user-plus"></i>Agregar usuario</a>
+                                <a class="dropdown-item"  style="padding: 10px 5px" onclick="abrirModalShowUsers()"><i class="fas fa-user-check"></i>Usuarios registrados</a>
+                            </div>
+                        </div>
+                    </li>
+                    <?php }?>
+                    <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-question-circle"></i><span class="selected-language"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-flag">
+                            <div class="arrow_box">
+                                <!--<a class="dropdown-item" href="#" id="btnPdf"><i class="la la-file-pdf-o"></i> PDF</a>-->
+                                <!--<a class="dropdown-item" data-toggle="modal" data-target="#modalexcel" id="btnExcel"><i style="color: green" class="la la-file-excel-o"></i> Excel</a>-->
+                            </div>
+                        </div>
+                    </li>
+
+
+
                 </ul>
                 <ul class="nav navbar-nav float-right">
                     <li class="dropdown dropdown-user nav-item">

@@ -83,7 +83,7 @@ $response = array();
 while( $datum=mysqli_fetch_array($query) ) {  // preparing an array
     $contador = 0;
     $data_aux = array();
-    $data_aux[] = "<input type='checkbox' class='deleteRow' value='".$datum['id']."'/>" ;
+    $data_aux[] = "<input type='checkbox' style='margin-top:10px' class='deleteRow' value='".$datum['id']."'/>" ;
     if ($datum['dureza_min'] == '')
         $contador++;
     if ($datum['dureza_max'] == '')

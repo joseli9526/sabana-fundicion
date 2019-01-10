@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-01-08 11:37:17
+/* Smarty version 3.1.30, created on 2019-01-09 23:20:10
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\inicio.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c34dfcd2b8619_89956064',
+  'unifunc' => 'content_5c36d60abfc828_16791094',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\inicio.html',
-      1 => 1546967940,
+      1 => 1547097607,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie.html' => 1,
   ),
 ),false)) {
-function content_5c34dfcd2b8619_89956064 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c36d60abfc828_16791094 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -353,6 +353,153 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
             <div class="modal-footer">
                 <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
             </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal success add user-->
+<div id="modalsuccessadduser" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="icon-box">
+                    <i class="material-icons" style="color: darkgreen">&#xE876;</i>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p class="text-center">Usuario registrado con éxito!</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal success reset-->
+<div id="modalsuccessreset" class="modal fade" style="z-index: 100000">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="icon-box">
+                    <i class="material-icons" style="color: darkgreen">&#xE876;</i>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p class="text-center">Contraseña restablecida con exito!</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal add modelos -->
+<div class="modal" id="modaladdmodel" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Agregar modelos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row col-md-12 mt-2">
+                    <div class="col-md-6">
+                        <div class="input-group mb-3">
+                            <label class="form-check-label">Familias:</label>
+                            <div class="input-group mb-3">
+                                <select class="custom-select" id="selectfamiliasadd" onchange="obtenerModelosAdd()">
+                                    <option selected value="">Seleccionar</option>
+                                </select>
+                                <div class="input-group-append">
+                                    <button class="btn btn-light" id="btnAbrirAddFamilia"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mb-3">
+                            <label class="form-check-label">Modelos:</label>
+                            <div class="input-group mb-3">
+                                <select class="custom-select" id="selectmodelosadd">
+                                    <option selected value="">Seleccionar</option>
+                                </select>
+                                <div class="input-group-append">
+                                    <button class="btn btn-light" id="btnAbrirAddModelo"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal add familia -->
+<div class="modal" id="modaladdfamilia" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Agregar familia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row col-md-12 mt-2">
+                    <div class="col-md-12">
+                        <label class="form-check-label">Nombre:</label>
+                        <input type="text" id="nombreFamiliaAdd" required class="form-control"  placeholder="Nombre">
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" onclick="agregarFamilia()" data-dismiss="modal">Agregar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal add modelo -->
+<div class="modal" id="modaladdmodelo" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Agregar modelo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="formModelos" enctype="multipart/form-data" >
+                <div class="modal-body">
+                    <h4 id="textomodelo">Agregar modelo para la familia: </h4>
+                        <div class="form-row col-md-12 mt-2">
+                            <div class="col-md-12">
+                                <label class="form-check-label">Nombre:</label>
+                                <input type="text" name="inputaddmodeloname" id="nombreModeloAdd" required class="form-control"  placeholder="Nombre">
+                            </div>
+                        </div>
+                        <div class="form-row col-md-12 mt-2">
+                            <div class="col-md-12">
+                                <label class="form-check-label">Archivo:</label>
+                                <input type="file"  data-max-size="2000000"  name="archivoaddmodelo" required class="form-control">
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Agregar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -1015,12 +1162,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 </div>
 
 <!-- Modal add user -->
-<div class="modal" id="modaladduser" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
+<div class="modal" id="modaladduser" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Crear usuario</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" onclick="cerrarModalAddUser()" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -1037,12 +1184,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 </div>
                 <div class="form-row col-md-12 mt-2">
                     <div class="col-md-6">
-                        <label class="form-check-label">Usuario:</label>
-                        <input type="text" id="userusuarioadd" required class="form-control"  placeholder="Usuario">
-                    </div>
-                    <div class="col-md-6">
                         <label class="form-check-label">Correo:</label>
                         <input type="email" id="correousuarioadd" required class="form-control" placeholder="Correo">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-check-label">Usuario:</label>
+                        <input type="text" id="userusuarioadd" required class="form-control"  placeholder="Usuario">
                     </div>
                 </div>
                 <div class="form-row col-md-12 mt-2">
@@ -1054,7 +1201,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                         <label class="form-check-label">Rol:</label>
                         <select class="form-control" id="selectrolusuarioadd">
                             <option selected disabled value="">Seleccionar rol</option>
-                            <option value="1">Administrador</option>
+                            <?php if ($_smarty_tpl->tpl_vars['rol']->value != 'Supervisor') {?>
+                            <option value="1">Administrador</option>}
+                            <?php }?>
                             <option value="2">Supervisor</option>
                             <option value="3">Usuario</option>
                         </select>
@@ -1067,7 +1216,41 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-success" onclick="crearUsuario()">Crear</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-secondary" onclick="cerrarModalAddUser()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal show users -->
+<div class="modal" id="modalshowusers" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Lista de usuarios</h5>
+                <button type="button" class="close" onclick="cerrarModalShowUsers()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table id="tablausuarios" class="table table-bordered" width="100%" style="text-align: center">
+                    <thead>
+                        <tr>
+                            <td>Nombre</td>
+                            <td>Usuario</td>
+                            <td>Correo</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="cerrarModalShowUsers()">Cerrar</button>
             </div>
         </div>
     </div>
@@ -1095,12 +1278,46 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                     </div>
                     <input type="hidden" id="validarpass" value="contrasena">
                 </div><br>
-                <div class="alert alert-success" style="display: none" role="alert" id="alertapassword">
-                    Contraseña actualizada correctamente!
+                <div class="alert alert-danger" style="text-align: center; font-size: 15px; display: none" role="alert" id="alertacambiarpass">
+                    Las contraseñas no coinciden
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-success" onclick="actualizarPass()">Cambiar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal reset password -->
+<div class="modal" id="modalpassreset" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Cambiar contraseña</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row col-md-12 mt-2">
+                    <div class="col-md-6">
+                        <label class="form-check-label">Nueva contraseña:</label>
+                        <input type="password" id="pass1reset" required class="form-control"  placeholder="">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-check-label">Confirmar contraseña:</label>
+                        <input type="password" id="pass2reset" required class="form-control" placeholder="">
+                    </div>
+                    <input type="hidden" id="validarpassreset" value="contrasena">
+                </div><br>
+                <div class="alert alert-danger" style="text-align: center; font-size: 15px; display: none" role="alert" id="alertaresetpass">
+                    Las contraseñas no coinciden
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="btnResetPass">Cambiar</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
@@ -1165,6 +1382,28 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
             <div class="modal-footer" style="margin-right: 35px">
                 <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
                 <button id="btnEliminar" type="button" class="btn btn-danger">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal eliminar usuario -->
+<div id="modalEliminarUsuario" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="icon-box" style="margin-left: 35px">
+                    <i class="material-icons">&#xE5CD;</i>
+                </div>
+                <h4 class="modal-title" style="margin-top: 4px">¿Eliminar usuario?</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer" style="margin-right: 35px">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+                <button id="btnEliminarUsuario" type="button" class="btn btn-danger">Eliminar</button>
             </div>
         </div>
     </div>
@@ -1330,6 +1569,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 <?php echo '<script'; ?>
 >
     var t = null;
+    var t2 = null;
+    var id_eliminar = 0;
+    var id_reset = 0;
     var opcionInsertar = 1;
     var opcionEditar = 1;
     var ultimo_id_insert = 0;
@@ -1380,7 +1622,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                  }
              ],
              fixedColumns:   {
-                 leftColumns: 7
+                 leftColumns: 8
              },
              destroy: true,
             "language": {
@@ -2267,7 +2509,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
             '&selectModelo='+ $('#selectModelo option:selected').text(),
            success: function () {
                t.draw();
-               //crearTabla();
            }
         });
     }
@@ -2279,7 +2520,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
            data: $('#formQuimico').serialize(),
            success: function () {
                t.draw();
-               //crearTabla();
            }
         });
     }
@@ -2291,7 +2531,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
            data: $('#formTemperatura').serialize(),
            success: function () {
               t.draw();
-               // crearTabla();
            }
         });
     }
@@ -2490,10 +2729,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                     $('#apellidousuarioadd').val('');
                     $('#passusuarioadd').val('');
                     $('#userusuarioadd').val('');
-                    $('#alertausuario').fadeIn('slow');
+                    $("#selectrolusuarioadd option[value='']").prop('selected', true);
+                    $("#modaladduser").modal('hide');
+                   /* $('#alertausuario').fadeIn('slow');
                     setTimeout(function() {
                         $('#alertausuario').fadeOut('slow');
-                    }, 2000);
+                    }, 2000);*/
                 }
             });
         } else {
@@ -2514,13 +2755,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 success: function () {
                     $('#pass1').val('');
                     $('#pass2').val('');
-                    $('#alertapassword').fadeIn('slow');
-                    setTimeout(function() {
-                        $('#alertapassword').fadeOut('slow');
-                    }, 2000);
                 }
             })
-        } 
+        } else {
+            $('#alertacambiarpass').fadeIn('slow');
+            setTimeout(function () {
+                $('#alertacambiarpass').fadeOut('slow');
+            },2000);
+        }
     }
 
     $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
@@ -2528,9 +2770,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
         if (target === '#pills-home2') {
             opcionInsertar = 1;
-            //$(e.relatedTarget).css('background','orangered');
-        }
-        else if (target === '#pills-profile2') {
+        } else if (target === '#pills-profile2') {
             opcionInsertar = 2;
         } else if (target === '#pills-home'){
             opcionEditar = 1;
@@ -2546,6 +2786,239 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     function abrirPDF(file) {
         window.open('../filespdf/'+file+'.pdf');
     }
+
+    $("#nombreusuarioadd").keypress(function(event){
+        var inputValue = event.charCode;
+        if(!(inputValue >= 65 && inputValue <= 122) && (inputValue !== 32 && inputValue !== 0)){
+            event.preventDefault();
+        }
+    });
+
+    $("#apellidousuarioadd").keypress(function(event){
+        var inputValue = event.charCode;
+        if(!(inputValue >= 65 && inputValue <= 122) && (inputValue !== 32 && inputValue !== 0)){
+            event.preventDefault();
+        }
+    });
+
+    $('#correousuarioadd').blur(function () {
+       let correo = $(this).val();
+       let correo_arr = correo.split('@');
+       $('#userusuarioadd').val(correo_arr[0]);
+       $('#userusuarioadd').prop('disabled',true);
+    });
+
+    function cerrarModalAddUser() {
+         $('#nombreusuarioadd').val('');
+         $('#apellidousuarioadd').val('');
+         $('#correousuarioadd').val('');
+         $('#passusuarioadd').val('');
+         $('#userusuarioadd').val('');
+         $('#selectrolusuarioadd option:selected').text();
+         $('#modaladduser').modal('hide');
+    }
+
+    function crearTablaUsers() {
+       t2 = $('#tablausuarios').DataTable({
+            ajax:{
+                url :"../peticiones/ShowUsers.php", // json datasource
+                type: "post",  // method  , by default get
+                error: function(){  // error handling
+                    console.log('error al mostrar datos')
+                }
+            },
+           columnDefs: [
+               {
+                   "targets": [0,1,2,3,4],
+                   "orderable": false,
+
+               },
+           ],
+           destroy: true,
+           dom: "frtip",
+           "pageLength": 5,
+           "language": {
+               "sProcessing": "Procesando...",
+               "sLengthMenu": "Mostrar _MENU_ registros",
+               "sZeroRecords": "No se encontraron resultados",
+               "sEmptyTable": "Ningún dato disponible en esta tabla",
+               "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+               "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+               "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+               "sInfoPostFix": "",
+               "sSearch": "Buscar:",
+               "sUrl": "",
+               "sInfoThousands": ",",
+               "sLoadingRecords": "Cargando...",
+               "oPaginate": {
+                   "sFirst": "Primero",
+                   "sLast": "Último",
+                   "sNext": "Siguiente",
+                   "sPrevious": "Anterior"
+               },
+               "oAria": {
+                   "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                   "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+               }
+           }
+        });
+    }
+
+    function abrirModalShowUsers() {
+        crearTablaUsers();
+        $('#modalshowusers').modal('show');
+    }
+
+    function cerrarModalShowUsers() {
+        $('#modalshowusers').modal('hide');
+    }
+    
+    function eliminarUsuario(id) {
+       $('#modalEliminarUsuario').modal('show');
+       id_eliminar = id;
+    }
+
+    $('#btnEliminarUsuario').click(function () {
+        $.ajax({
+            url: '../peticiones/usuarios/DeleteUser.php',
+            data: {id:id_eliminar},
+            method: 'post',
+            success: function () {
+                // t2.draw();
+                crearTablaUsers();
+                $('#modalEliminarUsuario').modal('hide');
+            }
+        });
+    });
+
+    function resetPassword(id) {
+        $('#modalpassreset').modal('show');
+        id_reset = id;
+    }
+
+    $('#btnResetPass').click(function () {
+        let pass1 = $('#pass1reset').val();
+        let pass2 = $('#pass2reset').val();
+
+        if (pass1 === '' || pass2 === '') {
+            $('#alertaresetpass').html('Debe llenar todos los campos');
+            $('#alertaresetpass').fadeIn('slow');
+            setTimeout(function () {
+                $('#alertaresetpass').fadeOut('slow');
+            },2000);
+        } else {
+            if(pass2 === pass1) {
+                $.ajax({
+                    url: '../peticiones/usuarios/ResetPassword.php',
+                    data: {id: id_reset,pass:pass1},
+                    method: 'post',
+                    success: function () {
+                        $('#modalsuccessreset').modal('show');
+                        $('#modalpassreset').modal('hide');
+                        $('#pass1reset').val('');
+                        $('#pass2reset').val('');
+                    }
+                })
+            } else {
+                $('#alertaresetpass').fadeIn('slow');
+                setTimeout(function () {
+                    $('#alertaresetpass').fadeOut('slow');
+                },2000);
+            }
+        }
+
+    });
+    
+    function abrirModalAddModelo() {
+        $('#modaladdmodel').modal('show');
+        obtenerFamiliasAdd();
+    }
+
+    function obtenerFamiliasAdd() {
+        $.ajax({
+            url: '../peticiones/familia/select.php',
+            method: 'get',
+            dataType: 'json',
+            success: function (response) {
+                $('#selectfamiliasadd').empty();
+                $('#selectfamiliasadd').append('<option selected value="">Seleccionar</option>');
+                $.each(response,function (key,value) {
+                    $('#selectfamiliasadd').append('<option value="'+value.id+'">'+value.familia+'</option>');
+                })
+            }
+        });
+    }
+    
+    function obtenerModelosAdd() {
+        let id = $('#selectfamiliasadd').val();
+        $.ajax({
+           url: '../peticiones/modelos/select.php',
+           method: 'get',
+           data: {id:id},
+           dataType: 'json',
+           success: function (response) {
+               $('#selectmodelosadd').empty();
+               $('#selectmodelosadd').append('<option selected value="">Seleccionar</option>');
+               $.each(response, function (key,value) {
+                   $('#selectmodelosadd').append('<option value="'+value.id+'">'+value.modelo+'</option>');
+               })
+           }
+        });
+    }
+
+    $('#btnAbrirAddFamilia').click(function () {
+        $('#modaladdfamilia').modal('show');
+    });
+
+    function agregarFamilia() {
+       let nombre = $('#nombreFamiliaAdd').val();
+       $.ajax({
+          url: '../peticiones/familia/insert.php',
+          method: 'post',
+          data: {familia:nombre},
+          success: function () {
+              obtenerFamiliasAdd();
+          }
+       });
+    }
+
+    $('#btnAbrirAddModelo').click(function () {
+       let familia = $('#selectfamiliasadd option:selected').text();
+       $('#modaladdmodelo').modal('show');
+       $('#textomodelo').html('Agregar modelo para la familia: ' + familia);
+    });
+
+    $('#formModelos').on('submit',function (e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+
+        var isOk = true;
+        $('input[type=file][data-max-size]').each(function(){
+            if(typeof this.files[0] !== 'undefined'){
+                var maxSize = parseInt($(this).attr('data-max-size'),10),
+                    size = this.files[0].size;
+                isOk = maxSize > size;
+                console.log(maxSize,size);
+            }
+        });
+
+        if (isOk)
+            alert('correcto');
+        else
+            alert('supero');
+
+       /* $.ajax({
+            url: '../peticiones/modelos/insert.php',
+            method: 'post',
+            processData: false,
+            contentType: false,
+            data: formData,
+            success: function () {
+
+            }
+        });*/
+    });
+
 <?php echo '</script'; ?>
 >
 <?php }

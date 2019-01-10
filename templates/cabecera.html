@@ -10,7 +10,7 @@
     <title>Sabana Fundición</title>
 
     <link rel="apple-touch-icon" href="../theme-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../theme-assets/images/ico/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
 
@@ -114,16 +114,6 @@
                     <li class="nav-item d-none d-md-block"></li>
                 </ul>
                 <ul class="nav navbar-nav float-right">
-                    {if $rol ne 'usuario'}
-                        <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-database"></i><span class="selected-language"></span></a>
-                            <div class="dropdown-menu" aria-labelledby="">
-                                <div class="arrow_box">
-                                    <a class="dropdown-item" data-toggle="modal" data-target="#modaladduser"><i class="la la-user-plus"></i>Usuarios</a>
-                                </div>
-                            </div>
-                        </li>
-                    {/if}
-
                     <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="la la-download"></i><span class="selected-language"></span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-flag">
                             <div class="arrow_box">
@@ -132,6 +122,35 @@
                             </div>
                         </div>
                     </li>
+                    <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag3" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-database"></i><span class="selected-language"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-flag">
+                            <div class="arrow_box">
+                                <!--<a class="dropdown-item" href="#" id="btnPdf"><i class="la la-file-pdf-o"></i> PDF</a>-->
+                                <a class="dropdown-item" onclick="abrirModalAddModelo()" id="btnAddModelos"><i class="fas fa-plus"></i>Agregar modelo</a>
+                            </div>
+                        </div>
+                    </li>
+                    {if $rol ne 'usuario'}
+                    <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users"></i><span class="selected-language"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="">
+                            <div class="arrow_box">
+                                <a class="dropdown-item" style="padding: 10px 5px" data-toggle="modal" data-target="#modaladduser"><i class="la la-user-plus"></i>Agregar usuario</a>
+                                <a class="dropdown-item"  style="padding: 10px 5px" onclick="abrirModalShowUsers()"><i class="fas fa-user-check"></i>Usuarios registrados</a>
+                            </div>
+                        </div>
+                    </li>
+                    {/if}
+                    <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-question-circle"></i><span class="selected-language"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-flag">
+                            <div class="arrow_box">
+                                <!--<a class="dropdown-item" href="#" id="btnPdf"><i class="la la-file-pdf-o"></i> PDF</a>-->
+                                <!--<a class="dropdown-item" data-toggle="modal" data-target="#modalexcel" id="btnExcel"><i style="color: green" class="la la-file-excel-o"></i> Excel</a>-->
+                            </div>
+                        </div>
+                    </li>
+
+
+
                 </ul>
                 <ul class="nav navbar-nav float-right">
                     <li class="dropdown dropdown-user nav-item">
