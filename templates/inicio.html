@@ -430,12 +430,13 @@
                     <div class="col-md-12">
                         <label class="form-check-label">Nombre:</label>
                         <input type="text" id="nombreFamiliaAdd" required class="form-control"  placeholder="Nombre">
+                        <span id="erroragregarfamilia" style="color: red; display: none">Familia ya registrada</span>
                     </div>
                 </div>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" onclick="agregarFamilia()" data-dismiss="modal">Agregar</button>
+                <button type="button" class="btn btn-success" onclick="agregarFamilia()">Agregar</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
@@ -458,13 +459,14 @@
                         <div class="form-row col-md-12 mt-2">
                             <div class="col-md-12">
                                 <label class="form-check-label">Nombre:</label>
-                                <input type="text" name="inputaddmodeloname" id="nombreModeloAdd" required class="form-control"  placeholder="Nombre">
+                                <input type="text" autocomplete="off" name="inputaddmodeloname" id="nombreModeloAdd" required class="form-control"  placeholder="Nombre">
                             </div>
                         </div>
                         <div class="form-row col-md-12 mt-2">
                             <div class="col-md-12">
-                                <label class="form-check-label">Archivo:</label>
-                                <input type="file"  data-max-size="2000000"  name="archivoaddmodelo" required class="form-control">
+                                <label class="form-check-label">Archivo (5MB):</label>
+                                <input type="file" id="inputarchivo" data-max-size="5000000"  name="archivoaddmodelo" class="form-control">
+                                <span id="mensajearchivo" style="display: none; color: red">El archivo supera el tamaño máximo.</span>
                             </div>
                         </div>
                 </div>
@@ -2912,7 +2914,18 @@
           url: '../peticiones/familia/insert.php',
           method: 'post',
           data: {familia:nombre},
-          success: function () {
+          success: function (data) {
+              if (data === 'error') {
+                $('#nombreFamiliaAdd').css('border-color','red');
+                $('#erroragregarfamilia').fadeIn('slow');
+                setTimeout(function () {
+                    $('#nombreFamiliaAdd').css('border-color','');
+                    $('#erroragregarfamilia').fadeOut('slow');
+                }, 2000);
+              } else {
+                  $('#nombreFamiliaAdd').val('');
+                  $('#modaladdfamilia').modal('hide');
+              }
               obtenerFamiliasAdd();
           }
        });
@@ -2927,6 +2940,8 @@
     $('#formModelos').on('submit',function (e) {
         e.preventDefault();
         var formData = new FormData(this);
+        let id_familia = $("#selectfamiliasadd").val();
+        formData.append('id_familia',id_familia);
 
         var isOk = true;
         $('input[type=file][data-max-size]').each(function(){
@@ -2934,7 +2949,6 @@
                 var maxSize = parseInt($(this).attr('data-max-size'),10),
                     size = this.files[0].size;
                 isOk = maxSize > size;
-                console.log(maxSize,size);
             }
         });
 
@@ -2949,12 +2963,14 @@
 
                 }
             });
+        } else {
+            $('#inputarchivo').css('border-color','red');
+            $('#mensajearchivo').fadeIn('slow');
+            setTimeout(function () {
+                $('#mensajearchivo').fadeOut('slow');
+                $('#inputarchivo').css('border-color','');
+            }, 2000);
         }
-        else {
-
-        }
-
     });
-
 </script>
 {/literal}

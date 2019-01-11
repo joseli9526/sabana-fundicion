@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-01-09 23:20:10
+/* Smarty version 3.1.30, created on 2019-01-11 12:06:00
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\inicio.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c36d60abfc828_16791094',
+  'unifunc' => 'content_5c38db0805fcf5_60071429',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\inicio.html',
-      1 => 1547097607,
+      1 => 1547229951,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie.html' => 1,
   ),
 ),false)) {
-function content_5c36d60abfc828_16791094 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c38db0805fcf5_60071429 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -457,12 +457,13 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
                     <div class="col-md-12">
                         <label class="form-check-label">Nombre:</label>
                         <input type="text" id="nombreFamiliaAdd" required class="form-control"  placeholder="Nombre">
+                        <span id="erroragregarfamilia" style="color: red; display: none">Familia ya registrada</span>
                     </div>
                 </div>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" onclick="agregarFamilia()" data-dismiss="modal">Agregar</button>
+                <button type="button" class="btn btn-success" onclick="agregarFamilia()">Agregar</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
@@ -485,13 +486,14 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
                         <div class="form-row col-md-12 mt-2">
                             <div class="col-md-12">
                                 <label class="form-check-label">Nombre:</label>
-                                <input type="text" name="inputaddmodeloname" id="nombreModeloAdd" required class="form-control"  placeholder="Nombre">
+                                <input type="text" autocomplete="off" name="inputaddmodeloname" id="nombreModeloAdd" required class="form-control"  placeholder="Nombre">
                             </div>
                         </div>
                         <div class="form-row col-md-12 mt-2">
                             <div class="col-md-12">
-                                <label class="form-check-label">Archivo:</label>
-                                <input type="file"  data-max-size="2000000"  name="archivoaddmodelo" required class="form-control">
+                                <label class="form-check-label">Archivo (5MB):</label>
+                                <input type="file" id="inputarchivo" data-max-size="5000000"  name="archivoaddmodelo" class="form-control">
+                                <span id="mensajearchivo" style="display: none; color: red">El archivo supera el tamaño máximo.</span>
                             </div>
                         </div>
                 </div>
@@ -2976,7 +2978,20 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
           url: '../peticiones/familia/insert.php',
           method: 'post',
           data: {familia:nombre},
-          success: function () {
+          success: function (data) {
+              if (data === 'error') {
+                $('#nombreFamiliaAdd').css('border-color','red');
+                $('#erroragregarfamilia').fadeIn('slow');
+
+                setTimeout(function () {
+                    $('#nombreFamiliaAdd').css('border-color','');
+                    $('#erroragregarfamilia').fadeOut('slow');
+
+                },2000);
+              } else {
+                  $('#nombreFamiliaAdd').val('');
+                  $('#modaladdfamilia').modal('hide');
+              }
               obtenerFamiliasAdd();
           }
        });
@@ -2991,6 +3006,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     $('#formModelos').on('submit',function (e) {
         e.preventDefault();
         var formData = new FormData(this);
+        let id_familia = $("#selectfamiliasadd").val();
+        formData.append('id_familia',id_familia);
 
         var isOk = true;
         $('input[type=file][data-max-size]').each(function(){
@@ -2998,27 +3015,29 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 var maxSize = parseInt($(this).attr('data-max-size'),10),
                     size = this.files[0].size;
                 isOk = maxSize > size;
-                console.log(maxSize,size);
             }
         });
 
-        if (isOk)
-            alert('correcto');
-        else
-            alert('supero');
+        if (isOk){
+            $.ajax({
+                url: '../peticiones/modelos/insert.php',
+                method: 'post',
+                processData: false,
+                contentType: false,
+                data: formData,
+                success: function () {
 
-       /* $.ajax({
-            url: '../peticiones/modelos/insert.php',
-            method: 'post',
-            processData: false,
-            contentType: false,
-            data: formData,
-            success: function () {
-
-            }
-        });*/
+                }
+            });
+        } else {
+            $('#inputarchivo').css('border-color','red');
+            $('#mensajearchivo').fadeIn('slow');
+            setTimeout(function () {
+                $('#mensajearchivo').fadeOut('slow');
+                $('#inputarchivo').css('border-color','');
+            }, 2000);
+        }
     });
-
 <?php echo '</script'; ?>
 >
 <?php }

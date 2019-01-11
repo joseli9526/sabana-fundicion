@@ -26,9 +26,9 @@ class Crud_Modelos extends Sabana {
         $sql = "INSERT INTO hoja_inspeccion (id, hoja_inspeccion) VALUES (null,'$file')";
         $this->ejecutar($sql);
 
-        $sql = "SELECT MAX(id) FROM hoja_inspeccion";
+        $sql = "SELECT MAX(id) as id FROM hoja_inspeccion";
         $ultimo_id = $this->fetchAll($sql);
-        $ultimo_id = $ultimo_id['id'];
+        $ultimo_id = $ultimo_id[0]['id'];
 
         $sql = "INSERT INTO modelos (id,modelo,id_familia,id_hoja_inspeccion) VALUES (null,'$modelo',$id_familia,$ultimo_id)";
         $this->ejecutar($sql);

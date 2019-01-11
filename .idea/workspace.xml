@@ -2,27 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc6981f8-625e-47ed-a0ba-16cef83f0185" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/peticiones/ShowUsers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/peticiones/familia/insert.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/peticiones/modelos/insert.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/peticiones/usuarios/DeleteUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/peticiones/usuarios/ResetPassword.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/familias/crud_familia.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/familias/crud_familia.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/modelos/crud_modelos.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/modelos/crud_modelos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peticiones/InsertData.php" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones/InsertData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peticiones/ReadOnlyData.php" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones/ReadOnlyData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peticiones/familia/select.php" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones/familia/select.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peticiones/sabana/UpdateMetalurgico.php" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones/sabana/UpdateMetalurgico.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peticiones/sabana/UpdateQuimico.php" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones/sabana/UpdateQuimico.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/peticiones/sabana/UpdateTemperaturaInoculante.php" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones/sabana/UpdateTemperaturaInoculante.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cabecera.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cabecera.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/peticiones/familia/insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones/familia/insert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/peticiones/modelos/insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/peticiones/modelos/insert.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inicio.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates_c/0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e_0.file.inicio.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e_0.file.inicio.html.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/2a939f4537161b3d352a4d29c7fe1bca8ab2695c_0.file.cabecera.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/2a939f4537161b3d352a4d29c7fe1bca8ab2695c_0.file.cabecera.html.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +47,13 @@
         <item name="sabanafundicion@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="sabanafundicion: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="hoja_inspeccion: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="sabanafundicion@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sabanafundicion: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="modelos: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
@@ -72,8 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/inicio.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="2953" selection-start-line="2953" selection-end-line="2953" />
+            <state relative-caret-position="355">
+              <caret line="2923" column="19" selection-start-line="2923" selection-start-column="19" selection-end-line="2923" selection-end-column="19" />
               <folding>
                 <element signature="n#style#0;n#!!top" />
                 <element signature="n#div#0;n#!!top" />
@@ -82,7 +74,9 @@
                 <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#div#2;n#!!top" />
                 <element signature="n#div#3;n#!!top" />
-                <element signature="n#div#4;n#!!top" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#div#5;n#!!top" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#5;n#!!top" expanded="true" />
                 <element signature="n#div#6;n#!!top" />
                 <element signature="n#div#7;n#!!top" />
                 <element signature="n#div#8;n#!!top" />
@@ -90,12 +84,86 @@
                 <element signature="n#div#10;n#!!top" />
                 <element signature="n#div#11;n#!!top" />
                 <element signature="n#div#12;n#!!top" />
-                <element signature="e#65707#67655#1" />
+                <element signature="e#65899#67847#1" />
                 <element signature="n#div#13;n#!!top" />
                 <element signature="n#div#14;n#!!top" />
                 <element signature="n#div#15;n#!!top" />
                 <element signature="n#div#16;n#!!top" />
+                <element signature="e#78526#81812#0" />
+                <element signature="e#81857#82014#0" />
+                <element signature="e#82278#82303#0" />
+                <element signature="e#82365#85887#0" />
+                <element signature="e#85941#86210#0" />
+                <element signature="e#86265#86548#0" />
+                <element signature="e#86603#86886#0" />
+                <element signature="e#86943#87234#0" />
+                <element signature="e#87283#87542#0" />
+                <element signature="e#87599#87884#0" />
+                <element signature="e#87943#88234#0" />
+                <element signature="e#88293#88584#0" />
+                <element signature="e#88645#88944#0" />
+                <element signature="e#88997#89264#0" />
+                <element signature="e#89307#89557#0" />
+                <element signature="e#89591#90322#0" />
+                <element signature="e#90350#95756#0" />
+                <element signature="e#95788#98696#0" />
+                <element signature="e#98743#99991#0" />
+                <element signature="e#100034#100913#0" />
+                <element signature="e#100960#101367#0" />
+                <element signature="e#101403#107876#0" />
+                <element signature="e#107911#108144#0" />
+                <element signature="e#108176#110747#0" />
+                <element signature="e#110779#110980#0" />
+                <element signature="e#111011#111107#0" />
+                <element signature="e#111149#111654#0" />
+                <element signature="e#111686#112266#0" />
+                <element signature="e#112305#112913#0" />
+                <element signature="e#112956#113580#0" />
+                <element signature="e#113610#114201#0" />
+                <element signature="e#114238#114850#0" />
+                <element signature="e#114891#115515#0" />
+                <element signature="e#115558#115946#0" />
+                <element signature="e#115981#116222#0" />
+                <element signature="e#116261#116519#0" />
+                <element signature="e#116525#116839#0" />
+                <element signature="e#116858#117489#0" />
+                <element signature="e#117743#118098#0" />
+                <element signature="e#118149#118563#0" />
+                <element signature="e#118618#118974#0" />
+                <element signature="e#119023#119367#0" />
+                <element signature="e#119476#120680#0" />
+                <element signature="e#120729#121953#0" />
+                <element signature="e#122006#123234#0" />
+                <element signature="e#123375#123581#0" />
+                <element signature="e#123611#124999#0" />
+                <element signature="e#125035#125707#0" />
+                <element signature="e#125772#126295#0" />
+                <element signature="e#126327#126383#0" />
+                <element signature="e#126436#126627#0" />
+                <element signature="e#126684#126875#0" />
+                <element signature="e#126923#127107#0" />
+                <element signature="e#127145#127457#0" />
+                <element signature="e#127490#129257#0" />
+                <element signature="e#129294#129372#0" />
+                <element signature="e#129410#129461#0" />
+                <element signature="e#129500#129581#0" />
+                <element signature="e#129630#129960#0" />
+                <element signature="e#129995#130069#0" />
+                <element signature="e#130112#131253#0" />
+                <element signature="e#131296#131376#0" />
+                <element signature="e#131412#131947#0" />
+                <element signature="e#131986#132582#0" />
+                <element signature="e#133288#134414#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/peticiones/familia/insert.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -103,8 +171,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/peticiones/modelos/insert.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+            <state relative-caret-position="174">
+              <caret line="12" column="44" lean-forward="true" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -112,8 +180,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/modelos/crud_modelos.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="33" column="30" selection-end-line="35" selection-end-column="1" />
+            <state relative-caret-position="-66">
+              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -121,8 +189,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a5a6bfab-9d88-43a3-906f-b30327b6fdf4/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3240">
-              <caret line="135" selection-start-line="135" selection-end-line="135" selection-end-column="19" />
+            <state relative-caret-position="134">
+              <caret line="139" column="46" lean-forward="true" selection-start-line="139" selection-start-column="46" selection-end-line="139" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -207,7 +275,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/peticiones/ShowUsers.php" />
         <option value="$PROJECT_DIR$/peticiones/usuarios/DeleteUser.php" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a5a6bfab-9d88-43a3-906f-b30327b6fdf4/console.sql" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/peticiones/usuarios/ResetPassword.php" />
@@ -219,10 +286,11 @@
         <option value="$PROJECT_DIR$/peticiones/ReadOnlyData.php" />
         <option value="$PROJECT_DIR$/templates/cabecera.html" />
         <option value="$PROJECT_DIR$/controllers/familias/crud_familia.php" />
-        <option value="$PROJECT_DIR$/peticiones/familia/insert.php" />
         <option value="$PROJECT_DIR$/peticiones/familia/select.php" />
-        <option value="$PROJECT_DIR$/controllers/modelos/crud_modelos.php" />
         <option value="$PROJECT_DIR$/peticiones/modelos/insert.php" />
+        <option value="$PROJECT_DIR$/controllers/modelos/crud_modelos.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a5a6bfab-9d88-43a3-906f-b30327b6fdf4/console.sql" />
+        <option value="$PROJECT_DIR$/peticiones/familia/insert.php" />
         <option value="$PROJECT_DIR$/templates/inicio.html" />
       </list>
     </option>
@@ -413,6 +481,8 @@
       <workItem from="1547070763004" duration="620000" />
       <workItem from="1547073203980" duration="6640000" />
       <workItem from="1547095959509" duration="2101000" />
+      <workItem from="1547147748132" duration="10602000" />
+      <workItem from="1547227666344" duration="2370000" />
     </task>
     <task id="LOCAL-00001" summary="Cancel Buttons">
       <created>1545927358329</created>
@@ -484,16 +554,24 @@
       <option name="project" value="LOCAL" />
       <updated>1546972679651</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Upload Files">
+      <created>1547147847103</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1547147847103</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="507603000" />
+    <option name="totallyTimeSpent" value="520575000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20953101" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21558245" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -529,7 +607,8 @@
     <MESSAGE value="Add User" />
     <MESSAGE value="Status" />
     <MESSAGE value="Users" />
-    <option name="LAST_COMMIT_MESSAGE" value="Users" />
+    <MESSAGE value="Upload Files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upload Files" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/lib/PHPExcel-1.8/Classes/PHPExcel/Cell/DataType.php" />
@@ -781,38 +860,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/peticiones/familia/insert.php">
+    <entry file="file://$PROJECT_DIR$/peticiones/modelos/insert.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/modelos/crud_modelos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="33" column="30" selection-end-line="35" selection-end-column="1" />
+        <state relative-caret-position="174">
+          <caret line="12" column="44" lean-forward="true" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a5a6bfab-9d88-43a3-906f-b30327b6fdf4/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3240">
-          <caret line="135" selection-start-line="135" selection-end-line="135" selection-end-column="19" />
+        <state relative-caret-position="134">
+          <caret line="139" column="46" lean-forward="true" selection-start-line="139" selection-start-column="46" selection-end-line="139" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/peticiones/modelos/insert.php">
+    <entry file="file://$PROJECT_DIR$/controllers/modelos/crud_modelos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+        <state relative-caret-position="-66">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/peticiones/familia/insert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/inicio.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="2953" selection-start-line="2953" selection-end-line="2953" />
+        <state relative-caret-position="355">
+          <caret line="2923" column="19" selection-start-line="2923" selection-start-column="19" selection-end-line="2923" selection-end-column="19" />
           <folding>
             <element signature="n#style#0;n#!!top" />
             <element signature="n#div#0;n#!!top" />
@@ -821,7 +900,9 @@
             <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#div#2;n#!!top" />
             <element signature="n#div#3;n#!!top" />
-            <element signature="n#div#4;n#!!top" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#div#5;n#!!top" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#5;n#!!top" expanded="true" />
             <element signature="n#div#6;n#!!top" />
             <element signature="n#div#7;n#!!top" />
             <element signature="n#div#8;n#!!top" />
@@ -829,11 +910,76 @@
             <element signature="n#div#10;n#!!top" />
             <element signature="n#div#11;n#!!top" />
             <element signature="n#div#12;n#!!top" />
-            <element signature="e#65707#67655#1" />
+            <element signature="e#65899#67847#1" />
             <element signature="n#div#13;n#!!top" />
             <element signature="n#div#14;n#!!top" />
             <element signature="n#div#15;n#!!top" />
             <element signature="n#div#16;n#!!top" />
+            <element signature="e#78526#81812#0" />
+            <element signature="e#81857#82014#0" />
+            <element signature="e#82278#82303#0" />
+            <element signature="e#82365#85887#0" />
+            <element signature="e#85941#86210#0" />
+            <element signature="e#86265#86548#0" />
+            <element signature="e#86603#86886#0" />
+            <element signature="e#86943#87234#0" />
+            <element signature="e#87283#87542#0" />
+            <element signature="e#87599#87884#0" />
+            <element signature="e#87943#88234#0" />
+            <element signature="e#88293#88584#0" />
+            <element signature="e#88645#88944#0" />
+            <element signature="e#88997#89264#0" />
+            <element signature="e#89307#89557#0" />
+            <element signature="e#89591#90322#0" />
+            <element signature="e#90350#95756#0" />
+            <element signature="e#95788#98696#0" />
+            <element signature="e#98743#99991#0" />
+            <element signature="e#100034#100913#0" />
+            <element signature="e#100960#101367#0" />
+            <element signature="e#101403#107876#0" />
+            <element signature="e#107911#108144#0" />
+            <element signature="e#108176#110747#0" />
+            <element signature="e#110779#110980#0" />
+            <element signature="e#111011#111107#0" />
+            <element signature="e#111149#111654#0" />
+            <element signature="e#111686#112266#0" />
+            <element signature="e#112305#112913#0" />
+            <element signature="e#112956#113580#0" />
+            <element signature="e#113610#114201#0" />
+            <element signature="e#114238#114850#0" />
+            <element signature="e#114891#115515#0" />
+            <element signature="e#115558#115946#0" />
+            <element signature="e#115981#116222#0" />
+            <element signature="e#116261#116519#0" />
+            <element signature="e#116525#116839#0" />
+            <element signature="e#116858#117489#0" />
+            <element signature="e#117743#118098#0" />
+            <element signature="e#118149#118563#0" />
+            <element signature="e#118618#118974#0" />
+            <element signature="e#119023#119367#0" />
+            <element signature="e#119476#120680#0" />
+            <element signature="e#120729#121953#0" />
+            <element signature="e#122006#123234#0" />
+            <element signature="e#123375#123581#0" />
+            <element signature="e#123611#124999#0" />
+            <element signature="e#125035#125707#0" />
+            <element signature="e#125772#126295#0" />
+            <element signature="e#126327#126383#0" />
+            <element signature="e#126436#126627#0" />
+            <element signature="e#126684#126875#0" />
+            <element signature="e#126923#127107#0" />
+            <element signature="e#127145#127457#0" />
+            <element signature="e#127490#129257#0" />
+            <element signature="e#129294#129372#0" />
+            <element signature="e#129410#129461#0" />
+            <element signature="e#129500#129581#0" />
+            <element signature="e#129630#129960#0" />
+            <element signature="e#129995#130069#0" />
+            <element signature="e#130112#131253#0" />
+            <element signature="e#131296#131376#0" />
+            <element signature="e#131412#131947#0" />
+            <element signature="e#131986#132582#0" />
+            <element signature="e#133288#134414#0" />
           </folding>
         </state>
       </provider>
