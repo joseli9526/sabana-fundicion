@@ -29,8 +29,8 @@ class LoginController extends Sabana {
                 $templates->assign('familias',$familias);
                 $templates->assign('modelos',$modelos);
                 $templates->assign('rol', $_SESSION['rol']);
-                $templates->assign('username', $_SESSION['username']);
-                $templates->assign('apellido',$_SESSION['apellido']);
+                $templates->assign('username', ucfirst($_SESSION['username']));
+                $templates->assign('apellido', ucfirst($_SESSION['apellido']));
                 $templates->display('inicio.html');
             //}
         } else {

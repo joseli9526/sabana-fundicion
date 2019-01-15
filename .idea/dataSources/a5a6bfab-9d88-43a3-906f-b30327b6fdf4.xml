@@ -1055,18 +1055,21 @@
       <RefSchemaName>sabanafundicion</RefSchemaName>
       <RefTableName>familia</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <foreign-key id="265" parent="245" name="modelos___fk2">
       <ColNames>id_hoja_inspeccion</ColNames>
       <RefSchemaName>sabanafundicion</RefSchemaName>
       <RefTableName>hoja_inspeccion</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <foreign-key id="266" parent="245" name="modelos___fk3">
       <ColNames>id_tipo_grafito</ColNames>
       <RefSchemaName>sabanafundicion</RefSchemaName>
       <RefTableName>tipo_grafito</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <column id="267" parent="246" name="id">
       <Position>1</Position>

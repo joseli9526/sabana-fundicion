@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-01-11 12:06:00
+/* Smarty version 3.1.30, created on 2019-01-14 23:04:17
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\inicio.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c38db0805fcf5_60071429',
+  'unifunc' => 'content_5c3d69d1647b82_73628245',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\inicio.html',
-      1 => 1547229951,
+      1 => 1547528442,
       2 => 'file',
     ),
   ),
@@ -22,12 +22,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie.html' => 1,
   ),
 ),false)) {
-function content_5c38db0805fcf5_60071429 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c3d69d1647b82_73628245 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 
 <style>
+    .element {
+        display: inline-flex;
+        align-items: center;
+    }
+    .fa-camera {
+        margin: 10px;
+        cursor: pointer;
+        font-size: 30px;
+    }
+    i:hover {
+        opacity: 0.6;
+    }
+
+
     th, td {
         white-space: nowrap;
     }
@@ -487,6 +501,7 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
                             <div class="col-md-12">
                                 <label class="form-check-label">Nombre:</label>
                                 <input type="text" autocomplete="off" name="inputaddmodeloname" id="nombreModeloAdd" required class="form-control"  placeholder="Nombre">
+                                <span style="color: red; display: none" id="mensajeaddmodelo">Modelo ya registrado</span>
                             </div>
                         </div>
                         <div class="form-row col-md-12 mt-2">
@@ -502,6 +517,83 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 </div>
             </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal edit modelo -->
+<div class="modal" id="modaleditmodelo" tabindex="-1" role="dialog" style="z-index: 10000">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="formeditarmodelo" enctype="multipart/form-data" >
+                <div class="modal-body">
+                    <div class="form-row col-md-12 mt-2">
+                        <div class="col-md-12">
+                            <label class="form-check-label">Familia:</label>
+                            <select class="form-control" id="selectfamiliaeditmodelo">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row col-md-12 mt-2">
+                        <div class="col-md-12">
+                            <label class="form-check-label">Modelo:</label>
+                            <select class="form-control" id="selectmodeloeditmodelo">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row col-md-12 mt-2">
+                        <div class="col-md-12">
+                            <label class="form-check-label">Archivo (5MB):</label>
+                            <input type="file" id="inputarchivoeditarmodelo" data-max-size="5000000"  name="archivoeditmodelo" class="form-control">
+                            <span id="mensajearchivoeditarmodelo" style="display: none; color: red">El archivo supera el tamaño máximo.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Agregar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal show modelos -->
+<div class="modal" id="modalshowmodelos" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modelos registrados</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+                <div class="modal-body">
+                    <table class="table table-bordered" id="tablamodelos" style="text-align: center">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Familia</th>
+                                <th>Modelo</th>
+                                <th>Hoja inspección</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
         </div>
     </div>
 </div>
@@ -1572,13 +1664,17 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 >
     var t = null;
     var t2 = null;
+    var t3 = null;
     var id_eliminar = 0;
     var id_reset = 0;
     var opcionInsertar = 1;
     var opcionEditar = 1;
     var ultimo_id_insert = 0;
+
     $(document).ready(function () {
         crearTabla();
+
+        //$('input[type=file]').trigger('click');
     });
 
     function crearTabla() {
@@ -2572,28 +2668,28 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     $('#checkMetalurgico').on('change',function () {
         t.columns.adjust().draw();
         if ($('#checkMetalurgico').prop('checked')){ //activar columnas de metalurgico
-            t.columns( [7,8,9,10,11,12,13,14,15,16,17,18,19] ).visible( true );
+            t.columns( [7,8,9,10,11,12,13,14,15,16,17,18,19,20] ).visible( true );
         } else { // desactivar columnas de metalurgico
-            t.columns( [7,8,9,10,11,12,13,14,15,16,17,18,19] ).visible( false );
+            t.columns( [7,8,9,10,11,12,13,14,15,16,17,18,19,20] ).visible( false );
         }
     });
 
     $('#checkQuimico').on('change',function () {
         if ($('#checkQuimico').prop('checked')){ //activar columnas de quimico
-            t.columns( [20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,25] ).visible( true );
+            t.columns( [21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36] ).visible( true );
             t.columns.adjust().draw();
         } else { // desactivar columnas de metalurgico
-            t.columns( [20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35] ).visible( false );
+            t.columns( [21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36] ).visible( false );
             t.columns.adjust().draw();
         }
     });
 
     $('#checkTemperatura').on('change',function () {
         if ($('#checkTemperatura').prop('checked')){ //activar columnas de metalurgico
-            t.columns( [36,37,38,39,40] ).visible( true );
+            t.columns( [37,38,39,40,41] ).visible( true );
             t.columns.adjust().draw();
         } else { // desactivar columnas de metalurgico
-            t.columns( [36,37,38,39,40] ).visible( false );
+            t.columns( [37,38,39,40,41] ).visible( false );
             t.columns.adjust().draw();
         }
     });
@@ -2822,6 +2918,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
     function crearTablaUsers() {
        t2 = $('#tablausuarios').DataTable({
+           "processing": true,
+           "serverSide": true,
             ajax:{
                 url :"../peticiones/ShowUsers.php", // json datasource
                 type: "post",  // method  , by default get
@@ -2889,6 +2987,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 // t2.draw();
                 crearTablaUsers();
                 $('#modalEliminarUsuario').modal('hide');
+                t2.draw();
             }
         });
     });
@@ -2982,12 +3081,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
               if (data === 'error') {
                 $('#nombreFamiliaAdd').css('border-color','red');
                 $('#erroragregarfamilia').fadeIn('slow');
-
                 setTimeout(function () {
                     $('#nombreFamiliaAdd').css('border-color','');
                     $('#erroragregarfamilia').fadeOut('slow');
-
-                },2000);
+                }, 2000);
               } else {
                   $('#nombreFamiliaAdd').val('');
                   $('#modaladdfamilia').modal('hide');
@@ -2999,8 +3096,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
     $('#btnAbrirAddModelo').click(function () {
        let familia = $('#selectfamiliasadd option:selected').text();
-       $('#modaladdmodelo').modal('show');
-       $('#textomodelo').html('Agregar modelo para la familia: ' + familia);
+       if (familia !== 'Seleccionar') {
+           $('#modaladdmodelo').modal('show');
+           $('#textomodelo').html('Agregar modelo para la familia: ' + familia);
+       }
     });
 
     $('#formModelos').on('submit',function (e) {
@@ -3025,8 +3124,19 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 processData: false,
                 contentType: false,
                 data: formData,
-                success: function () {
-
+                success: function (response) {
+                    if (response === 'error'){
+                        $('#nombreModeloAdd').css('border-color','red');
+                        $('#mensajeaddmodelo').fadeIn('slow');
+                        setTimeout(function () {
+                            $('#nombreModeloAdd').css('border-color','');
+                            $('#mensajeaddmodelo').fadeOut('slow');
+                        },2000)
+                    } else {
+                        $('#nombreModeloAdd').val('');
+                        $('#modaladdmodelo').modal('hide');
+                        $('#selectfamiliasadd').trigger('change');
+                    }
                 }
             });
         } else {
@@ -3038,6 +3148,141 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
             }, 2000);
         }
     });
+
+    function crearTablaModelos() {
+        t3 = $('#tablamodelos').DataTable({
+            "processing": true,
+            "serverSide": true,
+            destroy: true,
+            "pageLength": 5,
+            dom: "frtip",
+            "language": {
+                "sProcessing": "Procesando...",
+                "sLengthMenu": "Mostrar _MENU_ registros",
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                }
+            },
+            "ajax":{
+                url :"../peticiones/modelos/selectTabla.php", // json datasource
+                type: "post",  // method  , by default get
+                error: function(){  // error handling
+
+                }
+            }
+        });
+    }
+
+    function abrirModalShowModelos() {
+        crearTablaModelos();
+        $('#modalshowmodelos').modal('show');
+    }
+
+    function eliminarModelo(id) {
+        $.ajax({
+            url: '../peticiones/modelos/delete.php',
+            method: 'post',
+            data: {id:id},
+            success: function () {
+             t3.draw();
+            }
+        })
+    }
+
+    function eliminarArchivo(id) {
+        $.ajax({
+           url: '../peticiones/hojas_inspeccion/delete.php',
+           method: 'post',
+           data: {id:id},
+           success: function () {
+               t3.draw();
+           }
+        });
+    }
+    
+    function subirArchivo(e,id) {
+        let arreglo_ruta = $(e).val().split("\\");
+        let val = $(e).val();
+        let formulario = $(e).parent();
+        $(e).siblings('span').text(arreglo_ruta[2]);
+        var form = new FormData();
+        let file = $(e).prop('files');
+
+        form.append('id',id);
+        form.append('file',file[0]);
+
+        $.ajax({
+           url: '../peticiones/hojas_inspeccion/insert.php',
+           method: 'post',
+           processData: false,
+           contentType: false,
+           data: form,
+           success: function () {
+               
+           }
+        });
+    }
+
+    function subir(e) {
+        let id = $(e).attr('id');
+        let arreglo_id = id.split('_');
+        $("#inputsubirarchivo_"+arreglo_id[1]).trigger('click');
+    }
+
+    function abrirModalEditarModelo(e) {
+        $('#modaleditmodelo').modal('show');
+        let row = $(e).parent().parent();
+        let datos = row[0]['cells'];
+        let familia_actual = datos[1].innerHTML;
+        let modelo_actual = datos[2].innerHTML;
+        $.ajax({
+            url: '../peticiones/familia/select.php',
+            method: 'get',
+            dataType: 'json',
+            success: function (response) {
+                $('#selectfamiliaeditmodelo').empty();
+                $.each(response,function (key,value) {
+                    if (value.familia === familia_actual)
+                        $('#selectfamiliaeditmodelo').append('<option value="'+value.id+'" selected>'+value.familia+'</option>');
+                    else
+                        $('#selectfamiliaeditmodelo').append('<option value="'+value.id+'">'+value.familia+'</option>');
+                })
+            }
+        });
+
+        /*$.ajax({
+            url: '../peticiones/modelos/select.php',
+            method: 'get',
+            dataType: 'json',
+            success: function (response) {
+                $('#selectfamiliaeditmodelo').empty();
+                $.each(response,function (key,value) {
+                    if (value.familia === familia_actual)
+                        $('#selectfamiliaeditmodelo').append('<option selected>'+value.familia+'</option>');
+                    else
+                        $('#selectfamiliaeditmodelo').append('<option>'+value.familia+'</option>');
+                })
+            }
+        })*/
+    }
+
 <?php echo '</script'; ?>
 >
 <?php }

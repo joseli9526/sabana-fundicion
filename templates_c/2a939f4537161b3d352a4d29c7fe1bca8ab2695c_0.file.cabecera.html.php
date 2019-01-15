@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-01-09 15:58:15
+/* Smarty version 3.1.30, created on 2019-01-11 13:31:27
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\cabecera.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c366e772d95f8_16039426',
+  'unifunc' => 'content_5c38ef0f4153e9_17057945',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2a939f4537161b3d352a4d29c7fe1bca8ab2695c' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\cabecera.html',
-      1 => 1547071074,
+      1 => 1547235085,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c366e772d95f8_16039426 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c38ef0f4153e9_17057945 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -151,6 +151,7 @@ function content_5c366e772d95f8_16039426 (Smarty_Internal_Template $_smarty_tpl)
                             <div class="arrow_box">
                                 <!--<a class="dropdown-item" href="#" id="btnPdf"><i class="la la-file-pdf-o"></i> PDF</a>-->
                                 <a class="dropdown-item" onclick="abrirModalAddModelo()" id="btnAddModelos"><i class="fas fa-plus"></i>Agregar modelo</a>
+                                <a class="dropdown-item" onclick="abrirModalShowModelos()" id="btnMostrarModelos"><i class="fas fa-eye"></i>Modelos registrados</a>
                             </div>
                         </div>
                     </li>

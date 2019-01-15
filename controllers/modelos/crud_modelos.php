@@ -33,4 +33,9 @@ class Crud_Modelos extends Sabana {
         $sql = "INSERT INTO modelos (id,modelo,id_familia,id_hoja_inspeccion) VALUES (null,'$modelo',$id_familia,$ultimo_id)";
         $this->ejecutar($sql);
     }
+
+    function deleteData($id) {
+        $sql = "DELETE FROM modelos WHERE id = " . $id;
+        $this->ejecutar($sql);
+    }
 }
