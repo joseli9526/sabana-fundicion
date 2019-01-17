@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-01-14 23:04:17
+/* Smarty version 3.1.30, created on 2019-01-17 11:26:05
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\inicio.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c3d69d1647b82_73628245',
+  'unifunc' => 'content_5c40baad291f04_15741503',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a054d80c41d2e2ce9bcbfebeaf8b6566e43226e' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\inicio.html',
-      1 => 1547528442,
+      1 => 1547745963,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie.html' => 1,
   ),
 ),false)) {
-function content_5c3d69d1647b82_73628245 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c40baad291f04_15741503 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -450,7 +450,7 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-secondary"  onclick="cerrarModalAddModelos()">Cerrar</button>
             </div>
         </div>
     </div>
@@ -522,7 +522,7 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
 </div>
 
 <!-- Modal edit modelo -->
-<div class="modal" id="modaleditmodelo" tabindex="-1" role="dialog" style="z-index: 10000">
+<div class="modal" id="modaleditmodelo" tabindex="-1" role="dialog" style="z-index: 10000;">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -544,9 +544,7 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
                     <div class="form-row col-md-12 mt-2">
                         <div class="col-md-12">
                             <label class="form-check-label">Modelo:</label>
-                            <select class="form-control" id="selectmodeloeditmodelo">
-
-                            </select>
+                            <input class="form-control" id="selectmodeloeditmodelo" />
                         </div>
                     </div>
                     <div class="form-row col-md-12 mt-2">
@@ -558,7 +556,7 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Agregar</button>
+                    <button type="button" class="btn btn-success" onclick="editarModelo()">Guardar</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 </div>
             </form>
@@ -580,10 +578,10 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
                     <table class="table table-bordered" id="tablamodelos" style="text-align: center">
                         <thead>
                             <tr>
-                                <th></th>
                                 <th>Familia</th>
                                 <th>Modelo</th>
                                 <th>Hoja inspección</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -776,8 +774,17 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     <label>Esteadita</label>
                                     <input id="inputEsteadita" name="inputEsteadita" type="text" placeholder="Esteadita" class="form-control onlynum" autocomplete="off" disabled>
                                 </div>
-                                <div class="col-md-3">
-
+                                <div class="col-md-3" id="divLocalizacionEdit" style="display: none">
+                                    <label>Localización</label>
+                                    <select class="form-control" disabled id="selectLocalizacionEdit" name="selectLocalizacionEdit">
+                                        <option>Apoyo 1</option>
+                                        <option>Leva 1</option>
+                                        <option>Leva 8</option>
+                                        <option>Nariz</option>
+                                        <option>Leva 9</option>
+                                    </select>
+                                    <!--<button id="btnGuardarMetalurgico" class="btn btn-success" style="margin-top: 20px" type="submit">Guardar</button>-->
+                                    <!--<button class="btn btn-primary nextBtn" type="button" >Siguiente</button>-->
                                 </div>
                                 <div class="col-md-3">
                                     <label style="visibility: hidden">s</label>
@@ -1102,7 +1109,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                         </select>
                                     </div>
                                 </div>
-
                                 <div class="form-row mt-2 col-md-12">
                                     <div class="col-md-3">
                                         <label class="form-check-label">Grafito Min</label>
@@ -1118,8 +1124,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     </div>
                                     <input type="hidden" id="ocultometal" value="metalurgico" name="opcion">
                                     <input type="hidden" name="hoja" id="hoja">
-                                    <div class="col-md-3">
-                                        <label class="form-check-label" style="visibility: hidden">Esteadita</label>
+                                    <div class="col-md-3" id="divLocalizacion" style="display: none">
+                                        <label class="form-check-label">Localización</label>
+                                        <select class="form-control" id="selectLocalizacion" name="selectLocalizacion">
+                                            <option>Apoyo 1</option>
+                                            <option>Leva 1</option>
+                                            <option>Leva 8</option>
+                                            <option>Nariz</option>
+                                            <option>Leva 9</option>
+                                        </select>
                                         <!--<button id="btnGuardarMetalurgico" class="btn btn-success" style="margin-top: 20px" type="submit">Guardar</button>-->
                                         <!--<button class="btn btn-primary nextBtn" type="button" >Siguiente</button>-->
                                     </div>
@@ -1278,9 +1291,18 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 </div>
                 <div class="form-row col-md-12 mt-2">
                     <div class="col-md-6">
+                        <label>Correo:</label>
+                    <div class="input-group" style="margin-top: -7px">
+                        <input type="text" id="correousuarioadd"  class="form-control" placeholder="Correo">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">@arbomex.com.mx</span>
+                        </div>
+                    </div>
+                    </div>
+                    <!--<div class="col-md-6">
                         <label class="form-check-label">Correo:</label>
                         <input type="email" id="correousuarioadd" required class="form-control" placeholder="Correo">
-                    </div>
+                    </div>-->
                     <div class="col-md-6">
                         <label class="form-check-label">Usuario:</label>
                         <input type="text" id="userusuarioadd" required class="form-control"  placeholder="Usuario">
@@ -1316,6 +1338,72 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     </div>
 </div>
 
+<!-- Modal edit user -->
+<div class="modal" id="modaladituser" style="z-index: 10000" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar usuario</h5>
+                <button type="button" class="close" onclick="cerrarModalAddUser()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row col-md-12 mt-2">
+                    <div class="col-md-6">
+                        <label class="form-check-label">Nombre:</label>
+                        <input type="text" id="nombreusuarioedit" required class="form-control"  placeholder="Nombre">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-check-label">Apellido:</label>
+                        <input type="text" id="apellidousuarioedit" required class="form-control"  placeholder="Apellido">
+                    </div>
+                </div>
+                <div class="form-row col-md-12 mt-2">
+                    <div class="col-md-6">
+                        <label>Correo:</label>
+                        <div class="input-group" style="margin-top: -7px">
+                            <input type="text" id="correousuarioedit"  class="form-control" placeholder="Correo">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon22">@arbomex.com.mx</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="col-md-6">
+                        <label class="form-check-label">Correo:</label>
+                        <input type="email" id="correousuarioadd" required class="form-control" placeholder="Correo">
+                    </div>-->
+                    <div class="col-md-6">
+                        <label class="form-check-label">Usuario:</label>
+                        <input type="text" id="userusuarioedit" required class="form-control"  placeholder="Usuario">
+                    </div>
+                </div>
+                <div class="form-row col-md-12 mt-2">
+                    <div class="col-md-6">
+                        <label class="form-check-label">Rol:</label>
+                        <select class="form-control" id="selectrolusuarioedit">
+                            <option selected disabled value="">Seleccionar rol</option>
+                            <?php if ($_smarty_tpl->tpl_vars['rol']->value != 'Supervisor') {?>
+                            <option value="1">Administrador</option>}
+                            <?php }?>
+                            <option value="2">Supervisor</option>
+                            <option value="3">Usuario</option>
+                        </select>
+                    </div>
+                </div>
+                <br><br>
+                <div class="alert alert-success" style="text-align: center; font-size: 15px; display: none" role="alert" id="alertausuarioedit">
+                    Usuario creado correctamente!
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" onclick="actualizarUsuario()">Actualizar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Modal show users -->
 <div class="modal" id="modalshowusers" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-lg" role="document">
@@ -1333,6 +1421,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                             <td>Nombre</td>
                             <td>Usuario</td>
                             <td>Correo</td>
+                            <td></td>
                             <td></td>
                             <td></td>
                         </tr>
@@ -1503,6 +1592,50 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     </div>
 </div>
 
+<!-- Modal eliminar modelo -->
+<div id="modalEliminarModelo" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="icon-box" style="margin-left: 35px">
+                    <i class="material-icons">&#xE5CD;</i>
+                </div>
+                <h4 class="modal-title" style="margin-top: 4px">¿Eliminar modelo?</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer" style="margin-right: 35px">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+                <button id="btnEliminarModelo" type="button" class="btn btn-danger">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal eliminar familia -->
+<div id="modalEliminarFamilia" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="icon-box" style="margin-left: 35px">
+                    <i class="material-icons">&#xE5CD;</i>
+                </div>
+                <h4 class="modal-title" style="margin-top: 4px">¿Eliminar familia?</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer" style="margin-right: 35px">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+                <button id="btnEliminarFamilia" type="button" class="btn btn-danger">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!---- Modal filter--->
 <div class="modal" id="modalfilter" tabindex="-1" role="dialog">
     <div class="modal-dialog" style="width: 300px" role="document">
@@ -1583,7 +1716,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     <th></th>
                                     <th></th>
                                     <th></th>
-                                    <th colspan="13" style="color: black; background: orangered">Reporte metalurgico de ollas coladas</th>
+                                    <th colspan="14" style="color: black; background: orangered">Reporte metalurgico de ollas coladas</th>
                                     <th colspan="13" style="color: black; background: green">Análisis quimico</th>
                                     <th colspan="3" style="color: black; background: green">Determ. C & S</th>
                                     <th colspan="2" style="color: black; background: yellow">Temperatura</th>
@@ -1611,6 +1744,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                     <th>Grafito tamaño min</th>
                                     <th>Grafito tamaño max</th>
                                     <th>Esteadita</th>
+                                    <th>Localización</th>
                                     <th>Usuario</th>
                                     <th>% Si</th>
                                     <th>% Mn</th>
@@ -1666,15 +1800,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     var t2 = null;
     var t3 = null;
     var id_eliminar = 0;
+    var id_actualizar_usuario = 0;
     var id_reset = 0;
+    var id_eliminar_modelo = 0;
+    var familia_eliminar = ''
     var opcionInsertar = 1;
     var opcionEditar = 1;
     var ultimo_id_insert = 0;
 
     $(document).ready(function () {
         crearTabla();
-
-        //$('input[type=file]').trigger('click');
     });
 
     function crearTabla() {
@@ -1683,6 +1818,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
          t =  $('#tableData').DataTable({
              serverSide: true,
+             
              ajax:{
                  url :"../peticiones/ReadOnlyData.php", // json datasource
                  type: "post",  // method  , by default get
@@ -1708,12 +1844,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                      },
                  },
                  {
-                     targets:46,
+                     targets:47,
                      render: function ( data, type, row, meta ) {
                          if(type === 'display'){
                              //data = '<a href="basic.php?game=' + encodeURIComponent(data) + '">' + data + '</a>';
                              //if (rol !== 'usuario')
-                                 data = '<a href="#" onclick="abrirPDF(\'' + row[46] + '\');" >'+data+'</a>';
+                                 data = '<a href="#" onclick="abrirPDF(\'' + row[47] + '\');" >'+data+'</a>';
                          }
                          return data;
                      },
@@ -1820,6 +1956,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         $('#inputGrafitoMax').val(dataArr[18]);
         $('#inputEsteadita').val(dataArr[19]);
 
+        console.log(dataArr[6]);
+        if (dataArr[6] === 'Mazda') {
+            $('#divLocalizacionEdit').fadeIn('slow');
+            $("#selectLocalizacionEdit option:contains("+dataArr[20]+")").attr('selected','selected');
+        } else {
+            $('#divLocalizacionEdit').fadeOut('slow');
+        }
+
         if (dataArr[7] === 'N/A')
             $('#checkCavidadEdit').attr('checked',true);
         else
@@ -1847,28 +1991,28 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
         //quimico
         $('#id2').val(dataArr[2]);
-        $('#inputSi').val(dataArr[21]);
-        $('#inputMn').val(dataArr[22]);
-        $('#inputP').val(dataArr[23]);
-        $('#inputMg').val(dataArr[24]);
-        $('#inputCr').val(dataArr[25]);
-        $('#inputNi').val(dataArr[26]);
-        $('#inputMo').val(dataArr[27]);
-        $('#inputCu').val(dataArr[28]);
-        $('#inputAl').val(dataArr[29]);
-        $('#inputTi').val(dataArr[30]);
-        $('#inputV').val(dataArr[31]);
-        $('#inputSn').val(dataArr[32]);
-        $('#inputPb').val(dataArr[33]);
-        $('#inputC').val(dataArr[34]);
-        $('#inputS').val(dataArr[35]);
+        $('#inputSi').val(dataArr[22]);
+        $('#inputMn').val(dataArr[23]);
+        $('#inputP').val(dataArr[24]);
+        $('#inputMg').val(dataArr[25]);
+        $('#inputCr').val(dataArr[26]);
+        $('#inputNi').val(dataArr[27]);
+        $('#inputMo').val(dataArr[28]);
+        $('#inputCu').val(dataArr[29]);
+        $('#inputAl').val(dataArr[30]);
+        $('#inputTi').val(dataArr[31]);
+        $('#inputV').val(dataArr[32]);
+        $('#inputSn').val(dataArr[33]);
+        $('#inputPb').val(dataArr[34]);
+        $('#inputC').val(dataArr[35]);
+        $('#inputS').val(dataArr[36]);
 
         //Temperatura e inoculante
         $('#id3').val(dataArr[2]);
-        $('#inputSangrado').val(dataArr[37]);
-        $('#inputVaciado').val(dataArr[38]);
-        $('#inputKg').val(dataArr[39]);
-        $('#inputTiempo').val(dataArr[40]);
+        $('#inputSangrado').val(dataArr[38]);
+        $('#inputVaciado').val(dataArr[39]);
+        $('#inputKg').val(dataArr[40]);
+        $('#inputTiempo').val(dataArr[41]);
     } );
 
     $('#checkCavidad').on('change', function (e) {
@@ -2056,12 +2200,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
             $('#formMetalurgicoAdd').find(':input').each(function () {
                 var elemento= this;
+                console.log(elemento.id);
                 if (elemento.value === '') {
-                    $('#' + elemento.id).css('border-color', 'red');
+                    $("#" + elemento.id).css('border-color', 'red');
                     contador++;
                 }
                 else
-                    $('#'+elemento.id).css('border-color','#babfc7');
+                    $("#"+elemento.id).css('border-color','#babfc7');
             });
             data = $('#formMetalurgicoAdd').serialize()+'&familia='+familia+'&modelos='+modelo+'&olla='+olla+'&cavidad='+cavidad+'&hoja='+hoja;
         } else if (opcionInsertar === 2) { //quimico
@@ -2101,6 +2246,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                      $("#familias option[value='']").prop('selected', true);
                      //$("#modelos option[value='']").prop('selected', true);
                      $("#modelos").find('option').remove().end().append("<option selected disabled value=''>Modelo</option>");
+                     $("#divLocalizacion").fadeOut('slow');
 
                      $('#newOlla').val('');
                      $('#newCavidad').val('');
@@ -2166,6 +2312,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
             $('#checkDurezaMaxEdit').attr('disabled',true);
             $('#checkNodularidadEdit').attr('disabled',true);
             $('#checkNodEdit').attr('disabled',true);
+            $('#selectLocalizacionEdit').attr('disabled',true);
             $('#btnCancelarTres').fadeOut('slow');
             $('#btnEditarTres').removeClass('btn-success');
             $('#btnEditarTres').addClass('btn-outline-blue');
@@ -2223,6 +2370,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         $('#checkDurezaMaxEdit').attr('disabled',true);
         $('#checkNodularidadEdit').attr('disabled',true);
         $('#checkNodEdit').attr('disabled',true);
+        $('#selectLocalizacionEdit').attr('disabled',true);
         $('#btnCancelarUno').fadeOut('slow');
         $('#btnEditarUno').removeClass('btn-success');
         $('#btnEditarUno').addClass('btn-outline-blue');
@@ -2290,6 +2438,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 $('#checkDurezaMaxEdit').attr('disabled',false);
                 $('#checkNodularidadEdit').attr('disabled',false);
                 $('#checkNodEdit').attr('disabled',false);
+                $('#selectLocalizacionEdit').attr('disabled',false);
 
                 $('#btnCancelarTres').fadeIn('slow');
 
@@ -2360,6 +2509,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 $('#checkDurezaMaxEdit').attr('disabled',true);
                 $('#checkNodularidadEdit').attr('disabled',true);
                 $('#checkNodEdit').attr('disabled',true);
+                $('#selectLocalizacionEdit').attr('disabled',true);
 
             } else if(opcionEditar === 2) {
                 $(e).removeClass('btn-success');
@@ -2490,6 +2640,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
     function obtenerModelos() {
         let id = $('#familias').val();
+        let familia = $('#familias option:selected').text();
+
+        if (familia === 'Mazda')
+            $('#divLocalizacion').fadeIn('slow');
+        else
+            $('#divLocalizacion').fadeOut('slow');
         $.ajax({
             url: '../peticiones/modelos/select.php',
             method: 'GET',
@@ -2668,38 +2824,38 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     $('#checkMetalurgico').on('change',function () {
         t.columns.adjust().draw();
         if ($('#checkMetalurgico').prop('checked')){ //activar columnas de metalurgico
-            t.columns( [7,8,9,10,11,12,13,14,15,16,17,18,19,20] ).visible( true );
+            t.columns( [7,8,9,10,11,12,13,14,15,16,17,18,19,20,21] ).visible( true );
         } else { // desactivar columnas de metalurgico
-            t.columns( [7,8,9,10,11,12,13,14,15,16,17,18,19,20] ).visible( false );
+            t.columns( [7,8,9,10,11,12,13,14,15,16,17,18,19,20,21] ).visible( false );
         }
     });
 
     $('#checkQuimico').on('change',function () {
         if ($('#checkQuimico').prop('checked')){ //activar columnas de quimico
-            t.columns( [21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36] ).visible( true );
+            t.columns( [22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37] ).visible( true );
             t.columns.adjust().draw();
         } else { // desactivar columnas de metalurgico
-            t.columns( [21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36] ).visible( false );
+            t.columns( [22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37] ).visible( false );
             t.columns.adjust().draw();
         }
     });
 
     $('#checkTemperatura').on('change',function () {
         if ($('#checkTemperatura').prop('checked')){ //activar columnas de metalurgico
-            t.columns( [37,38,39,40,41] ).visible( true );
+            t.columns( [38,39,40,41,42] ).visible( true );
             t.columns.adjust().draw();
         } else { // desactivar columnas de metalurgico
-            t.columns( [37,38,39,40,41] ).visible( false );
+            t.columns( [38,39,40,41,42] ).visible( false );
             t.columns.adjust().draw();
         }
     });
 
     $('#checkNotas').on('change',function () {
         if ($('#checkNotas').prop('checked')){ //activar columnas de notas
-            t.columns( [41,42,43,44,45,46] ).visible( true );
+            t.columns( [43,44,45,46,47] ).visible( true );
             t.columns.adjust().draw();
         } else { // desactivar columnas de notas
-            t.columns( [41,42,43,44,45,46] ).visible( false );
+            t.columns( [43,44,45,46,47] ).visible( false );
             t.columns.adjust().draw();
         }
     });
@@ -2811,7 +2967,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     function crearUsuario() {
         let nombre = $('#nombreusuarioadd').val();
         let apellido = $('#apellidousuarioadd').val();
-        let correo = $('#correousuarioadd').val();
+        let correo = $('#correousuarioadd').val() + '@arbomex.com.mx';
         let contrasena = $('#passusuarioadd').val();
         let usuario = $('#userusuarioadd').val();
         let rol = $('#selectrolusuarioadd option:selected').text();
@@ -3147,6 +3303,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 $('#inputarchivo').css('border-color','');
             }, 2000);
         }
+
+        $('#selectfamiliasadd').trigger('change');
     });
 
     function crearTablaModelos() {
@@ -3190,10 +3348,50 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         });
     }
 
+    function cerrarModalAddModelos() {
+        $('#modaladdmodel').modal('hide');
+        $('#selectmodelosadd').empty();
+        $('#selectmodelosadd').append('<option selected="" value="">Seleccionar</option>');
+    }
+
     function abrirModalShowModelos() {
         crearTablaModelos();
         $('#modalshowmodelos').modal('show');
     }
+
+    function abrirModalEliminarModelo(id) {
+        id_eliminar_modelo = id;
+        $('#modalEliminarModelo').modal('show');
+    }
+
+    function abrirModalEliminarFamilia(familia) {
+        familia_eliminar = familia;
+        $('#modalEliminarFamilia').modal('show');
+    }
+
+    $('#btnEliminarFamilia').on('click',function () {
+        $.ajax({
+            url: '../peticiones/familia/delete.php',
+            method: 'post',
+            data: {familia:familia_eliminar},
+            success: function () {
+                $('#modalEliminarFamilia').modal('hide');
+                t3.draw();
+            }
+        })
+    });
+
+    $('#btnEliminarModelo').on('click',function () {
+        $.ajax({
+            url: '../peticiones/modelos/delete.php',
+            method: 'post',
+            data: {id:id_eliminar_modelo},
+            success: function () {
+                $('#modalEliminarModelo').modal('hide');
+                t3.draw();
+            }
+        })
+    });
 
     function eliminarModelo(id) {
         $.ajax({
@@ -3252,6 +3450,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         let datos = row[0]['cells'];
         let familia_actual = datos[1].innerHTML;
         let modelo_actual = datos[2].innerHTML;
+        $('#selectmodeloeditmodelo').val(modelo_actual).prop('disabled',true);
+
         $.ajax({
             url: '../peticiones/familia/select.php',
             method: 'get',
@@ -3267,20 +3467,87 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
             }
         });
 
-        /*$.ajax({
-            url: '../peticiones/modelos/select.php',
+    }
+
+    function editarModelo() {
+        var form = new FormData();
+        let familia = $('#selectfamiliaeditmodelo').val();
+        let modelo = $('#selectmodeloeditmodelo').val();
+        let file = $('#inputarchivoeditarmodelo').prop('files');
+        form.append('familia',familia);
+        form.append('modelo',modelo);
+        form.append('file',file[0]);
+
+        $.ajax({
+           url: '../peticiones/modelos/update.php',
+           method: 'post',
+           data: form,
+           processData: false,
+           contentType: false,
+           success: function () {
+                t3.draw(false);
+                $('#inputarchivoeditarmodelo').val('');
+                $('#modaleditmodelo').modal('hide');
+           }
+        });
+    }
+
+    $("#nombreusuarioadd").on('blur',function () {
+        let cadena = $(this).val().replace(/\b\w/g, l => l.toUpperCase());
+        $(this).val(cadena);
+    });
+
+    $('#apellidousuarioadd').on('blur',function () {
+        let cadena = $(this).val().replace(/\b\w/g, l => l.toUpperCase());
+        $(this).val(cadena);
+    });
+
+    $("#nombreusuarioedit").on('blur',function () {
+        let cadena = $(this).val().replace(/\b\w/g, l => l.toUpperCase());
+        $(this).val(cadena);
+    });
+
+    $('#apellidousuarioedit').on('blur',function () {
+        let cadena = $(this).val().replace(/\b\w/g, l => l.toUpperCase());
+        $(this).val(cadena);
+    });
+
+    function abriModalEditUser(id) {
+        id_actualizar_usuario = id;
+        $.ajax({
+            url: '../peticiones/usuarios/select.php',
             method: 'get',
+            data: {id:id},
             dataType: 'json',
             success: function (response) {
-                $('#selectfamiliaeditmodelo').empty();
-                $.each(response,function (key,value) {
-                    if (value.familia === familia_actual)
-                        $('#selectfamiliaeditmodelo').append('<option selected>'+value.familia+'</option>');
-                    else
-                        $('#selectfamiliaeditmodelo').append('<option>'+value.familia+'</option>');
+                $.each(response, function (key,value) {
+                    $('#nombreusuarioedit').val(value.name);
+                    $('#apellidousuarioedit').val(value.apellido);
+                    $('#correousuarioedit').val(value.email);
+                    $('#userusuarioedit').val(value.user);
+                    $("#selectrolusuarioedit option:contains("+value.rol+")").attr('selected', 'selected');
+                    $('#modaladituser').modal('show');
                 })
             }
-        })*/
+        });
+    }
+    
+    function actualizarUsuario() {
+        let nombre = $('#nombreusuarioedit').val();
+        let apellido =  $('#apellidousuarioedit').val();
+        let correo =   $('#correousuarioedit').val();
+        let user = $('#userusuarioedit').val();
+        let rol = $('#selectrolusuarioedit option:selected').text();
+
+        $.ajax({
+           url: '../peticiones/usuarios/update.php',
+           method: 'post',
+           data: {id:id_actualizar_usuario,usuario:user,nombre:nombre,apellido:apellido,correo:correo,rol:rol},
+           success: function () {
+               $('#modaladituser').modal('hide');
+               t2.draw();
+           }
+        });
     }
 
 <?php echo '</script'; ?>

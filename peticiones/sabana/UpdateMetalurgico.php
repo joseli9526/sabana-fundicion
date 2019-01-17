@@ -21,9 +21,10 @@ $grafitoMax = $_POST['inputGrafitoMax'];
 $esteadita = $_POST['inputEsteadita'];
 $familia = $_POST['selectFamilia'];
 $modelo = $_POST['selectModelo'];
+$localizacion = $_POST['selectLocalizacionEdit'];
 $usuario = $_SESSION['user'];
 
-$web->updateMetalurgico($id,$olla,$familia,$modelo,$cavidad,$dureza_min,$dureza_max,$nodularidad,$nod,$perlita,$ferrita,$carburos,$tipo_grafito,$grafitoMin,$grafitoMax,$esteadita,$usuario);
+$web->updateMetalurgico($id,$olla,$familia,$modelo,$cavidad,$dureza_min,$dureza_max,$nodularidad,$nod,$perlita,$ferrita,$carburos,$tipo_grafito,$grafitoMin,$grafitoMax,$esteadita,$localizacion,$usuario);
 
 $sql = "SELECT dureza_min,dureza_max,nodularidad,nod,perlita,ferrita,carburos,grafito_tipo, grafito_tamanio,grafito_tamanio_max,
        esteadita, porcentaje_si,porcentaje_mn,porcentaje_p,porcentaje_mg,porcentaje_cr,porcentaje_ni,porcentaje_mo,porcentaje_cu,

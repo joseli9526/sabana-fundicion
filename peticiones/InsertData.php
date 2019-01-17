@@ -26,6 +26,7 @@ else if ($hora >= '21:30:00' && $hora <= '23:59:59')
 else if ($hora >= '00:00:00' && $hora < '05:59:59')
     $turno = '3ero';
 
+
 if ($_POST['opcion'] == 'metalurgico') {
     $olla = $_POST['olla'];
     $familia = $_POST['familia'];
@@ -42,13 +43,14 @@ if ($_POST['opcion'] == 'metalurgico') {
     $tamanio_grafito = $_POST['grafitotamanio'];
     $tamanio_grafito_min = $_POST['grafitotamaniomin'];
     $esteadita = $_POST['esteadita'];
+    $localizacion = $_POST['selectLocalizacion'];
     $hoja = $_POST['hoja'];
 
     $sql = "INSERT INTO sabana (fecha,turno,no_olla,familia,modelo,cavidad,dureza_min,dureza_max,
                     nodularidad,nod,perlita,ferrita,carburos,grafito_tipo,grafito_tamanio,grafito_tamanio_max,
-                    esteadita,usuario_metalurgico,dia,semana,mes,anio,hoja_inspeccion,status) VALUES ('$fecha','$turno',$olla,'$familia','$modelo','$cavidad','$dureza',
+                    esteadita,localizacion,usuario_metalurgico,dia,semana,mes,anio,hoja_inspeccion,status) VALUES ('$fecha','$turno',$olla,'$familia','$modelo','$cavidad','$dureza',
                                                            '$dureza_max','$nodularidad','$nod','$perlita','$ferrita','$carburo',
-                                                           '$grafito','$tamanio_grafito_min','$tamanio_grafito','$esteadita','$usuario',
+                                                           '$grafito','$tamanio_grafito_min','$tamanio_grafito','$esteadita','$localizacion','$usuario',
                                                            '$dia','$semana','$mes','$anio','$hoja',2)";
     $web->ejecutar($sql);
 

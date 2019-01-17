@@ -173,6 +173,7 @@ while( $datum=mysqli_fetch_array($query) ) {  // preparing an array
     $data_aux[] = $datum['grafito_tamanio'];
     $data_aux[] = $datum['grafito_tamanio_max'];
     $data_aux[] = $datum['esteadita'];
+    $data_aux[] = $datum['localizacion'];
     $data_aux[] = $datum['usuario_metalurgico'];
     $data_aux[] = $datum['porcentaje_si'];
     $data_aux[] = $datum['porcentaje_mn'];

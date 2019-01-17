@@ -1158,216 +1158,221 @@
       <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="246" name="usuario_metalurgico">
+    <column id="284" parent="246" name="localizacion">
       <Position>18</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="285" parent="246" name="usuario_metalurgico">
+      <Position>19</Position>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="285" parent="246" name="porcentaje_si">
-      <Position>19</Position>
-      <DataType>float|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="286" parent="246" name="porcentaje_mn">
+    <column id="286" parent="246" name="porcentaje_si">
       <Position>20</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="287" parent="246" name="porcentaje_p">
+    <column id="287" parent="246" name="porcentaje_mn">
       <Position>21</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="288" parent="246" name="porcentaje_mg">
+    <column id="288" parent="246" name="porcentaje_p">
       <Position>22</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="246" name="porcentaje_cr">
+    <column id="289" parent="246" name="porcentaje_mg">
       <Position>23</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="246" name="porcentaje_ni">
+    <column id="290" parent="246" name="porcentaje_cr">
       <Position>24</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="291" parent="246" name="porcentaje_mo">
+    <column id="291" parent="246" name="porcentaje_ni">
       <Position>25</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="292" parent="246" name="porcentaje_cu">
+    <column id="292" parent="246" name="porcentaje_mo">
       <Position>26</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="246" name="porcentaje_al">
+    <column id="293" parent="246" name="porcentaje_cu">
       <Position>27</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="294" parent="246" name="porcentaje_ti">
+    <column id="294" parent="246" name="porcentaje_al">
       <Position>28</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="295" parent="246" name="porcentaje_v">
+    <column id="295" parent="246" name="porcentaje_ti">
       <Position>29</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="296" parent="246" name="porcentaje_sn">
+    <column id="296" parent="246" name="porcentaje_v">
       <Position>30</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="246" name="porcentaje_pb">
+    <column id="297" parent="246" name="porcentaje_sn">
       <Position>31</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="298" parent="246" name="porcentaje_c">
+    <column id="298" parent="246" name="porcentaje_pb">
       <Position>32</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="299" parent="246" name="porcentaje_s">
+    <column id="299" parent="246" name="porcentaje_c">
       <Position>33</Position>
       <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="300" parent="246" name="usuario_quimico">
+    <column id="300" parent="246" name="porcentaje_s">
       <Position>34</Position>
+      <DataType>float|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="301" parent="246" name="usuario_quimico">
+      <Position>35</Position>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="301" parent="246" name="sangrado">
-      <Position>35</Position>
-      <DataType>int(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="302" parent="246" name="vaciado">
+    <column id="302" parent="246" name="sangrado">
       <Position>36</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="303" parent="246" name="kg">
+    <column id="303" parent="246" name="vaciado">
       <Position>37</Position>
-      <DataType>float|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="304" parent="246" name="tiempo">
-      <Position>38</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="305" parent="246" name="usuario_temperatura">
+    <column id="304" parent="246" name="kg">
+      <Position>38</Position>
+      <DataType>float|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="305" parent="246" name="tiempo">
       <Position>39</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="306" parent="246" name="usuario_temperatura">
+      <Position>40</Position>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="306" parent="246" name="dia">
-      <Position>40</Position>
-      <DataType>varchar(10)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="307" parent="246" name="semana">
+    <column id="307" parent="246" name="dia">
       <Position>41</Position>
       <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="308" parent="246" name="mes">
+    <column id="308" parent="246" name="semana">
       <Position>42</Position>
       <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="309" parent="246" name="anio">
+    <column id="309" parent="246" name="mes">
       <Position>43</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="310" parent="246" name="anio">
+      <Position>44</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="310" parent="246" name="hoja_inspeccion">
-      <Position>44</Position>
+    <column id="311" parent="246" name="hoja_inspeccion">
+      <Position>45</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="311" parent="246" name="familia">
-      <Position>45</Position>
+    <column id="312" parent="246" name="familia">
+      <Position>46</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="312" parent="246" name="usuario">
-      <Position>46</Position>
+    <column id="313" parent="246" name="usuario">
+      <Position>47</Position>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="313" parent="246" name="status">
-      <Position>47</Position>
+    <column id="314" parent="246" name="status">
+      <Position>48</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="314" parent="246" name="PRIMARY">
+    <key id="315" parent="246" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="315" parent="247" name="id">
+    <column id="316" parent="247" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="316" parent="247" name="tipo_grafito">
+    <column id="317" parent="247" name="tipo_grafito">
       <Position>2</Position>
       <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="317" parent="247" name="PRIMARY">
+    <key id="318" parent="247" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="318" parent="248" name="id">
+    <column id="319" parent="248" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="319" parent="248" name="email">
+    <column id="320" parent="248" name="email">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="320" parent="248" name="password">
+    <column id="321" parent="248" name="password">
       <Position>3</Position>
       <DataType>varchar(128)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="321" parent="248" name="rol">
+    <column id="322" parent="248" name="rol">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="322" parent="248" name="name">
+    <column id="323" parent="248" name="name">
       <Position>5</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="323" parent="248" name="user">
+    <column id="324" parent="248" name="user">
       <Position>6</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="324" parent="248" name="apellido">
+    <column id="325" parent="248" name="apellido">
       <Position>7</Position>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="325" parent="248" name="PRIMARY">
+    <key id="326" parent="248" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

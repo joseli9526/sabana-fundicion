@@ -20,18 +20,18 @@ $columns = array(
 
 // getting total number records without any search
 $sql = "SELECT *, m.id as id_modelo ";
-$sql.=" from familia f inner join modelos m
-on f.id = m.id_familia inner join hoja_inspeccion h on m.id_hoja_inspeccion = h.id";
+$sql.=" from familia f left join modelos m
+on f.id = m.id_familia left join hoja_inspeccion h on m.id_hoja_inspeccion = h.id";
 $query=mysqli_query($conn, $sql);
 $totalData = mysqli_num_rows($query);
 $totalFiltered = $totalData;  // when there is no search parameter then total number rows = total number filtered rows.
 
 $sql = "SELECT *, m.id as id_modelo ";
-$sql.=" from familia f inner join modelos m
-on f.id = m.id_familia inner join hoja_inspeccion h on m.id_hoja_inspeccion = h.id WHERE 1=1";
+$sql.=" from familia f left join modelos m
+on f.id = m.id_familia left join hoja_inspeccion h on m.id_hoja_inspeccion = h.id WHERE 1=1";
 if( !empty($requestData['search']['value']) ) {   // if there is a search parameter, $requestData['search']['value'] contains search parameter
-    $sql.=" AND ( familia LIKE '".$requestData['search']['value']."%') ";
-    //$sql.=" OR familia LIKE '".$requestData['search']['value']."%' )";
+    $sql.=" AND ( familia LIKE '".$requestData['search']['value']."%' ";
+    $sql.=" OR modelo LIKE '".$requestData['search']['value']."%' )";
     //$sql.=" OR employee_age LIKE '".$requestData['search']['value']."%' )";
 }
 $query=mysqli_query($conn, $sql);
@@ -44,62 +44,86 @@ $query=mysqli_query($conn, $sql);
 $response = array();
 
 $j = 0;
-$i = 0;
+$ruta = "../../filespdf/";
+$bandera = false;
+$aux = '';
+$archivos_ruta = array_diff(scandir($ruta), array('..', '.'));
 
 while( $datum = mysqli_fetch_array($query) ) {  // preparing an array
-        $data_aux = array();
-        $hoja = $datum['hoja_inspeccion'];
-        $data_aux[] = '<button class="btn btn-primary btn-circle" onclick="abrirModalEditarModelo(this)" title="Editar"><i class="fa fa-edit"></i></button><button style="margin-left: 5px" class="btn btn-danger btn-circle" onclick="eliminarModelo('.$datum['id_modelo'].')" title="Eliminar"><i class="fa fa-trash"></i></button>';
-        $data_aux[] = $datum['familia'];
-        $data_aux[] = $datum['modelo'];
+    $data_aux = array();
+
+    $hoja = $datum['hoja_inspeccion'];
+    $familia = $datum['familia'];
+
+    $data_aux[] = $datum['familia'];
+    $data_aux[] = $datum['modelo'];
+
+    for ($i = 2; $i < sizeof($archivos_ruta); $i++) {
+        $aux = substr($archivos_ruta[$i],0,-4);
+
+        if ($datum['hoja_inspeccion'] == $aux) {
+            $bandera = true;
+            break;
+        } else
+            $bandera = false;
+    }
+
+    if ($bandera)
         $data_aux[] = '<a href="#" onclick="abrirPDF(\''.$hoja.'\')">'.$hoja.'</a>';
+    else
+        $data_aux[] = '<span style="color: red;">'.$hoja.'</span>';
+
+    if ($datum['modelo'] != null)
+        $data_aux[] = '<button class="btn btn-primary btn-circle" onclick="abrirModalEditarModelo(this)" title="Editar"><i class="fa fa-edit"></i></button><button style="margin-left: 5px" class="btn btn-danger btn-circle" onclick="abrirModalEliminarModelo('.$datum['id_modelo'].')" title="Eliminar"><i class="fa fa-trash"></i></button>';
+    else
+        $data_aux[] = '<button class="btn btn-primary btn-circle" onclick="abrirModalEditarModelo(this)" title="Editar"><i class="fa fa-edit"></i></button><button style="margin-left: 5px" class="btn btn-danger btn-circle" onclick="abrirModalEliminarFamilia(\''.$familia.'\')" title="Eliminar"><i class="fa fa-trash"></i></button>';
 
 //    $sql = "SELECT id,modelo FROM modelos WHERE id_familia = " .$datum['id'];
 
-  //  $querymodelo = mysqli_query($conn,$sql);
+    //  $querymodelo = mysqli_query($conn,$sql);
     //$totalData += mysqli_num_rows($querymodelo);
- /*   if (mysqli_num_rows($querymodelo) > 0) {
-        while ($dataModelos =  mysqli_fetch_array($querymodelo)) {
+    /*   if (mysqli_num_rows($querymodelo) > 0) {
+           while ($dataModelos =  mysqli_fetch_array($querymodelo)) {
 
-            if ($dataModelos['modelo'] == '')
-                //$data_aux[] = '';
-                $i++;
-            else {
-              //  $data_aux[] = $dataModelos['modelo'];
-               // $data_aux[] = 'hoja';
-                $sql = "SELECT hoja_inspeccion FROM hoja_inspeccion WHERE id = " . $dataModelos['id'];
-                $queryhojas = mysqli_query($conn,$sql);
-                while ($dataHojas = mysqli_fetch_array($queryhojas)) {
+               if ($dataModelos['modelo'] == '')
+                   //$data_aux[] = '';
+                   $i++;
+               else {
+                 //  $data_aux[] = $dataModelos['modelo'];
+                  // $data_aux[] = 'hoja';
+                   $sql = "SELECT hoja_inspeccion FROM hoja_inspeccion WHERE id = " . $dataModelos['id'];
+                   $queryhojas = mysqli_query($conn,$sql);
+                   while ($dataHojas = mysqli_fetch_array($queryhojas)) {
 
-                    $data_aux = array();
-                    $data_aux[] = '<button class="btn btn-primary btn-circle" title="Editar"><i class="fa fa-edit"></i></button><button style="margin-left: 5px" class="btn btn-danger btn-circle" title="Eliminar"><i class="fa fa-trash"></i></button>';
-                    $data_aux[] = $datum['familia'];
-                    $data_aux[] = $dataModelos['modelo'];
-                    if ($dataModelos == '')
-                        $data_aux[] = '<div class="element">
-                          <form class="formsubirarchivo" enctype="multipart/form-data">
-                              <i id="iconosubir_'.$i.'"  class="clip fa fa-paperclip fa-lg"></i><span style="margin-left: 10px" class="name">No se eligió archivo</span>
-                              <input style="display: none" type="file" onchange="subirArchivo(this,'.$datum['id'].')" name="iconosubir_'.$i.'" id="inputsubirarchivo_'.$i.'">
-                          </form>
-                       </div>';
-                    else
-                        $data_aux[] = $dataHojas['hoja_inspeccion'];
-                }
-            }
-            $response[] = $data_aux;
-        }
+                       $data_aux = array();
+                       $data_aux[] = '<button class="btn btn-primary btn-circle" title="Editar"><i class="fa fa-edit"></i></button><button style="margin-left: 5px" class="btn btn-danger btn-circle" title="Eliminar"><i class="fa fa-trash"></i></button>';
+                       $data_aux[] = $datum['familia'];
+                       $data_aux[] = $dataModelos['modelo'];
+                       if ($dataModelos == '')
+                           $data_aux[] = '<div class="element">
+                             <form class="formsubirarchivo" enctype="multipart/form-data">
+                                 <i id="iconosubir_'.$i.'"  class="clip fa fa-paperclip fa-lg"></i><span style="margin-left: 10px" class="name">No se eligió archivo</span>
+                                 <input style="display: none" type="file" onchange="subirArchivo(this,'.$datum['id'].')" name="iconosubir_'.$i.'" id="inputsubirarchivo_'.$i.'">
+                             </form>
+                          </div>';
+                       else
+                           $data_aux[] = $dataHojas['hoja_inspeccion'];
+                   }
+               }
+               $response[] = $data_aux;
+           }
 
-        //$data_aux[] = $datum['familia'];
-    } else {
-        $data_aux[] = '<button class="btn btn-primary btn-circle" title="Editar"><i class="fa fa-edit"></i></button><button style="margin-left: 5px" class="btn btn-danger btn-circle" title="Eliminar"><i class="fa fa-trash"></i></button>';
-        $data_aux[] = 'a';
-        $data_aux[] = 'a';
-        $data_aux[] = 'a';
-        $response[] = $data_aux;
-    }*/
+           //$data_aux[] = $datum['familia'];
+       } else {
+           $data_aux[] = '<button class="btn btn-primary btn-circle" title="Editar"><i class="fa fa-edit"></i></button><button style="margin-left: 5px" class="btn btn-danger btn-circle" title="Eliminar"><i class="fa fa-trash"></i></button>';
+           $data_aux[] = 'a';
+           $data_aux[] = 'a';
+           $data_aux[] = 'a';
+           $response[] = $data_aux;
+       }*/
 
 
-  //  $i++;
+    //  $i++;
     /*  $data_aux[] = $datum['modelo'];
       $data_aux[] = '<button class="btn btn-danger btn-circle" title="Eliminar" onclick="eliminarModelo('.$datum['id'].')"><i class="far fa-trash-alt"></i></button>';
 

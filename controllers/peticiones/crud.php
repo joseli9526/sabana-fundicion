@@ -50,11 +50,11 @@ class CRUD extends Sabana {
     }
 
     function updateMetalurgico($id, $olla, $familia, $modelo, $cavidad, $dur_min, $dur_max, $nodularidad, $nod, $perlita, $ferrita,
-             $carburos, $tipo_grafito, $grafito_min, $grafito_max, $esteadita, $usuario) {
+             $carburos, $tipo_grafito, $grafito_min, $grafito_max, $esteadita, $localizacion, $usuario) {
 
         $sql = "UPDATE sabana SET no_olla = $olla, familia = '$familia', modelo = '$modelo', cavidad = '$cavidad', dureza_min = '$dur_min', dureza_max = '$dur_max',
                   nodularidad = '$nodularidad', nod = '$nod', perlita = '$perlita', ferrita = '$ferrita', carburos = '$carburos', grafito_tipo = '$tipo_grafito',
-                  grafito_tamanio = '$grafito_min', grafito_tamanio_max = '$grafito_max', esteadita = '$esteadita', usuario_metalurgico = '$usuario' WHERE id = $id";
+                  grafito_tamanio = '$grafito_min', grafito_tamanio_max = '$grafito_max', esteadita = '$esteadita', localizacion = '$localizacion', usuario_metalurgico = '$usuario' WHERE id = $id";
 echo $sql;
         $this->ejecutar($sql);
     }

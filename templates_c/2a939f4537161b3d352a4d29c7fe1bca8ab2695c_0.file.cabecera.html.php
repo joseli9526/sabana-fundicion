@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-01-11 13:31:27
+/* Smarty version 3.1.30, created on 2019-01-16 11:39:38
   from "C:\xampp2\htdocs\Arbomex\Celaya\SabanaFundicionCambios2\templates\cabecera.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5c38ef0f4153e9_17057945',
+  'unifunc' => 'content_5c3f6c5a86ee05_32097047',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2a939f4537161b3d352a4d29c7fe1bca8ab2695c' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\Arbomex\\Celaya\\SabanaFundicionCambios2\\templates\\cabecera.html',
-      1 => 1547235085,
+      1 => 1547660374,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c38ef0f4153e9_17057945 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c3f6c5a86ee05_32097047 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -168,7 +168,7 @@ function content_5c38ef0f4153e9_17057945 (Smarty_Internal_Template $_smarty_tpl)
                     <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-question-circle"></i><span class="selected-language"></span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-flag">
                             <div class="arrow_box">
-                                <!--<a class="dropdown-item" href="#" id="btnPdf"><i class="la la-file-pdf-o"></i> PDF</a>-->
+                                <a class="dropdown-item" href="#" target="_blank" onclick="window.open('../filespdf/Quick Guide _ Calidad _ Fundición.pdf')" id="btnPdf"><i style="margin-left: -10px" class="la la-file-pdf-o"></i> Quick Guide</a>
                                 <!--<a class="dropdown-item" data-toggle="modal" data-target="#modalexcel" id="btnExcel"><i style="color: green" class="la la-file-excel-o"></i> Excel</a>-->
                             </div>
                         </div>

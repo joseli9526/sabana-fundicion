@@ -46,11 +46,12 @@ $i = 0;
 while( $datum = mysqli_fetch_array($query) ) {  // preparing an array
 
     $data_aux = array();
-    $data_aux[] = $datum['name'];
+    $data_aux[] = $datum['name'] . ' '. $datum['apellido'];
     $data_aux[] = $datum['user'];
     $data_aux[] = $datum['email'];
-    $data_aux[] = '<button class="btn btn-danger btn-circle" title="Eliminar" onclick="eliminarUsuario('.$datum['id'].')"><i class="far fa-trash-alt"></i></button>';
+    $data_aux[] = '<button class="btn btn-primary btn-circle" title="Editar" onclick="abriModalEditUser('.$datum['id'].')"><i class="far fa-edit"></i></button>';
     $data_aux[] = '<button class="btn btn-primary btn-circle" title="Reset contraseña" onclick="resetPassword('.$datum['id'].')"><i class="fas fa-unlock"></i></i></button>';
+    $data_aux[] = '<button class="btn btn-danger btn-circle" title="Eliminar" onclick="eliminarUsuario('.$datum['id'].')"><i class="far fa-trash-alt"></i></button>';
     $response[] = $data_aux;
 }
 
